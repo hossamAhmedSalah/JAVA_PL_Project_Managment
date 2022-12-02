@@ -1,4 +1,3 @@
- Name , gender, email, password, age, imgURL, city, DOB, phone_number
  'Nathan Lemaire', 'male', 'nathan.lemaire@example.com', 'callum', 35, 'https://randomuser.me/api/portraits/men/5.jpg', 'Besançon', '1987-01-20T11:32:33.396Z', '05-26-18-01-37' ,
  'Doğan Gankema', 'male', 'dogan.gankema@example.com', 'rascal', 38, 'https://randomuser.me/api/portraits/men/86.jpg', 'Woudbloem', '1984-04-15T19:44:26.045Z', '(017 , 4050022' ,
  'Kajus Ulleberg', 'male', 'kajus.ulleberg@example.com', 'bruce', 77, 'https://randomuser.me/api/portraits/men/41.jpg', 'Stjørdalshalsen', '1945-04-15T09:34:19.942Z', '72822411' ,
