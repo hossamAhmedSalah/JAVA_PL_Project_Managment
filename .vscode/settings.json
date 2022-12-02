@@ -4,6 +4,6 @@
         "src/mssql-jdbc-11.2.1.jre18.jar"
     ],
     "java.project.sourcePaths": [
-        "src"
+        "DB"
     ]
 }

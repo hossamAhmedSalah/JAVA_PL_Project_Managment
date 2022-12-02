@@ -11,10 +11,10 @@ public class SQLConnection {
     // Replace server name, username, and password with your credentials
     SQLConnection(){
         this.connectionUrl =  
-                "jdbc:sqlserver://KEK;"
-                        + "database=project;"
-                        + "user=project;"
-                        + "password=project123;"
+                "jdbc:sqlserver://pl2project.mssql.somee.com;"
+                        + "database=pl2project;"
+                        + "user=gimmepp_SQLLogin_1;"
+                        + "password=qj54fx9pff;"
                         + "encrypt=false;"
                         + "trustServerCertificate=false;";
 
@@ -61,3 +61,5 @@ public class SQLConnection {
     }
 
 }
+
+//o2bcn7KZuMuVW0CD
