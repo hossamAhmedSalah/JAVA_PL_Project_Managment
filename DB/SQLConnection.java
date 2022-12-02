@@ -49,7 +49,7 @@ public class SQLConnection {
                 resultSet = statement.executeQuery(s);
                 int i = 0;
                 while (resultSet.next()) {
-                    ans[i] = resultSet.getString(2);
+                    ans[i] = resultSet.getString(1);
                     i++;
                 }
         }
@@ -58,6 +58,22 @@ public class SQLConnection {
             e.printStackTrace();
         }   
         return ans;
+    }
+
+    public int rcount(String s){
+        int n = -1;
+        ResultSet resultSet = null;
+        try (Connection connection = DriverManager.getConnection(connectionUrl);
+            Statement statement = connection.createStatement();) {
+                resultSet = statement.executeQuery(s);
+                resultSet.next();
+                n = resultSet.getInt("cnt");
+        }
+        // Handle any errors that may have occurred.
+        catch (SQLException e) {
+            e.printStackTrace();
+        }   
+        return n;
     }
 
 }
