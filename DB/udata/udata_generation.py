@@ -1,7 +1,6 @@
 from randomuser import RandomUser
 
-# Generate a single user
-user = RandomUser()
+
 
 # Generate a list of 10 random users
 user_list = RandomUser.generate_users(10)
@@ -24,15 +23,17 @@ for i in users_data:
     else:
         print(f"insert into {table_name} values (", end="")
         for j in range(len(i)):
+            # for age to be detected 
             if (i[j]).isnumeric():
                 print(f"{i[j]}", end="")
                 continue
-            if j == 0:
+            # for name and city if they are Arabic letters 
+            if j == 0 or j == 6:
                 print(f"N'{i[j]}'", end=",")
-            elif j == 6:
-                print(f"N'{i[j]}'", end=",")
+            # last in the querey string
             elif j == len(i) - 1:
                 print(f"{i[j]} )")
+            # what ever else
             else:
                 print(f"'{i[j]}'", end="")
 
