@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.ResultSetMetaData;
 
 public class SQLConnection {
     String connectionUrl;
@@ -29,8 +30,8 @@ public class SQLConnection {
         }
     }
     
-    public void insert(String s){
-        // ResultSet resultSet = null;
+    //execute sql query, returns nothing, takes in table name
+    public void query(String s){
         try (Connection connection = DriverManager.getConnection(connectionUrl);
             Statement statement = connection.createStatement();) {
                 statement.execute(s);
@@ -41,15 +42,21 @@ public class SQLConnection {
         }   
     }
 
-    public String[] select(String s){
-        String[] ans = new String[100];
+    //execute sql query, returns table, takes in query + table name
+    public String[][] select(String s, String tbl){
+        int row = this.r_count(tbl);
+        int col = this.c_count(tbl);
+
+        String[][] ans = new String[row][col];
         ResultSet resultSet = null;
         try (Connection connection = DriverManager.getConnection(connectionUrl);
             Statement statement = connection.createStatement();) {
-                resultSet = statement.executeQuery(s);
+                resultSet = statement.executeQuery(s + tbl);
                 int i = 0;
-                while (resultSet.next()) {
-                    ans[i] = resultSet.getString(1);
+                while (resultSet.next()){
+                    for(int j=1;j<=col;j++){
+                        ans[i][j-1] = resultSet.getString(j);
+                    }
                     i++;
                 }
         }
@@ -60,12 +67,29 @@ public class SQLConnection {
         return ans;
     }
 
-    public int rcount(String s){
+    public int c_count(String s){
         int n = -1;
+        String str = "select * from " + s;
         ResultSet resultSet = null;
         try (Connection connection = DriverManager.getConnection(connectionUrl);
             Statement statement = connection.createStatement();) {
-                resultSet = statement.executeQuery(s);
+                resultSet = statement.executeQuery(str);
+                ResultSetMetaData rsmd = resultSet.getMetaData();
+                n = rsmd.getColumnCount();
+        }
+        // Handle any errors that may have occurred.
+        catch (SQLException e) {
+            e.printStackTrace();
+        }   
+        return n;
+    }
+    public int r_count(String s){
+        int n = -1;
+        String str = "select count(*) as cnt from " + s;
+        ResultSet resultSet = null;
+        try (Connection connection = DriverManager.getConnection(connectionUrl);
+            Statement statement = connection.createStatement();) {
+                resultSet = statement.executeQuery(str);
                 resultSet.next();
                 n = resultSet.getInt("cnt");
         }
@@ -75,6 +99,7 @@ public class SQLConnection {
         }   
         return n;
     }
+
 
 }
 
