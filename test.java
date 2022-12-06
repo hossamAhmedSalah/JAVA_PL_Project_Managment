@@ -5,8 +5,8 @@ public class test {
         Scanner input = new Scanner(System.in);
         // Account a1 = new Account("ho@g.com", "15");
         // Account a2 = new Account("bob@g.com", "143");
-        Account a3 = new Account();
-        a3.sign_up("Hamid Walid","hah@gmail.com","12345","admin");
+        // Account a3 = new Account();
+        // a3.sign_up("Hamid Walid","hah@gmail.com","12345","admin");
 
         // System.out.print("Please enter name: ");
         // String name = input.nextLine();

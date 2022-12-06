@@ -87,8 +87,7 @@ public class SQLConnection {
         int n = -1;
         String str = "select count(*) as cnt from " + s;
         ResultSet rs = null;
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-            Statement statement = connection.createStatement();) {
+        try{
                 rs = statement.executeQuery(str);
                 rs.next();
                 n = rs.getInt("cnt");
