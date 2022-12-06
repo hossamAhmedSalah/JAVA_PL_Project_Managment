@@ -7,6 +7,9 @@ import java.sql.ResultSetMetaData;
 
 public class SQLConnection {
     String connectionUrl;
+    Connection connection;
+    Statement statement;
+    ResultSet rs = null;
 
     // Connect to your database.
     // Replace server name, username, and password with your credentials
@@ -19,9 +22,10 @@ public class SQLConnection {
                         + "encrypt=false;"
                         + "trustServerCertificate=false;";
 
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-            Statement statement = connection.createStatement();) {
-            System.out.println("Connected Successfully...");
+        try{
+            connection = DriverManager.getConnection(connectionUrl);
+            statement = connection.createStatement();
+            // System.out.println("Connected Successfully...");
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
@@ -32,9 +36,8 @@ public class SQLConnection {
     
     //execute sql query, returns nothing, takes in table name
     public void query(String s){
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-            Statement statement = connection.createStatement();) {
-                statement.execute(s);
+        try{
+            statement.execute(s);
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
@@ -48,17 +51,15 @@ public class SQLConnection {
         int col = this.c_count(tbl);
 
         String[][] ans = new String[row][col];
-        ResultSet resultSet = null;
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-            Statement statement = connection.createStatement();) {
-                resultSet = statement.executeQuery(s + tbl);
-                int i = 0;
-                while (resultSet.next()){
-                    for(int j=1;j<=col;j++){
-                        ans[i][j-1] = resultSet.getString(j);
-                    }
-                    i++;
+        try{
+            rs = statement.executeQuery(s + tbl);
+            int i = 0;
+            while (rs.next()){
+                for(int j=1;j<=col;j++){
+                    ans[i][j-1] = rs.getString(j);
                 }
+                i++;
+            }
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
@@ -70,11 +71,10 @@ public class SQLConnection {
     public int c_count(String s){
         int n = -1;
         String str = "select * from " + s;
-        ResultSet resultSet = null;
-        try (Connection connection = DriverManager.getConnection(connectionUrl);
-            Statement statement = connection.createStatement();) {
-                resultSet = statement.executeQuery(str);
-                ResultSetMetaData rsmd = resultSet.getMetaData();
+        ResultSet rs = null;
+        try{
+                rs = statement.executeQuery(str);
+                ResultSetMetaData rsmd = rs.getMetaData();
                 n = rsmd.getColumnCount();
         }
         // Handle any errors that may have occurred.
@@ -86,12 +86,12 @@ public class SQLConnection {
     public int r_count(String s){
         int n = -1;
         String str = "select count(*) as cnt from " + s;
-        ResultSet resultSet = null;
+        ResultSet rs = null;
         try (Connection connection = DriverManager.getConnection(connectionUrl);
             Statement statement = connection.createStatement();) {
-                resultSet = statement.executeQuery(str);
-                resultSet.next();
-                n = resultSet.getInt("cnt");
+                rs = statement.executeQuery(str);
+                rs.next();
+                n = rs.getInt("cnt");
         }
         // Handle any errors that may have occurred.
         catch (SQLException e) {
