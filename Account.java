@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+import SQL.SQLConnection;
 
 public class Account extends SQLConnection{
     protected int id;
@@ -34,6 +35,4 @@ public class Account extends SQLConnection{
             System.out.println("Wrong Email or Password");
         }
     }
-
-    
 }
