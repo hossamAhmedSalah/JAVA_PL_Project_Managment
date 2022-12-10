@@ -10,24 +10,24 @@ public class Account extends SQLConnection{
     Account() throws SQLException{
     }
 
-    Account(String email, String pass) throws SQLException{
+    Account(String e, String p) throws SQLException{
         Scanner in = new Scanner(System.in);
-        this.email = email;
-        this.password = pass;
+        this.email = e;
+        this.password = p;
         
-        while(!log_in(email,pass)){
+        while(!log_in(email,password)){
             System.out.println("Wrong email or password!!");
-            System.out.println("Please re-enter Email ");
-            email = in.next();
-            System.out.println("Please re-enter Password ");
-            pass = in.next();
+            System.out.print("Re-enter Email: ");
+            this.email = in.next();
+            System.out.print("Re-enter Password: ");
+            this.password = in.next();
         }
-        
+
         in.close();
     }
 
-    private boolean log_in(String email,String pass) throws SQLException{
-        rs = statement.executeQuery("select * from Account where email = '" + email + "' and password = '" + password + "'");
+    private boolean log_in(String e,String p) throws SQLException{
+        rs = statement.executeQuery("select * from Account where email = '" + e + "' and password = '" + p + "'");
         while(rs.next()){
             this.id = rs.getInt("id");
             this.name = rs.getString("name");
