@@ -15,5 +15,6 @@
     "java.project.sourcePaths": [
         "DB",
         "."
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

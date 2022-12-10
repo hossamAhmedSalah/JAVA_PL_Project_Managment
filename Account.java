@@ -1,6 +1,5 @@
-import java.sql.SQLException;
-import SQL.SQLConnection;
-
+import java.sql.*;
+import java.util.Scanner;
 public class Account extends SQLConnection{
     protected int id;
     protected String name;
@@ -8,20 +7,31 @@ public class Account extends SQLConnection{
     protected String password;
     protected String type;
 
-    Account(){
+    Account() throws SQLException{
     }
 
-    Account(String e, String p){
-        email = e;
-        password = p;
-        log_in(e,p);
-        if(this.name!=null){
-            System.out.println("Welcome " + name);
+    Account(String email, String pass) throws SQLException{
+        Scanner in = new Scanner(System.in);
+        this.email = email;
+        this.password = pass;
+        log_in(email,pass);
+        
+        while(this.name==null){
+            System.out.println("Wrong email or password");
+            System.out.println("Please re-enter Email ");
+            email = in.next();
+            System.out.println("Please re-enter Password ");
+            pass = in.next();
+
+            // if(log_in(email,pass)){
+            //     System.out.println("Welcome " + name);
+            // } 
+
         }
-        else System.out.println("Wrong email or password");
+        in.close();
     }
 
-    private void log_in(String email,String pass){
+    private boolean log_in(String email,String pass){
         try{
             rs = statement.executeQuery("select * from Account where email = '" + email + "' and password = '" + password + "'");
             while(rs.next()){
@@ -34,5 +44,9 @@ public class Account extends SQLConnection{
         }catch(SQLException e){
             System.out.println("Wrong Email or Password");
         }
+        return (this.name!=null);
+    }
+    public String toString(){
+        return "\nName: " + name + "\nEmail: " + email + "\nRole: " + type + "\n";
     }
 }
