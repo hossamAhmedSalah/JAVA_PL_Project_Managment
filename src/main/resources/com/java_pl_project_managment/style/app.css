@@ -1,0 +1,20 @@
+l1{
+    -fx-alignment : "center";
+
+}
+#stage{
+    -fx-background-color : "white";
+
+}
+#log{
+    -fx-background-radius : 15px;
+    -fx-background-color : #0e0038;
+}
+#username{
+    -fx-border-color : #0e0038;
+    -fx-padding : 0px 10px;
+}
+#password{
+    -fx-border-color : #0e0038;
+    -fx-padding : 0px 10px;
+}
