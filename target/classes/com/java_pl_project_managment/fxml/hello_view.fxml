@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="stage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="stage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="553.0" fitWidth="874.0" layoutX="361.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,21 +17,21 @@
       </ImageView>
       <Button fx:id="log" layoutX="184.0" layoutY="438.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="177.0" text="Login" textFill="WHITE">
          <font>
-            <Font name="Roboto Condensed" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
       <TextField fx:id="username" layoutX="146.0" layoutY="294.0" prefHeight="30.0" prefWidth="254.0" promptText="USERNAME">
          <font>
-            <Font name="Roboto Condensed Light Italic" size="16.0" />
+            <Font size="16.0" />
          </font></TextField>
       <Label fx:id="l1" layoutX="202.0" layoutY="197.0" prefHeight="53.0" prefWidth="143.0" text="User Login" textAlignment="CENTER" textFill="#0e0038">
          <font>
-            <Font name="Roboto Condensed" size="32.0" />
+            <Font size="32.0" />
          </font>
       </Label>
-      <TextField fx:id="password" layoutX="147.0" layoutY="350.0" prefHeight="30.0" prefWidth="254.0" promptText="PASSWWORD">
+      <TextField fx:id="password" layoutX="147.0" layoutY="350.0" prefHeight="30.0" prefWidth="254.0" promptText="PASSWORD">
          <font>
-            <Font name="Roboto Condensed Light Italic" size="16.0" />
+            <Font size="16.0" />
          </font></TextField>
    </children>
 </AnchorPane>

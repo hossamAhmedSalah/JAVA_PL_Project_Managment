@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Condensed Light Italic';
+    src: url('fonts/RobotoCondensed-LightItalic.ttf');
+}
+
+*{
+    -fx-font-family: 'Roboto Condensed';
+
+}
+
 l1{
     -fx-alignment : "center";
 
@@ -11,10 +25,12 @@ l1{
     -fx-background-color : #0e0038;
 }
 #username{
+    -fx-font-family: 'Roboto Condensed Light Italic';
     -fx-border-color : #0e0038;
     -fx-padding : 0px 10px;
 }
 #password{
+    -fx-font-family: 'Roboto Condensed Light Italic';
     -fx-border-color : #0e0038;
     -fx-padding : 0px 10px;
 }
