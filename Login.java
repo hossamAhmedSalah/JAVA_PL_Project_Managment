@@ -1,16 +1,16 @@
 import java.sql.*;
 import java.util.Scanner;
-public class Account extends SQLConnection{
+public class Login extends SQLConnection{
     protected int id;
     protected String name;
     protected String email;
     protected String password;
     protected String type;
 
-    Account() throws SQLException{
+    Login() throws SQLException{
     }
 
-    Account(String e, String p) throws SQLException{
+    Login(String e, String p) throws SQLException{
         Scanner in = new Scanner(System.in);
         this.email = e;
         this.password = p;
@@ -42,3 +42,4 @@ public class Account extends SQLConnection{
         return "\nName: " + name + "\nEmail: " + email + "\nRole: " + type + "\n";
     }
 }
+// [["name ", "id"]]

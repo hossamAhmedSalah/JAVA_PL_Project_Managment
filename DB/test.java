@@ -11,7 +11,7 @@ public class test {
         System.out.print("Password: ");
         String pass = in.next();
 
-        Account a1 = new Account(email,pass);
+        Login a1 = new Login(email,pass);
         System.out.println(a1.toString());
 
         in.close();
