@@ -210,6 +210,26 @@ private Button AssignTask;
     //TODO
     @FXML
     void removeTask(ActionEvent event) {
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        if (!tlEm.getSelectionModel().isEmpty()){
+            int id = tlEm.getSelectionModel().getSelectedIndex();
+            // saving the name of thr deleted project to use later in db deletion
+            String taskName0 = tlEm.getItems().get(id).getTask_name();
+            System.out.println(taskName0+" have been deleted");
+
+            tlEm.getItems().remove(id);
+            try {
+                query("delete from tasks where task_name = '"+taskName0+"'" );
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        }
+        else {
+            x.setTitle("there is no task to delete");
+            x.show();
+        }
 
     }
     //TODO
