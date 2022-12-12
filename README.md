@@ -27,3 +27,4 @@ over month.
 -----------------------------------------------------------------------
 **UML class diagram**
 ![PL project class diagram - Page 1 (1)](https://user-images.githubusercontent.com/100955137/207131325-81f932b3-7e98-4e7a-b80f-842f5b0b1536.png)
+---------------------------------------------------------------------
