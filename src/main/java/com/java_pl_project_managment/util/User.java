@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 
 public class User extends SQLConnection{
-    protected int id;
-    protected String name;
+    public int id;
+    public String name;
     protected String email;
     protected String password;
-    protected String type;
+    public String type;
 
     public User() throws SQLException{
     }
@@ -31,7 +31,7 @@ public class User extends SQLConnection{
         in.close();
     }
 
-    private boolean Login(String e,String p) throws SQLException{
+    public boolean Login(String e,String p) throws SQLException{
         rs = statement.executeQuery("select * from Account where email = '" + e + "' and password = '" + p + "'");
         while(rs.next()){
             this.id = rs.getInt("id");

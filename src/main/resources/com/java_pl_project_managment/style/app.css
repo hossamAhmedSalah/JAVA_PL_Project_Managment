@@ -24,7 +24,7 @@ l1{
     -fx-background-radius : 15px;
     -fx-background-color : #0e0038;
 }
-#username{
+#email{
     -fx-font-family: 'Roboto Condensed Light Italic';
     -fx-border-color : #0e0038;
     -fx-padding : 0px 10px;
@@ -34,3 +34,9 @@ l1{
     -fx-border-color : #0e0038;
     -fx-padding : 0px 10px;
 }
+
+/* #log_dialog{
+    -fx-z-index: 1;
+    -fx-text-align: center;
+    -fx-border: red;
+} */
