@@ -3,7 +3,6 @@ package com.java_pl_project_managment.util;
 import com.java_pl_project_managment.util.DB.SQLConnection;
 import java.sql.*;
 
-
 public class Account extends SQLConnection{
     protected String email;
     private String password;
