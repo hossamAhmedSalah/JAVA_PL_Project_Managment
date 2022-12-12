@@ -12,9 +12,9 @@
 
 }
 
-l1{
+#l1{
     -fx-alignment : "center";
-
+    -fx-font-size : 32px;
 }
 #stage{
     -fx-background-color : "white";
@@ -23,16 +23,23 @@ l1{
 #log{
     -fx-background-radius : 15px;
     -fx-background-color : #0e0038;
+    -fx-font-size : 16px;
+
 }
 #email{
     -fx-font-family: 'Roboto Condensed Light Italic';
     -fx-border-color : #0e0038;
     -fx-padding : 0px 10px;
+    -fx-font-size : 15px;
+
+
 }
 #password{
     -fx-font-family: 'Roboto Condensed Light Italic';
     -fx-border-color : #0e0038;
     -fx-padding : 0px 10px;
+    -fx-font-size : 15px;
+
 }
 
 /* #log_dialog{
