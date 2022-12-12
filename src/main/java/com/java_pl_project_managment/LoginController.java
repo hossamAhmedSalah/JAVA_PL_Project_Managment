@@ -1,6 +1,6 @@
 package com.java_pl_project_managment;
 
-import com.java_pl_project_managment.util.User;
+import com.java_pl_project_managment.util.Account;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -27,7 +27,7 @@ public class LoginController{
         Alert a = new Alert(AlertType.NONE);
         // Popup pop = new Popup();
 
-        User u1 = new User();
+        Account u1 = new Account();
         if(!u1.Login(e, p)){
             // Label l1 = new Label("Wrong email or password");
             // l1.setStyle(" -fx-background-color: white;");
@@ -45,7 +45,7 @@ public class LoginController{
         else{
             a.setAlertType(AlertType.INFORMATION);
             a.setHeaderText("");
-            a.setContentText("Welcome " + u1.name);
+            a.setContentText("Welcome " + u1.username);
             a.showAndWait();
         }
         // System.out.println(u1.toString());

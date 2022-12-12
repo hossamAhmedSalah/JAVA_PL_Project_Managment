@@ -38,7 +38,7 @@ public class SQLConnection {
 
         rs = statement.executeQuery("select * from " + tbl);
         int i = 0;
-        while (rs.next()){
+        while(rs.next()){
             for(int j=1;j<=col;j++){
                 ans[i][j-1] = rs.getString(j);
             }
@@ -54,7 +54,7 @@ public class SQLConnection {
 
         rs = statement.executeQuery(str);
         ResultSetMetaData rsmd = rs.getMetaData();
-        n = rsmd.getColumnCount(); 
+        n = rsmd.getColumnCount();
 
         return n;
     }
