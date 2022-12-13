@@ -1,11 +1,13 @@
 Roles = [('EM', 1250.0), ('PM', 2000.0), ('TL', 1900.0), ('AD', 2200.0)]
-Names = [('HOSSAM', 'M'),
+Names = [
+         ('TOQA', 'F'),
+         ('JOUMANA', 'F')
          ('HAMID', 'M'),
+         ('HOSSAM', 'M'),
          ('HAZEM_AHMED', 'M'),
          ('HAZEM_WALIED', 'M'),
          ('HAFEZ', 'M'),
-         ('TOQA', 'F'),
-         ('JOUMANA', 'F')
+
          ]
 # imgUrl[0] => M , imgUrl[1] => F
 imgUrl = (
