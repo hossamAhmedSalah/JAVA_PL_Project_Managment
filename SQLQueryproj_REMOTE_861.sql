@@ -11,7 +11,7 @@ create table Account(
 )
 
 create table workhours(
-	email nvarchar(50) references Account(email) on delete cascade,
+	email nvarchar(50) references Account(email),
 	number_of_hours int,
 	date_of_day date
 )
@@ -41,12 +41,8 @@ create table TL(
 )
 
 create table EM(
-	em_email nvarchar(50) references Account(email) PRIMARY KEY,
-	tl_email nvarchar(50) DEFAULT(null)
+	em_email nvarchar(50) references Account(email) PRIMARY KEY
 )
-
-alter table EM
-alter column 
 
 /* 
 0 in state => not started
@@ -72,9 +68,9 @@ create table tasks(
 	task_name nvarchar(50) PRIMARY KEY,
 	task_desc nvarchar(100),
 	task_state tinyint DEFAULT(0),
-	pro_name nvarchar(50) references project(pro_name) on delete cascade,
-	tl_email nvarchar(50) references TL(tl_email) on delete cascade,
-	em_email nvarchar(50) references EM(em_email) on delete cascade
+	pro_name nvarchar(50) references project(pro_name),
+	tl_email nvarchar(50) references TL(tl_email),
+	em_email nvarchar(50) references EM(em_email)
 )
 
 create table penalties(
@@ -95,20 +91,8 @@ create table report(
 */
 create table vacation(
 	v_id int PRIMARY KEY IDENTITY(20220,1),
-	em_email nvarchar(50) references EM(em_email) on delete cascade,
+	em_email nvarchar(50) references EM(em_email),
 	s_date date,
 	e_date date,
 	v_state tinyint DEFAULT(2)
 )
-
-drop table vacation
-drop table report
-drop table penalties
-drop table tasks
-drop table project
-drop table EM
-drop table TL
-drop table PM
-drop table AD
-drop table workhours
-drop table Account

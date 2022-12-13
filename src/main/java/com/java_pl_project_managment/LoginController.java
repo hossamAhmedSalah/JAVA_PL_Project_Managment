@@ -17,7 +17,7 @@ public class LoginController{
 
     @FXML private TextField email;
     @FXML private PasswordField password;
-    @FXML private DialogPane log_dialog;
+
 
     @FXML
     private void kek(ActionEvent event) throws IOException,SQLException {
