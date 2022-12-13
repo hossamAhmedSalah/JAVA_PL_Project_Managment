@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -25,16 +24,9 @@ public class LoginController{
         String p = password.getText();
 
         Alert a = new Alert(AlertType.NONE);
-        // Popup pop = new Popup();
 
         Account u1 = new Account();
         if(!u1.Login(e, p)){
-            // Label l1 = new Label("Wrong email or password");
-            // l1.setStyle(" -fx-background-color: white;");
-            // l1.setMinWidth(80);
-            // l1.setMinHeight(50);
-            // pop.getContent().add(l1);
-            // pop.setAutoHide(true);
             a.setAlertType(AlertType.ERROR);
             a.setHeaderText("");
             a.setContentText("Wrong email or password");
@@ -48,6 +40,5 @@ public class LoginController{
             a.setContentText("Welcome " + u1.username);
             a.showAndWait();
         }
-        // System.out.println(u1.toString());
     }
 }
