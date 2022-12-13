@@ -33,5 +33,4 @@ public class Account extends SQLConnection{
     public String toString(){
         return "\nName: " + username + "\nEmail: " + email + "\nRole: " + role + "\n";
     }
-
 }
