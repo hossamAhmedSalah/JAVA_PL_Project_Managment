@@ -2,7 +2,7 @@ from randomuser import RandomUser
 
 
 
-# Generate a list of 10 random users
+# Generate a list of 20 random users
 Salary = 1250.0
 user_list = RandomUser.generate_users(20)
 users_data = [(
