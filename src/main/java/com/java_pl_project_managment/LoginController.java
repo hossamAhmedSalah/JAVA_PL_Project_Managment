@@ -1,6 +1,7 @@
 package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Account;
+import com.java_pl_project_managment.util.Admin;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -39,6 +40,15 @@ public class LoginController{
             a.setHeaderText("");
             a.setContentText("Welcome " + u1.username);
             a.showAndWait();
+            Admin a1 = new Admin(u1);
+            // a1.delete("hoh@g.com");
+            // System.out.println(a1.username);
+            // if(!a1.add(new String[]{"hoh@g.com","hoh","123","M","AD","//","125","null"})){
+            //     a.setAlertType(AlertType.ERROR);
+            //     a.setHeaderText("");
+            //     a.setContentText("Cant insert duplicate emails");
+            //     a.showAndWait();
+            // }
         }
     }
 }
