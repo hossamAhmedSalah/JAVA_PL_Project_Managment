@@ -45,9 +45,6 @@ create table EM(
 	tl_email nvarchar(50) DEFAULT(null)
 )
 
-alter table EM
-alter column 
-
 /* 
 0 in state => not started
 1 => completed
@@ -59,8 +56,8 @@ create table project(
 	deadline date,
 	pro_state tinyint DEFAULT(0),
 	comp_percent decimal DEFAULT(0.0),
-	pm_email nvarchar(50) references PM(pm_email),
-	tl_email nvarchar(50) references TL(tl_email)
+	pm_email nvarchar(50) references PM(pm_email) on delete set null,
+	tl_email nvarchar(50) references TL(tl_email) on delete set null
 )
 
 /* 
@@ -78,13 +75,13 @@ create table tasks(
 )
 
 create table penalties(
-	em_email nvarchar(50) references EM(em_email) PRIMARY KEY,
+	em_email nvarchar(50) references EM(em_email) on delete cascade,
 	amount decimal,
 	p_desc nvarchar(100)
 )
 
 create table report(
-	em_email nvarchar(50) references EM(em_email) PRIMARY KEY,
+	em_email nvarchar(50) references EM(em_email) on delete cascade,
 	report_desc nvarchar(100)
 )
 
@@ -112,3 +109,9 @@ drop table PM
 drop table AD
 drop table workhours
 drop table Account
+
+select * from account
+
+delete from account where email = 'hamid@gmail.com'
+
+truncate table account
