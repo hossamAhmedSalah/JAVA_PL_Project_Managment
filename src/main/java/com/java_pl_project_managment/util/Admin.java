@@ -3,15 +3,10 @@ package com.java_pl_project_managment.util;
 import java.sql.*;
 
 public class Admin extends Account{
-    protected String email;
-    public String username;
-    public String role;
     public String[][] projects;
 
     public Admin() throws SQLException{
-        this.email = Account.email;
-        this.username = Account.username;
-        this.role = Account.role;
+
     }
 
     public boolean add(String[] data) throws SQLException{
@@ -25,7 +20,7 @@ public class Admin extends Account{
         }
 
         String str2 = "insert into "+ data[4] + " values('"+data[0];
-        if(data[4].toLowerCase().equals("EM"))
+        if(data[4].toLowerCase().equals("em"))
             str2 += "','"+data[8]+"')";
         else str2 += "')";
         statement.execute(str2);
@@ -33,7 +28,7 @@ public class Admin extends Account{
     }
 
     public boolean delete(String ed) throws SQLException{
-        String strole = "delete from "+ role +" where "+ role +"_email= '"+ed+"'";
+        String strole = "delete from "+ Account.role +" where "+ Account.role +"_email= '"+ed+"'";
         String str = "delete from account where email= '"+ed+"'";
         try{
             statement.execute(strole);

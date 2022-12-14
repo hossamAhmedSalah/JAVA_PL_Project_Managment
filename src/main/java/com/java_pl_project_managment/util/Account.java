@@ -6,11 +6,11 @@ import java.sql.*;
 public class Account extends SQLConnection{
     protected static String email;
     private static String password;
-    public static String username;
-    public static String role;
-    public static String gender;
-    public static String imgUrl;
-    public static double salary;
+    protected static String username;
+    protected static String role;
+    protected static String gender;
+    protected static String imgUrl;
+    protected static double salary;
 
     public Account() throws SQLException{
     }
