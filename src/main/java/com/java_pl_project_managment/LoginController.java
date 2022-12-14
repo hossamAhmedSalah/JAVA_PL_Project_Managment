@@ -29,8 +29,8 @@ public class LoginController extends Account{
 
         Alert a = new Alert(AlertType.NONE);
 
-        Account u1 = new Account();
-        if(!u1.Login(e, p)){
+        Account acc = new Account();
+        if(!acc.Login(e, p)){
             a.setAlertType(AlertType.ERROR);
             a.setHeaderText("");
             a.setContentText("Wrong email or password");
@@ -42,11 +42,17 @@ public class LoginController extends Account{
             a.setAlertType(AlertType.INFORMATION);
             a.setHeaderText("");
             a.setContentText("Welcome " + Account.username);
-            a.showAndWait();    
+            a.showAndWait();   
 
             if(Account.role.toLowerCase().equals("ad"))
                 App.setRoot("fxml/admin");
             else App.setRoot("fxml/primary");
+
+            // else if(Account.role.toLowerCase().equals("pm"))
+            //     App.setRoot("fxml/pm");
+            // else if(Account.role.toLowerCase().equals("tl"))
+            //     App.setRoot("fxml/tl");
+            // else    App.setRoot("fxml/employee");
         }
     }
 }
