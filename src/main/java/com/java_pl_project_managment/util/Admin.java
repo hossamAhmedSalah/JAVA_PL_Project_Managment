@@ -8,10 +8,10 @@ public class Admin extends Account{
     public String role;
     public String[][] projects;
 
-    public Admin(Account u) throws SQLException{
-        this.email = u.email;
-        this.username = u.username;
-        this.role = u.role;
+    public Admin() throws SQLException{
+        this.email = Account.email;
+        this.username = Account.username;
+        this.role = Account.role;
     }
 
     public boolean add(String[] data) throws SQLException{

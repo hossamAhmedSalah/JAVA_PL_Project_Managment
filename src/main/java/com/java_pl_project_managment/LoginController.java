@@ -11,8 +11,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
-public class LoginController{
+public class LoginController extends Account{
     // private String getStyle = getClass().getResource("style/app.css").toExternalForm();
+
+    public LoginController() throws SQLException {
+    }
+
 
     @FXML private TextField email;
     @FXML private PasswordField password;
@@ -37,10 +41,10 @@ public class LoginController{
         else{
             a.setAlertType(AlertType.INFORMATION);
             a.setHeaderText("");
-            a.setContentText("Welcome " + u1.username);
+            a.setContentText("Welcome " + Account.username);
             a.showAndWait();    
 
-            if(u1.role.toLowerCase().equals("ad"))
+            if(Account.role.toLowerCase().equals("ad"))
                 App.setRoot("fxml/admin");
             else App.setRoot("fxml/primary");
         }
