@@ -1,27 +1,18 @@
 package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Account;
-import com.java_pl_project_managment.util.Admin;
 import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.stage.Stage;
 
 public class LoginController{
     // private String getStyle = getClass().getResource("style/app.css").toExternalForm();
-
-    private Stage stage;
-    private Scene scene;
 
     @FXML private TextField email;
     @FXML private PasswordField password;
@@ -49,7 +40,9 @@ public class LoginController{
             a.setContentText("Welcome " + u1.username);
             a.showAndWait();    
 
-            App.setRoot("fxml/secondary");
-            }
+            if(u1.role.toLowerCase().equals("ad"))
+                App.setRoot("fxml/admin");
+            else App.setRoot("fxml/primary");
+        }
     }
 }
