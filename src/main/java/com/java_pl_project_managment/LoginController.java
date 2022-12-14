@@ -7,13 +7,21 @@ import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 
 public class LoginController{
     // private String getStyle = getClass().getResource("style/app.css").toExternalForm();
+
+    private Stage stage;
+    private Scene scene;
 
     @FXML private TextField email;
     @FXML private PasswordField password;
@@ -39,16 +47,9 @@ public class LoginController{
             a.setAlertType(AlertType.INFORMATION);
             a.setHeaderText("");
             a.setContentText("Welcome " + u1.username);
-            a.showAndWait();
-            Admin a1 = new Admin(u1);
-            // a1.delete("hoh@g.com");
-            // System.out.println(a1.username);
-            // if(!a1.add(new String[]{"hoh@g.com","hoh","123","M","AD","//","125","null"})){
-            //     a.setAlertType(AlertType.ERROR);
-            //     a.setHeaderText("");
-            //     a.setContentText("Cant insert duplicate emails");
-            //     a.showAndWait();
-            // }
-        }
+            a.showAndWait();    
+
+            App.setRoot("fxml/secondary");
+            }
     }
 }

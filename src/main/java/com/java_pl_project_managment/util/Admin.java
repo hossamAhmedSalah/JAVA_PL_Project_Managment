@@ -6,6 +6,8 @@ public class Admin extends Account{
     protected String email;
     public String username;
     public String role;
+    public String[][] projects;
+
     public Admin(Account u) throws SQLException{
         this.email = u.email;
         this.username = u.username;
@@ -43,4 +45,36 @@ public class Admin extends Account{
         return true;
     }
 
+    public boolean update(String[] eu) throws SQLException{
+        String[] d = {"email","username","password","gender","imgurl","salary"};
+        for(int i=1;i<eu.length;i++){
+            if(!eu[i].equals(null)){
+                try{
+                    statement.execute("update account set "+d[i]+" = "+"'"+eu[i]+"' where email= "+"'"+eu[0]+"';");
+                }
+                catch(Exception e){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public String[][] view_project() throws SQLException{
+        projects = new String[r_count("project")][7];
+
+        rs = statement.executeQuery("select * from project");
+        int i=0;
+        while(rs.next()){
+            projects[i][0] = rs.getString("pro_name");
+            projects[i][1] = rs.getString("pro_desc");
+            projects[i][2] = rs.getString("deadline");
+            projects[i][3] = rs.getString("pro_state");
+            projects[i][4] = rs.getString("comp_percent");
+            projects[i][5] = rs.getString("pm_email");
+            projects[i][6] = rs.getString("tl_email");
+            i++;
+        }
+        return projects;
+    }
 }
