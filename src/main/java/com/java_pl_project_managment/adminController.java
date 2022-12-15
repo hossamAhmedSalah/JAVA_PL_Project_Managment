@@ -2,97 +2,63 @@ package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.*;
 
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-// implements Initializable
-public class adminController extends Admin {
-    private ObservableList<project> idk;
-    
-    TableView<ObservableList<String>> pro_table = createTableView(Admin.projects);
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+public class adminController extends Admin implements Initializable{
 
     public adminController() throws SQLException {
     }
 
-    private TableView<ObservableList<String>> createTableView(String[][] projects) {
-        TableView<ObservableList<String>> tableView = new TableView<>();
-        tableView.setItems((ObservableList<ObservableList<String>>) buildData(projects));
- 
-        for (int i = 0; i < projects[0].length; i++) {
-            final int curCol = i;
-            final TableColumn<ObservableList<String>, String> column = new TableColumn<>(
-                    "Col " + (curCol + 1)
-            );
-            column.setCellValueFactory(
-                    param -> new ReadOnlyObjectWrapper<>(param.getValue().get(curCol))
-            );
-            tableView.getColumns().add(column);
+    @FXML
+    private TableView<project> pro_table;
+    @FXML
+    private TableColumn<project, String> Pro_name;
+    @FXML
+    private TableColumn<project, String> Pro_desc; 
+    @FXML
+    private TableColumn<project, String> Deadline;
+    @FXML 
+    private TableColumn<project, String> Status; 
+    @FXML
+    private TableColumn<project, String> Pm;
+    @FXML 
+    private TableColumn<project, String> Tl;
+
+    ObservableList<project> obs = FXCollections.observableArrayList();
+
+    private void load() throws SQLException{
+        Admin a = new Admin();
+        a.view_project();
+        String[][] kek = Admin.projects;
+        for(int i=0;i<kek.length;i++){
+            obs.add(new project(kek[i][0],kek[i][1],kek[i][2],kek[i][3],kek[i][4],kek[i][5]));
         }
- 
-        return tableView;
     }
 
-    private TableView<ObservableList<String>> buildData(String[][] projects) {
-        ObservableList<ObservableList<String>> data = FXCollections.observableArrayList();
- 
-        for (String[] row : projects) {
-            data.add(FXCollections.observableArrayList(row));
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try{
+            load();
         }
- 
-        return (TableView<ObservableList<String>>) data;
+        catch(Exception e){
+            System.out.println("خخخخخخخخخخخخخخ");
+        }
+        Pro_name.setCellValueFactory(new PropertyValueFactory<project,String>("pro_name"));
+        Pro_desc.setCellValueFactory(new PropertyValueFactory<project,String>("pro_desc"));
+        Deadline.setCellValueFactory(new PropertyValueFactory<project,String>("deadline"));
+        Status.setCellValueFactory(new PropertyValueFactory<project,String>("status"));
+        Pm.setCellValueFactory(new PropertyValueFactory<project,String>("pm"));
+        Tl.setCellValueFactory(new PropertyValueFactory<project,String>("tl"));
+
+        pro_table.setItems(obs);
     }
-
-    
-    
-    // @FXML
-    // private TableView<project> pro_table;
-
-    // @FXML 
-    // private TableColumn<project, String> pro_name;
-    // @FXML 
-    // private TableColumn<project, String> pro_desc;
-    // @FXML 
-    // private TableColumn<project, String> deadline;
-    // @FXML 
-    // private TableColumn<project, String> status;
-    // @FXML 
-    // private TableColumn<project, String> pm;
-    // @FXML 
-    // private TableColumn<project, String> tl;
-
-    // Admin a = new Admin();    
-
-    
-
-    // @Override
-    // public void initialize(URL location, ResourceBundle resources) {
-
-    //     pro_name.setCellValueFactory(new PropertyValueFactory<project,String>("pro_name"));
-    //     pro_desc.setCellValueFactory(new PropertyValueFactory<project,String>("pro_desc"));
-    //     deadline.setCellValueFactory(new PropertyValueFactory<project,String>("deadline"));
-    //     status.setCellValueFactory(new PropertyValueFactory<project,String>("status"));
-    //     pm.setCellValueFactory(new PropertyValueFactory<project,String>("pm"));
-    //     tl.setCellValueFactory(new PropertyValueFactory<project,String  >("tl"));
-
-    //     try{
-    //         data();
-    //     }
-    //     catch(SQLException e){
-    //         System.out.println("خخخخخخخخخخخخخ");
-    //     }
-    // }
-
-    // public void data() throws SQLException{
-    //     idk = FXCollections.observableArrayList();
-    //     for(int i=0;i<Admin.projects.length;i++){
-    //         idk.add(new project(i));    
-    //     }
-    //     pro_table.setItems(idk);
-    // }
 }
-
 //hamid_ad@gmail.com

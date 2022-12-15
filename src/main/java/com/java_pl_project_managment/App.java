@@ -11,9 +11,11 @@ public class App extends Application {
 
     private static Scene scene;
 
+
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("fxml/main"));
+        scene = new Scene(loadFXML("fxml/tab"));
+        // adminController.lol();
         stage.setTitle("Project");
         stage.setScene(scene);
         stage.show();

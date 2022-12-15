@@ -17,10 +17,8 @@ public class LoginController extends Account{
     public LoginController() throws SQLException {
     }
 
-
     @FXML private TextField email;
     @FXML private PasswordField password;
-
 
     @FXML
     private void kek(ActionEvent event) throws IOException,SQLException {

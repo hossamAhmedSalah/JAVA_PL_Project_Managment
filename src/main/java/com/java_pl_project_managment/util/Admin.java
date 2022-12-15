@@ -6,9 +6,6 @@ public class Admin extends Account{
     protected static String[][] projects;
 
     public Admin() throws SQLException{
-        view_project();
-        // System.out.println(Admin.projects[0][1]);
-        // System.out.println(Admin.projects[0][2]);
     }
 
     public boolean add(String[] data) throws SQLException{
