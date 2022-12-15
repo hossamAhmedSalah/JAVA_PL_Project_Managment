@@ -7,17 +7,18 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
-public class LoginController{
+public class LoginController extends Account{
     // private String getStyle = getClass().getResource("style/app.css").toExternalForm();
+
+    public LoginController() throws SQLException {
+    }
 
     @FXML private TextField email;
     @FXML private PasswordField password;
-
 
     @FXML
     private void kek(ActionEvent event) throws IOException,SQLException {
@@ -25,16 +26,9 @@ public class LoginController{
         String p = password.getText();
 
         Alert a = new Alert(AlertType.NONE);
-        // Popup pop = new Popup();
 
-        Account u1 = new Account();
-        if(!u1.Login(e, p)){
-            // Label l1 = new Label("Wrong email or password");
-            // l1.setStyle(" -fx-background-color: white;");
-            // l1.setMinWidth(80);
-            // l1.setMinHeight(50);
-            // pop.getContent().add(l1);
-            // pop.setAutoHide(true);
+        Account acc = new Account();
+        if(!acc.Login(e, p)){
             a.setAlertType(AlertType.ERROR);
             a.setHeaderText("");
             a.setContentText("Wrong email or password");
@@ -45,9 +39,18 @@ public class LoginController{
         else{
             a.setAlertType(AlertType.INFORMATION);
             a.setHeaderText("");
-            a.setContentText("Welcome " + u1.username);
-            a.showAndWait();
+            a.setContentText("Welcome " + Account.username);
+            a.showAndWait();   
+
+            if(Account.role.toLowerCase().equals("ad"))
+                App.setRoot("fxml/admin");
+            else App.setRoot("fxml/primary");
+
+            // else if(Account.role.toLowerCase().equals("pm"))
+            //     App.setRoot("fxml/pm");
+            // else if(Account.role.toLowerCase().equals("tl"))
+            //     App.setRoot("fxml/tl");
+            // else    App.setRoot("fxml/employee");
         }
-        // System.out.println(u1.toString());
     }
 }

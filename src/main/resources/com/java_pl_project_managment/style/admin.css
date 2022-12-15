@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Condensed Light Italic';
+    src: url('fonts/RobotoCondensed-LightItalic.ttf');
+}
+
+*{
+    -fx-font-family: 'Roboto Condensed';
+}
+
+#viewBtn:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
+}
+#addBtn:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
+}
+#deleteBtn:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
+}
+#updateBtn:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
+}
