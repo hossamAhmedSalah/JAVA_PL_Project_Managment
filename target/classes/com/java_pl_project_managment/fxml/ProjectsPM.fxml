@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
-            prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx/19"
+            prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.table">
 
     <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="720.0" prefWidth="255.0"
@@ -25,6 +25,7 @@
         </Button>
         <ImageView fitHeight="256.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
             <!--<Image url="G:\intelij-java\PM_view\imagesPM\account.jpeg"/>-->
+            <Image url="@../img/ad_view/account.jpeg" />
         </ImageView>
         <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0"
                 prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">

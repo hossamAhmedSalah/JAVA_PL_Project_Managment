@@ -11,10 +11,17 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-public class dashboardController implements Initializable {
+import com.java_pl_project_managment.util.Account;
+
+public class dashboardController extends Account implements Initializable {
+    
+    public dashboardController() throws SQLException {
+    }
+
     @FXML
     CategoryAxis proX;
     @FXML
@@ -37,67 +44,41 @@ public class dashboardController implements Initializable {
     @FXML
     public void SwitchToDsashboard(ActionEvent event) throws IOException {
         System.out.println("dashBoard");
-
-
-
         App.setRoot("fxml/dashboard");
-        //        Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-//
-//        setLable(pmNameID, "Hossam");
-//        setLable(pmEmailID, "Hossam@gmail.com");
-//
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-        //stage.show();
-
-
-
-
-
-
-
-
     }
     @FXML
     public void SwitchToProject(ActionEvent event) throws IOException {
-
         System.out.println("project");
         App.setRoot("fxml/ProjectsPM");
-
-        //        Parent root = FXMLLoader.load(getClass().getResource("ProjectsPM.fxml"));
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-//        stage.show();
-
-
     }
     @FXML
     public void SwitchToReport(ActionEvent event) throws IOException{
         System.out.println("Report view");
         App.setRoot("fxml/Report");
-        //        Parent root = FXMLLoader.load(getClass().getResource("ProjectsPM.fxml"));
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-//        stage.show();
-
-
     }
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO generalize this code
-        pmEmailID.setText("Hossam_pm@gmail.com");
-        pmNameID.setText("Hossam");
-        employeeCounter.setText("50");
-        budgetCouter.setText("837$");
-        projeectsCounter.setText("7");
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        pmEmailID.setText(Account.email);
+        pmNameID.setText(Account.username);
+        int n;
+        try{
+            rs = statement.executeQuery("select count(*) as cnt from em");
+            rs.next();
+            n = rs.getInt("cnt");
+            employeeCounter.setText(Integer.toString(n));
+
+            rs = statement.executeQuery("select count(*) as cnt from project");
+            rs.next();
+            n = rs.getInt("cnt");
+            projeectsCounter.setText(Integer.toString(n));
+
+            budgetCouter.setText("837$");
+        }
+        catch(Exception e){
+            System.out.println("خخخخخخخخخخخخخخخخخ");
+        }
         Random r = new Random();
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();

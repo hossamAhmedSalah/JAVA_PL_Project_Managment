@@ -11,10 +11,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class table implements Initializable {
+import com.java_pl_project_managment.util.Account;
+
+public class table extends Account implements Initializable {
+    
+    public table() throws SQLException {
+    }
 
     @FXML
     private TableView<projectH> pro_table;
@@ -78,27 +84,39 @@ public class table implements Initializable {
     private Button goToResult;
 
 
+    ObservableList<projectH> list = FXCollections.observableArrayList();
 
 
+    private void load() throws SQLException{
+        rs = statement.executeQuery("select * from project");
+        while(rs.next()){
+            list.add(new projectH(rs.getString("deadline"),
+            rs.getString("pro_desc"),
+            rs.getString("pm_email"),
+            rs.getString("pm_email"),
+            rs.getString("pro_name"),
+            rs.getString("pro_state"),
+            rs.getDouble("comp_percent")));
+        }
+    }
 
-    ObservableList<projectH> list = FXCollections.observableArrayList(
-            new projectH("2022-12-20", "project managment system", "Hossam@gmail.com","Hossam_tl@gmail.com", "PL2", "in_progress", 60.0),
-            new projectH("2022-12-22", "project Super market system", "sellEvery@gmail.com","sellEvery_tl@gmail.com", "stera", "not Started", 0.0),
-            new projectH("2022-12-20", "project xv ship", "Hossam@gmail.com","Hossam_tl@gmail.com", "max", "in_progress", 60.0),
-            new projectH("2022-12-30", "project Super market system", "sellEvery@gmail.com","sellEvery_tl@gmail.com", "daxiy", "not Started", 0.0),
-            new projectH("2023-1-8", "project hyper system", "Hossam@gmail.com","Hossam_tl@gmail.com", "haxi", "in_progress", 60.0)
-
-
-    );
-
-
+    // new projectH("2022-12-20", "project managment system", "Hossam@gmail.com","Hossam_tl@gmail.com", "PL2", "in_progress", 60.0),
+    // new projectH("2022-12-22", "project Super market system", "sellEvery@gmail.com","sellEvery_tl@gmail.com", "stera", "not Started", 0.0),
+    // new projectH("2022-12-20", "project xv ship", "Hossam@gmail.com","Hossam_tl@gmail.com", "max", "in_progress", 60.0),
+    // new projectH("2022-12-30", "project Super market system", "sellEvery@gmail.com","sellEvery_tl@gmail.com", "daxiy", "not Started", 0.0),
+    // new projectH("2023-1-8", "project hyper system", "Hossam@gmail.com","Hossam_tl@gmail.com", "haxi", "in_progress", 60.0)
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       pmEmailID.setText("Hossam_pm@gmail.com");
-       pmNameID.setText("Hossam");
-
+        pmEmailID.setText(Account.email);
+        pmNameID.setText(Account.username);
+        try{
+            load();
+        }
+        catch(Exception e){
+            System.out.println("خخخخخخخخخخخخخخخخ");
+        }
         colProName.setCellValueFactory(new PropertyValueFactory<projectH, String>("proName" ));
         colDeadLine.setCellValueFactory(new PropertyValueFactory<projectH, String>("date"));
         colDesc.setCellValueFactory(new PropertyValueFactory<projectH, String>("description"));
@@ -107,14 +125,13 @@ public class table implements Initializable {
         colSate.setCellValueFactory(new PropertyValueFactory<projectH, String>("state"));
         colProgress.setCellValueFactory(new PropertyValueFactory<projectH, Double>("progress"));
         pro_table.setItems(list);
-
     }
     public void createProject(ActionEvent event){
         Alert b = new Alert(Alert.AlertType.WARNING);
         b.setTitle("progress should be a number");
 
         String projectName, DeadLine, Description, tl_Email, pm_Email, state;
-        double progress ;
+        double progress;
         projectName = textProName.getText() ;
         DeadLine = String.valueOf(dateDeadLine.getValue());
         Description = textDesc.getText();
@@ -208,56 +225,16 @@ public class table implements Initializable {
     @FXML
     public void SwitchToDsashboard(ActionEvent event) throws IOException{
         System.out.println("dashBoard");
-
-
-
         App.setRoot("fxml/dashboard");
-        //        Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-//
-//        setLable(pmNameID, "Hossam");
-//        setLable(pmEmailID, "Hossam@gmail.com");
-//
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-        //stage.show();
-
-
-
-
-
-
-
-
     }
     @FXML
     public void SwitchToProject(ActionEvent event) throws IOException {
         System.out.println("project");
         App.setRoot("fxml/ProjectsPM");
-        //        Parent root = FXMLLoader.load(getClass().getResource("ProjectsPM.fxml"));
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-//        stage.show();
-
-
     }
     @FXML
     public void SwitchToReport(ActionEvent event) throws IOException{
         System.out.println("Report view");
         App.setRoot("fxml/Report");
-        //        Parent root = FXMLLoader.load(getClass().getResource("ProjectsPM.fxml"));
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setResizable(false);
-//        stage.show();
-
-
     }
-
-
-//
 }
