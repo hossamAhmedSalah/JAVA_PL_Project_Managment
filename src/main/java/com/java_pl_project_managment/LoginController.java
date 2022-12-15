@@ -44,13 +44,12 @@ public class LoginController extends Account{
 
             if(Account.role.toLowerCase().equals("ad"))
                 App.setRoot("fxml/admin");
-            else App.setRoot("fxml/primary");
-
-            // else if(Account.role.toLowerCase().equals("pm"))
-            //     App.setRoot("fxml/pm");
+            else if(Account.role.toLowerCase().equals("pm"))
+                App.setRoot("fxml/dashboard");
             // else if(Account.role.toLowerCase().equals("tl"))
             //     App.setRoot("fxml/tl");
             // else    App.setRoot("fxml/employee");
+            // else    App.setRoot("fxml/primary");
         }
     }
 }
