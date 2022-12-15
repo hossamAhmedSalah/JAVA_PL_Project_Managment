@@ -25,6 +25,7 @@
         </Button>
         <ImageView fitHeight="256.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
             <!--<Image url="G:\intelij-java\PM_view\imagesPM\account.jpeg"/>-->
+            <Image url="@../img/ad_view/account.jpeg" />
         </ImageView>
         <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0"
                 prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">
