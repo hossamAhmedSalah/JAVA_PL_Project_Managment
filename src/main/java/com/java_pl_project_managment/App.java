@@ -14,7 +14,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("fxml/main"));
+        scene = new Scene(loadFXML("fxml/dashboard"));
         stage.setTitle("Project");
         stage.setScene(scene);
         stage.setResizable(false);
