@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.adminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
          <children>
@@ -51,27 +51,10 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Label layoutX="241.0" layoutY="71.0" prefHeight="59.0" prefWidth="176.0" text="All Projects">
+      <Label layoutX="241.0" layoutY="71.0" prefHeight="59.0" prefWidth="176.0" text="Delete Users">
          <font>
             <Font name="Roboto Condensed" size="27.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="241.0" layoutY="167.0" prefHeight="231.0" prefWidth="1014.0">
-         <children>
-            <TableView fx:id="pro_table" prefHeight="516.0" prefWidth="1018.0">
-               <columns>
-                  <TableColumn fx:id="Pro_name" prefWidth="130.0" styleClass="Col" text="Project Name" />
-                  <TableColumn fx:id="Pro_desc" prefWidth="275.99993896484375" styleClass="Col" text="Project Description" />
-                  <TableColumn fx:id="Deadline" minWidth="7.20001220703125" prefWidth="148.0" styleClass="Col" text="Deadline" />
-                  <TableColumn fx:id="Status" minWidth="0.0" prefWidth="125.60003662109375" text="Status" />
-                  <TableColumn fx:id="Pm" prefWidth="163.99993896484375" styleClass="Col" text="PM" />
-                  <TableColumn fx:id="Tl" prefWidth="175.2000732421875" styleClass="Col" text="TL" />
-               </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>

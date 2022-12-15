@@ -2,6 +2,7 @@ package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 public class adminController extends Admin implements Initializable{
 
     public adminController() throws SQLException {
@@ -60,5 +62,22 @@ public class adminController extends Admin implements Initializable{
 
         pro_table.setItems(obs);
     }
+
+    @FXML
+    private void viewP(MouseEvent event) throws IOException{
+        App.setRoot("fxml/admin");
+    }
+    @FXML
+    private void addU(MouseEvent event) throws IOException{
+        App.setRoot("fxml/addUser");
+    }
+    @FXML
+    private void deleteU(MouseEvent event) throws IOException{
+        App.setRoot("fxml/deleteUser");
+    }
+    @FXML
+    private void updateU(MouseEvent event) throws IOException{
+        App.setRoot("fxml/updateUser");
+    }
+
 }
-//hamid_ad@gmail.com

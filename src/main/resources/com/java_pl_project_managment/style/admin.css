@@ -11,45 +11,23 @@
     -fx-font-family: 'Roboto Condensed';
 }
 
-#employeeBtn:hover{
+#viewBtn:hover{
     -fx-background-color: #FFFFFF;
     -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
 }
-#tasksBtn:hover{
+#addBtn:hover{
     -fx-background-color: #FFFFFF;
     -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
 }
-#completeBtn:hover{
+#deleteBtn:hover{
     -fx-background-color: #FFFFFF;
     -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
 }
-.addBtn{
-    -fx-background-color : #28a745;
-    -fx-text-fill:#FFFFFF;
-    -fx-font-weight : bold;
-    -fx-font-size:14;
-    -fx-cursor : hand;
-}
-
-.addBtn:hover{
-    -fx-background-color : #FFFFFF;
-    -fx-text-fill:#28a745;
-    -fx-font-weight : bold;
-    -fx-font-size:14;
-    -fx-cursor : hand;
-}
-
-.removeBtn{
-    -fx-background-color : #bd2130;
-    -fx-text-fill:#FFFFFF;
-    -fx-font-weight : bold;
-    -fx-font-size:14;
-    -fx-cursor : hand;
-}
-.removeBtn:hover{
-    -fx-background-color : #FFFFFF;
-    -fx-text-fill:#bd2130;
-    -fx-font-weight : bold;
-    -fx-font-size:14;
-    -fx-cursor : hand;
+#updateBtn:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill : #1a266b;
+    -fx-font-size: 22px;
 }
