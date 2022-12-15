@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
+            prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.table">
+
+    <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="720.0" prefWidth="255.0"
+                style="-fx-background-color: #1a266b;">
+        <Button layoutY="488.0" mnemonicParsing="false" onAction="#SwitchToReport" prefHeight="46.0"
+                prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Report">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Button>
+        <ImageView fitHeight="256.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+            <!--<Image url="G:\intelij-java\PM_view\imagesPM\account.jpeg"/>-->
+        </ImageView>
+        <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0"
+                prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">
+            <font>
+                <Font size="22.0"/>
+            </font>
+        </Button>
+        <Button layoutY="429.0" mnemonicParsing="false" onAction="#SwitchToProject" prefHeight="46.0"
+                prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Projects"
+                textFill="#230202">
+            <font>
+                <Font name="MS Reference Specialty" size="20.0"/>
+            </font>
+        </Button>
+        <Label fx:id="pmNameID" layoutX="26.0" layoutY="268.0" text="PM_name" textFill="WHITE">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="pmEmailID" layoutX="26.0" layoutY="309.0" text="PM_EMAIL@gmail.com" textFill="WHITE">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
+    <Label layoutX="260.0" layoutY="14.0" text="Projects">
+        <font>
+          <Font size="30.0"/>
+        </font>
+    </Label>
+    <TableView fx:id="pro_table" layoutX="293.0" layoutY="91.0" prefHeight="274.0" prefWidth="986.0">
+      <columns>
+          <TableColumn fx:id="colProName" prefWidth="75.0" text="pro_name"/>
+          <TableColumn fx:id="colDesc" prefWidth="175.20001220703125" text="Description"/>
+          <TableColumn fx:id="colDeadLine" minWidth="0.0" prefWidth="112.0" text="Dead Line"/>
+          <TableColumn fx:id="colSate" prefWidth="78.39996337890625" text="state"/>
+          <TableColumn fx:id="colProgress" prefWidth="77.60009765625" text="progress"/>
+          <TableColumn fx:id="colPm" prefWidth="262.39996337890625" text="PM "/>
+          <TableColumn fx:id="colTl" prefWidth="212.0001220703125" text="TL"/>
+      </columns>
+    </TableView>
+    <Label layoutX="900.0" layoutY="46.0" prefHeight="27.0" prefWidth="45.0" text="Search">
+        <font>
+          <Font size="14.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="searchBar" layoutX="966.0" layoutY="46.0" prefHeight="27.0" prefWidth="244.0"
+               promptText="search prokect name"
+               style="-fx-border-color: black; -fx-background-color: black; -fx-text-fill: white;">
+        <font>
+          <Font size="13.0"/>
+        </font>
+    </TextField>
+    <Button fx:id="goToResult" layoutX="1218.0" layoutY="46.0" mnemonicParsing="false" onAction="#search"
+            prefHeight="30.0" prefWidth="46.0" style="-fx-background-color: red;" text="GO" textFill="#021b33">
+        <font>
+          <Font name="Arial Rounded MT Bold" size="15.0"/>
+        </font>
+    </Button>
+    <AnchorPane layoutX="277.0" layoutY="413.0" prefHeight="284.0" prefWidth="986.0">
+        <Label layoutX="14.0" layoutY="14.0" text="Create  Project" textFill="#080101">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="textProName" layoutX="22.0" layoutY="57.0" prefHeight="35.0" prefWidth="222.0"
+                   promptText="project name" style="-fx-border-radius: 40%;"/>
+        <DatePicker fx:id="dateDeadLine" layoutX="22.0" layoutY="195.0" prefHeight="35.0" prefWidth="222.0"
+                    promptText="Dead line"/>
+        <TextField fx:id="textDesc" layoutX="273.0" layoutY="53.0" prefHeight="192.0" prefWidth="366.0"
+                   promptText="Description" style="-fx-border-radius: 40%;"/>
+        <TextField fx:id="textPmEmail" layoutX="664.0" layoutY="124.0" prefHeight="35.0" prefWidth="300.0"
+                   promptText="pm_email" style="-fx-border-radius: 40%;"/>
+        <TextField fx:id="textTlEmail" layoutX="664.0" layoutY="57.0" prefHeight="35.0" prefWidth="300.0"
+                   promptText="TL_email" style="-fx-border-radius: 40%;"/>
+        <Button fx:id="createProject" layoutX="858.0" layoutY="180.0" mnemonicParsing="false"
+                onAction="#createProject" prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #2DFF00;"
+                text="Create" textFill="#021b33">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="15.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="textState" layoutX="22.0" layoutY="106.0" prefHeight="35.0" prefWidth="222.0"
+                   promptText="project State" style="-fx-border-radius: 40%;"/>
+        <TextField fx:id="textProgress" layoutX="22.0" layoutY="149.0" prefHeight="35.0" prefWidth="222.0"
+                   promptText="progress %" style="-fx-border-radius: 40%;"/>
+    </AnchorPane>
+    <Button fx:id="refreshButton" layoutX="293.0" layoutY="375.0" mnemonicParsing="false" onAction="#refreshTable"
+            prefHeight="30.0" prefWidth="105.0" style="-fx-background-color: #2DFF00;" text="Refresh"
+            textFill="#021b33">
+        <font>
+          <Font name="Arial Rounded MT Bold" size="15.0"/>
+        </font>
+    </Button>
+    <Button fx:id="DeleteProject" layoutX="413.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteProjrct"
+            prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: red;" text="Delete" textFill="#021b33">
+        <font>
+          <Font name="Arial Rounded MT Bold" size="15.0"/>
+        </font>
+    </Button>
+</AnchorPane>
