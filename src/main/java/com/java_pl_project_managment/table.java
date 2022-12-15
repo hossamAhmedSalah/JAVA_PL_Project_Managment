@@ -145,7 +145,7 @@ public class table implements Initializable {
         else {
             projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, state, progress);
             System.out.printf("project name : %s\tDeadLine : %s\tDescription: %s\ttl_Email : %s\tpm_Email : %s",projectName, DeadLine, Description, tl_Email, pm_Email);
-           ObservableList<projectH> addProjectH = pro_table.getItems();
+            ObservableList<projectH> addProjectH = pro_table.getItems();
             addProjectH.add(pro);
             pro_table.setItems(addProjectH);
             dateDeadLine.setValue(null);
