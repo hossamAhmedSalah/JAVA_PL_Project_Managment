@@ -1,0 +1,11 @@
+
+.buttonMenu:hover{
+-fx-background-color: red!important;
+-fx-font-weight: 800 !important;
+-fx-text-fill: white !important;
+
+}
+.pic{
+-fx-background-color: red!important;
+
+}
