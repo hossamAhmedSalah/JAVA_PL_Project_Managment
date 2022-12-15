@@ -1,5 +1,4 @@
 package com.java_pl_project_managment;
-import com.java_pl_project_managment.HelloApplication;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,7 +63,7 @@ public class Scene1Controler implements Initializable {
         System.out.println(pmEmailID.getText());
         System.out.println(pmNameID.getText());
 
-        HelloApplication.setRoot("fxml/dashboard");
+        App.setRoot("fxml/dashboard");
         //        Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
 //
 //        setLable(pmNameID, "Hossam");

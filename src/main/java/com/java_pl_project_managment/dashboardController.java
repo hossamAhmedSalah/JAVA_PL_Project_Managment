@@ -1,5 +1,4 @@
 package com.java_pl_project_managment;
-import com.java_pl_project_managment.HelloApplication;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
