@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/global.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.VacationController">
+    <children>
+        <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
+            <children>
+                <Label fx:id="employeeBtn" layoutY="287.0" onMouseClicked="#SwitchToPenalty" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Your Employees" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed" size="22.0" />
+                    </font>
+                </Label>
+                <Label fx:id="tasksBtn" layoutY="338.0" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Assign a Task" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed" size="22.0" />
+                    </font>
+                </Label>
+                <Label fx:id="completeBtn" layoutY="391.0" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Completed Tasks" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed" size="22.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/tl_view_ha/leader.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="reportBtn" layoutY="441.0" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Reports" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed" size="22.0" />
+                    </font>
+                </Label>
+                <Label fx:id="vacationBtn" layoutY="491.0" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Vacations" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed" size="22.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="-3.0" prefHeight="71.0" prefWidth="1288.0" style="-fx-background-color: #1a266b;">
+            <children>
+                <Label layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome,Team Leader" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Condensed Bold Italic" size="20.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+        <Label layoutX="229.0" layoutY="90.0" prefHeight="59.0" prefWidth="209.0" text="Vacation requests">
+            <font>
+                <Font name="Roboto Condensed" size="27.0" />
+            </font>
+        </Label>
+        <TableView layoutX="275.0" layoutY="187.0" prefHeight="234.0" prefWidth="877.0">
+            <columns>
+                <TableColumn prefWidth="206.0" text="Employee Name" />
+                <TableColumn minWidth="0.0" prefWidth="154.0" text="From" />
+                <TableColumn prefWidth="162.0" styleClass="BounsCol" text="To" />
+                <TableColumn prefWidth="354.0" styleClass="PenaltyCol" text="Vacation status" />
+            </columns>
+        </TableView>
+        <Button layoutX="275.0" layoutY="479.0" mnemonicParsing="false" styleClass="acceptBtn" text="Accept">
+            <font>
+                <Font name="Roboto Medium" size="18.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="234.0" fitWidth="325.0" layoutX="827.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/tl_view_ha/Vacation-Beach-Free-PNG-Image.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="355.0" layoutY="479.0" mnemonicParsing="false" styleClass="declineBtn" text="Decline">
+            <font>
+                <Font name="Roboto Medium" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
