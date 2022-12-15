@@ -74,7 +74,10 @@ public class dashboardController extends Account implements Initializable {
             n = rs.getInt("cnt");
             projeectsCounter.setText(Integer.toString(n));
 
-            budgetCouter.setText("837$");
+            rs = statement.executeQuery("select sum(salary) as sum from account");
+            rs.next();
+            n = rs.getInt("sum");
+            budgetCouter.setText("$"+Integer.toString(n));
         }
         catch(Exception e){
             System.out.println("خخخخخخخخخخخخخخخخخ");
