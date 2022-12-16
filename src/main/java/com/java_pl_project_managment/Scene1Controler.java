@@ -1,5 +1,6 @@
 package com.java_pl_project_managment;
 
+import com.java_pl_project_managment.util.Employee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,9 +17,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Scene1Controler implements Initializable {
+public class Scene1Controler extends Employee implements Initializable {
     public Button sendReport;
     private Stage stage;
     private Scene scene;
@@ -44,6 +46,9 @@ public class Scene1Controler implements Initializable {
 
     @FXML
     private TextField ReportTL;
+
+    public Scene1Controler() throws SQLException {
+    }
 
 
     //private String emp_Email, tl_Email, report_desc;
@@ -128,8 +133,14 @@ public class Scene1Controler implements Initializable {
             a.show();
 
         }
+
         else {
             System.out.println(report_desc+'\n'+emp_Email+'\n'+tl_Email);
+            try {
+                query("insert into Report values('"+emp_Email+"', '"+report_desc+"')");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             ReportDesc.setText("");
             ReportEM.setText("");
             ReportTL.setText("");
