@@ -13,9 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
-public class LoginController extends Account{
-    // private String getStyle = getClass().getResource("style/app.css").toExternalForm();
-
+public class LoginController extends Admin{
     public LoginController() throws SQLException {
     }
 
@@ -29,8 +27,7 @@ public class LoginController extends Account{
 
         Alert a = new Alert(AlertType.NONE);
 
-        Account acc = new Account();
-        if(!acc.Login(e, p)){
+        if(!super.Login(e, p)){
             a.setAlertType(AlertType.ERROR);
             a.setHeaderText("");
             a.setContentText("Wrong email or password");
@@ -45,8 +42,7 @@ public class LoginController extends Account{
             // a.showAndWait();   
 
             if(Account.role.toLowerCase().equals("ad")){
-                Admin ad = new Admin();
-                ad.view_project();
+                super.view_project();
                 App.setRoot("fxml/admin");
             }
             else if(Account.role.toLowerCase().equals("pm"))
