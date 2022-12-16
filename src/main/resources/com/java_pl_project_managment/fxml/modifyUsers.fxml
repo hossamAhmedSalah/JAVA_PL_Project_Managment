@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/global.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
          <children>
@@ -23,7 +23,8 @@
             <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="38.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/ad_view/PL%20project%20class%20diagram%20-%20Page%201%20(1).png" />
-               </image></ImageView>
+               </image>
+            </ImageView>
             <Label fx:id="viewBtn" layoutX="22.0" layoutY="305.0" onMouseClicked="#viewP" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="View Projects" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />

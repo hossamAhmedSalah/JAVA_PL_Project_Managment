@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Condensed Light Italic';
+    src: url('fonts/RobotoCondensed-LightItalic.ttf');
+}
+
+*{
+    -fx-font-family: 'Roboto Condensed';
+}
+
 #employeeBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
@@ -73,6 +86,22 @@
 
    -fx-background-color : #dd3500;
    -fx-text-fill : #FFFFFF;
+}
+
+#pushBtn{
+    -fx-background-color : #e0a800;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-weight : bold;
+    -fx-font-size:14;
+    -fx-cursor : hand;
+    
+}
+#pushBtn:hover{
+    -fx-background-color : #FFFFFF;
+-fx-text-fill:#e0a800;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
 }
 .acceptBtn{
 

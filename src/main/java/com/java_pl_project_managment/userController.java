@@ -115,47 +115,55 @@ public class userController extends Account{
 
     @FXML
     private void modbtn(ActionEvent event) throws SQLException{
-        if(choice.getValue().equals("Add")){
-            if(ad.add(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),role.getText(),imgUrl.getText(),salary.getText(),null})){
-                a.setAlertType(AlertType.INFORMATION);
-                a.setHeaderText("");
-                a.setContentText("Added Successfully");
-                a.showAndWait();
+        if(!email.getText().equals("")){
+            if(choice.getValue().equals("Add")){
+                if(ad.add(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),role.getText(),imgUrl.getText(),salary.getText(),null})){
+                    a.setAlertType(AlertType.INFORMATION);
+                    a.setHeaderText("");
+                    a.setContentText("Added Successfully");
+                    a.showAndWait();
+                }
+                else{
+                    a.setAlertType(AlertType.ERROR);
+                    a.setHeaderText("");
+                    a.setContentText("Email Already Added!");
+                    a.showAndWait();
+                }
             }
-            else{
-                a.setAlertType(AlertType.ERROR);
-                a.setHeaderText("");
-                a.setContentText("Email Already Added!");
-                a.showAndWait();
+            else if(choice.getValue().equals("Delete")){
+                if(ad.delete(email.getText())){
+                    a.setAlertType(AlertType.INFORMATION);
+                    a.setHeaderText("");
+                    a.setContentText("Deleted Successfully");
+                    a.showAndWait();
+                }
+                else{
+                    a.setAlertType(AlertType.ERROR);
+                    a.setHeaderText("");
+                    a.setContentText("Email Not Found!");
+                    a.showAndWait();
+                }
+            }
+            else if(choice.getValue().equals("Update")){
+                if(ad.update(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),imgUrl.getText(),salary.getText()})){
+                    a.setAlertType(AlertType.INFORMATION);
+                    a.setHeaderText("");
+                    a.setContentText("Updated Successfully");
+                    a.showAndWait();
+                }
+                else{
+                    a.setAlertType(AlertType.ERROR);
+                    a.setHeaderText("");
+                    a.setContentText("Email Not Found!");
+                    a.showAndWait();
+                }
             }
         }
-        else if(choice.getValue().equals("Delete")){
-            if(ad.delete(email.getText())){
-                a.setAlertType(AlertType.INFORMATION);
-                a.setHeaderText("");
-                a.setContentText("Deleted Successfully");
-                a.showAndWait();
-            }
-            else{
-                a.setAlertType(AlertType.ERROR);
-                a.setHeaderText("");
-                a.setContentText("Email Not Found!");
-                a.showAndWait();
-            }
-        }
-        else if(choice.getValue().equals("Update")){
-            if(ad.update(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),imgUrl.getText(),salary.getText()})){
-                a.setAlertType(AlertType.INFORMATION);
-                a.setHeaderText("");
-                a.setContentText("Updated Successfully");
-                a.showAndWait();
-            }
-            else{
-                a.setAlertType(AlertType.ERROR);
-                a.setHeaderText("");
-                a.setContentText("Email Not Found!");
-                a.showAndWait();
-            }
+        else{
+            a.setAlertType(AlertType.WARNING);
+            a.setHeaderText("");
+            a.setContentText("Email Cannot be empty");
+            a.showAndWait();
         }
     }
 }
