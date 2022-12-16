@@ -1,0 +1,120 @@
+#employeeBtn:hover{
+-fx-background-color: #FFFFFF;
+-fx-text-fill : #1a266b;
+}
+#tasksBtn:hover{
+-fx-background-color: #FFFFFF;
+-fx-text-fill : #1a266b;
+}
+#completeBtn:hover{
+-fx-background-color: #FFFFFF;
+-fx-text-fill : #1a266b;
+}
+#reportBtn:hover{
+-fx-background-color: #FFFFFF;
+-fx-text-fill : #1a266b;
+}
+#vacationBtn:hover{
+-fx-background-color: #FFFFFF;
+-fx-text-fill : #1a266b;
+}
+
+.addBtn{
+-fx-background-color : #006eb9;
+-fx-text-fill:#FFFFFF;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+}
+
+.addBtn:hover{
+-fx-background-color : #FFFFFF;
+-fx-text-fill:#006eb9;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+}
+
+.bounsBtn{
+-fx-background-color : #006eb9;
+-fx-text-fill:#FFFFFF;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+}
+.bounsBtn:hover{
+-fx-background-color : #FFFFFF;
+-fx-text-fill:#006eb9;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+}
+
+.penaltyBtn{
+-fx-background-color : #ba222e;
+-fx-text-fill:#FFFFFF;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+}
+.penaltyBtn:hover{
+-fx-background-color : #FFFFFF;
+-fx-text-fill:#ba222e;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+}
+#BounsCol{
+    -fx-background-color : #05c600;
+    -fx-text-fill : #FFFFFF;
+}
+
+#PenaltyCol{
+
+   -fx-background-color : #dd3500;
+   -fx-text-fill : #FFFFFF;
+}
+.acceptBtn{
+
+-fx-background-color : #e0a800;
+-fx-text-fill:#FFFFFF;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+
+
+
+}
+
+.acceptBtn:hover{
+
+
+-fx-background-color : #FFFFFF;
+-fx-text-fill:#e0a800;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+
+}
+.declineBtn{
+
+-fx-background-color : #c82333;
+-fx-text-fill:#FFFFFF;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+
+
+
+}
+
+.declineBtn:hover{
+
+
+-fx-background-color : #FFFFFF;
+-fx-text-fill:#c82333;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
+
+}
