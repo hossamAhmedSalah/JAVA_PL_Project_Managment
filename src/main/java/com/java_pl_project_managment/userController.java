@@ -3,7 +3,6 @@ package com.java_pl_project_managment;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Admin;
 
 import javafx.event.ActionEvent;
@@ -15,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
-public class userController extends Account{
+public class userController extends Admin{
 
     public userController() throws SQLException {
     }
@@ -40,7 +39,7 @@ public class userController extends Account{
     @FXML
     private TextField username;
 
-    Admin ad = new Admin();
+    // Admin ad = new Admin();
     Alert a = new Alert(AlertType.NONE);
 
     @FXML
@@ -117,7 +116,7 @@ public class userController extends Account{
     private void modbtn(ActionEvent event) throws SQLException{
         if(!email.getText().equals("")){
             if(choice.getValue().equals("Add")){
-                if(ad.add(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),role.getText(),imgUrl.getText(),salary.getText(),null})){
+                if(super.add(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),role.getText(),imgUrl.getText(),salary.getText(),null})){
                     a.setAlertType(AlertType.INFORMATION);
                     a.setHeaderText("");
                     a.setContentText("Added Successfully");
@@ -131,7 +130,7 @@ public class userController extends Account{
                 }
             }
             else if(choice.getValue().equals("Delete")){
-                if(ad.delete(email.getText())){
+                if(super.delete(email.getText())){
                     a.setAlertType(AlertType.INFORMATION);
                     a.setHeaderText("");
                     a.setContentText("Deleted Successfully");
@@ -145,7 +144,7 @@ public class userController extends Account{
                 }
             }
             else if(choice.getValue().equals("Update")){
-                if(ad.update(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),imgUrl.getText(),salary.getText()})){
+                if(super.update(new String[]{email.getText(),username.getText(),password.getText(),gender.getText(),imgUrl.getText(),salary.getText()})){
                     a.setAlertType(AlertType.INFORMATION);
                     a.setHeaderText("");
                     a.setContentText("Updated Successfully");

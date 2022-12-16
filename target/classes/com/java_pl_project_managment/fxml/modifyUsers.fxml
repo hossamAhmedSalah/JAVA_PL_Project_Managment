@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/global.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
          <children>
@@ -45,7 +45,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Label layoutX="259.0" layoutY="95.0" prefHeight="59.0" prefWidth="176.0" text="Add Users">
+      <Label layoutX="259.0" layoutY="95.0" prefHeight="59.0" prefWidth="176.0" text="Modify Users">
          <font>
             <Font name="Roboto Condensed" size="27.0" />
          </font>

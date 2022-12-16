@@ -87,22 +87,6 @@
    -fx-background-color : #dd3500;
    -fx-text-fill : #FFFFFF;
 }
-
-#pushBtn{
-    -fx-background-color : #e0a800;
-    -fx-text-fill:#FFFFFF;
-    -fx-font-weight : bold;
-    -fx-font-size:14;
-    -fx-cursor : hand;
-    
-}
-#pushBtn:hover{
-    -fx-background-color : #FFFFFF;
--fx-text-fill:#e0a800;
--fx-font-weight : bold;
--fx-font-size:14;
--fx-cursor : hand;
-}
 .acceptBtn{
 
 -fx-background-color : #e0a800;
