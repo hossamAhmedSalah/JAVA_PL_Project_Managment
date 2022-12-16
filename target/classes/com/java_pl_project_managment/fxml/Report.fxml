@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -8,73 +9,83 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
-            prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx/19"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.Scene1Controler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.Scene1Controler">
 
-    <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="720.0" prefWidth="255.0"
-                style="-fx-background-color: #1a266b;">
-        <Button layoutY="488.0" mnemonicParsing="false" onAction="#SwitchToReport" prefHeight="46.0"
-                prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Report">
+    <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="720.0" prefWidth="255.0" style="-fx-background-color: #1a266b;">
+        <Button layoutY="488.0" mnemonicParsing="false" onAction="#SwitchToReport" prefHeight="46.0" prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Report">
             <font>
-                <Font size="20.0"/>
+                <Font size="20.0" />
             </font>
         </Button>
         <ImageView fitHeight="256.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
             <!--<Image url="G:\intelij-java\PM_view\imagesPM\account.jpeg"/>-->
             <Image url="@../img/ad_view/account.jpeg" />
         </ImageView>
-        <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0"
-                prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">
+        <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0" prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">
             <font>
-                <Font size="22.0"/>
+                <Font size="22.0" />
             </font>
         </Button>
-        <Button layoutY="429.0" mnemonicParsing="false" onAction="#SwitchToProject" prefHeight="46.0"
-                prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Projects"
-                textFill="#230202">
+        <Button layoutY="429.0" mnemonicParsing="false" onAction="#SwitchToProject" prefHeight="46.0" prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Projects" textFill="#230202">
             <font>
-                <Font name="MS Reference Specialty" size="20.0"/>
+                <Font name="MS Reference Specialty" size="20.0" />
             </font>
         </Button>
         <Label fx:id="pmNameID" layoutX="26.0" layoutY="268.0" text="PM_name" textFill="WHITE">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
         <Label fx:id="pmEmailID" layoutX="26.0" layoutY="309.0" text="PM_EMAIL@gmail.com" textFill="WHITE">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
     </AnchorPane>
     <Label layoutX="260.0" layoutY="14.0" text="Report">
         <font>
-          <Font size="30.0"/>
+          <Font size="30.0" />
         </font>
     </Label>
-    <Label layoutX="540.0" layoutY="209.0" text="EMPLOYEE EMAIL">
+    <Label layoutX="688.0" layoutY="211.0" text="EMPLOYEE EMAIL">
         <font>
-          <Font size="18.0"/>
+          <Font name="System Bold Italic" size="16.0" />
         </font>
     </Label>
-    <TextField fx:id="ReportEM" layoutX="712.0" layoutY="210.0" prefHeight="27.0" prefWidth="472.0"/>
-    <Label layoutX="540.0" layoutY="272.0" prefHeight="27.0" prefWidth="141.0" text="Send to TL">
+    <TextField fx:id="ReportEM" layoutX="843.0" layoutY="210.0" prefHeight="27.0" prefWidth="362.0" />
+    <Label layoutX="688.0" layoutY="272.0" prefHeight="27.0" prefWidth="141.0" text="Send to TL">
         <font>
-          <Font size="18.0"/>
+          <Font name="System Bold Italic" size="16.0" />
         </font>
     </Label>
-    <TextField fx:id="ReportTL" layoutX="711.0" layoutY="272.0" prefHeight="27.0" prefWidth="472.0"/>
-    <Label layoutX="540.0" layoutY="334.0" prefHeight="27.0" prefWidth="141.0" text="Describtion">
+    <TextField fx:id="ReportTL" layoutX="843.0" layoutY="272.0" prefHeight="27.0" prefWidth="362.0" />
+    <Label layoutX="688.0" layoutY="335.0" prefHeight="27.0" prefWidth="141.0" text="Describtion">
         <font>
-          <Font size="18.0"/>
+          <Font name="System Bold Italic" size="16.0" />
         </font>
     </Label>
-    <TextField fx:id="ReportDesc" layoutX="712.0" layoutY="335.0" prefHeight="164.0" prefWidth="478.0"/>
-    <Button fx:id="sendReport" layoutX="719.0" layoutY="536.0" mnemonicParsing="false" onAction="#sendReport"
-            prefHeight="40.0" prefWidth="472.0" style="-fx-background-color: red;" text="SEND" textFill="#fffdfd">
+    <TextField fx:id="ReportDesc" layoutX="843.0" layoutY="335.0" prefHeight="164.0" prefWidth="362.0" />
+    <Button fx:id="sendReport" layoutX="843.0" layoutY="536.0" mnemonicParsing="false" onAction="#sendReport" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: red;" text="SEND" textFill="#fffdfd">
         <font>
-          <Font size="18.0"/>
+          <Font size="18.0" />
         </font>
     </Button>
+   <AnchorPane layoutX="329.0" layoutY="203.0" prefHeight="281.0" prefWidth="306.0">
+      <children>
+         <Label layoutX="14.0" layoutY="8.0" prefHeight="46.0" prefWidth="215.0" text="find Employee">
+            <font>
+               <Font name="System Bold Italic" size="29.0" />
+            </font>
+         </Label>
+         <TextField fx:id="findEmail" layoutX="30.0" layoutY="67.0" prefHeight="26.0" prefWidth="234.0" promptText="Employee email" />
+         <TextField fx:id="findSalary" disable="true" layoutX="30.0" layoutY="151.0" prefHeight="26.0" prefWidth="234.0" promptText="Salary" />
+         <Button fx:id="findme" layoutX="30.0" layoutY="231.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: red;" text="Find">
+            <font>
+               <Font name="System Bold Italic" size="16.0" />
+            </font>
+         </Button>
+         <Hyperlink fx:id="findLink" layoutX="36.0" layoutY="191.0" prefHeight="24.0" prefWidth="234.0" text="Employee image" />
+         <TextField fx:id="findUserName" disable="true" layoutX="30.0" layoutY="107.0" prefHeight="26.0" prefWidth="234.0" promptText="name" />
+      </children>
+   </AnchorPane>
 </AnchorPane>
