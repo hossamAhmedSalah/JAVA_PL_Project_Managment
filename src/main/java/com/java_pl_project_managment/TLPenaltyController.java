@@ -58,14 +58,14 @@ public class TLPenaltyController extends Employee implements Initializable {
     }
 
     @FXML
-    public void SwitchToVacation(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+    public void SwitchToVacation(MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLVacation");
     }
     @FXML
-    public void SwitchToPenalty(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+    public void SwitchToPenalty(MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLPenalty");
     }
-    public void SwitchToAssignTask(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+    public void SwitchToAssignTask(MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/Tl_Tasks");
     }
 

@@ -37,8 +37,6 @@ public class adminController extends Admin implements Initializable{
     ObservableList<project> obs = FXCollections.observableArrayList();
 
     private void load() throws SQLException{
-        // Admin a = new Admin();
-        // a.view_project();
         String[][] kek = Admin.projects;
         for(int i=0;i<kek.length;i++){
             obs.add(new project(kek[i][0],kek[i][1],kek[i][2],kek[i][3],kek[i][4],kek[i][5]));

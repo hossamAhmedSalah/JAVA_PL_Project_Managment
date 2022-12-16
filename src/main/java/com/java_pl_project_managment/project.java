@@ -1,7 +1,5 @@
 package com.java_pl_project_managment;
 
-import java.sql.SQLException;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -14,7 +12,7 @@ public class project{
     private SimpleStringProperty pm; 
     private SimpleStringProperty tl;
 
-    public project(String pro_name, String pro_desc, String deadline, String status, String pm, String tl) throws SQLException {
+    public project(String pro_name, String pro_desc, String deadline, String status, String pm, String tl){
         this.pro_name = new SimpleStringProperty(pro_name);
         this.pro_desc = new SimpleStringProperty(pro_desc);
         this.deadline = new SimpleStringProperty(deadline);
@@ -79,5 +77,4 @@ public class project{
     public StringProperty tlProperty() {
         return tl;
     }
-    
 }
