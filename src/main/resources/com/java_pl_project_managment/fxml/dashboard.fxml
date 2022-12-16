@@ -94,4 +94,9 @@
          </font>
       </Label>
    </AnchorPane>
+   <Button layoutX="1193.0" layoutY="23.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" textFill="#1e1a1a">
+      <font>
+         <Font name="System Bold Italic" size="13.0" />
+      </font>
+   </Button>
 </AnchorPane>

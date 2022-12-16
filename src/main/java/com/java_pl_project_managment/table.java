@@ -261,4 +261,5 @@ public class table extends Employee implements Initializable {
         System.out.println("Report view");
         App.setRoot("fxml/Report");
     }
+
 }

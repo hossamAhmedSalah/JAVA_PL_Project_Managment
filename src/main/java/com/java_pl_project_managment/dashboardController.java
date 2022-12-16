@@ -154,4 +154,13 @@ public class dashboardController extends Employee implements Initializable {
 
 
     }
+    @FXML
+    void logOut(ActionEvent event) {
+        try {
+            App.setRoot("fxml/main");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
