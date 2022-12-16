@@ -131,14 +131,14 @@ public class table extends Employee implements Initializable {
         Alert b = new Alert(Alert.AlertType.WARNING);
         b.setTitle("progress should be a number");
 
-        String projectName, DeadLine, Description, tl_Email, pm_Email, state;
-        double progress;
+        String projectName, DeadLine, Description, tl_Email, pm_Email;
+        double progress, state = 0;
         projectName = textProName.getText() ;
         DeadLine = String.valueOf(dateDeadLine.getValue());
         Description = textDesc.getText();
         tl_Email = textTlEmail.getText();
         pm_Email = textPmEmail.getText();
-        state = textState.getText();
+        state = Double.parseDouble(textState.getText());
         try {
             progress = Double.parseDouble(textProgress.getText());
         } catch (NumberFormatException e) {
@@ -151,7 +151,7 @@ public class table extends Employee implements Initializable {
         Alert a = new Alert(Alert.AlertType.WARNING);
         a.setTitle("Can't create");
 
-        if(projectName.equals("") || DeadLine.equals("") || Description.equals("") || tl_Email.equals("") || pm_Email.equals("")||state.equals("") || textProgress.getText().equals("")){
+        if(projectName.equals("") || DeadLine.equals("") || Description.equals("") || tl_Email.equals("") || pm_Email.equals("") || textProgress.getText().equals("")){
             a.setContentText("fill all fields please");
             a.show();
         }
@@ -161,10 +161,23 @@ public class table extends Employee implements Initializable {
 
         }
         else {
-            projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, state, progress);
+            projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, (state+""), progress);
             System.out.printf("project name : %s\tDeadLine : %s\tDescription: %s\ttl_Email : %s\tpm_Email : %s",projectName, DeadLine, Description, tl_Email, pm_Email);
             ObservableList<projectH> addProjectH = pro_table.getItems();
             addProjectH.add(pro);
+
+
+            try {
+                query("insert into project values('"+ projectName+"', '"+
+                                                         Description+ "', '"+
+                                                         DeadLine + "' ,"+
+                                                         state+", "+
+                                                         progress+", '"+
+                                                         pm_Email+"' ,'"+
+                                                         tl_Email+"')"  );
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             pro_table.setItems(addProjectH);
             dateDeadLine.setValue(null);
             textDesc.setText("");
@@ -199,6 +212,11 @@ public class table extends Employee implements Initializable {
             System.out.println(pro_name_d+" have been deleted");
 
             pro_table.getItems().remove(id);
+            try {
+                query("delete from project where pro_name = '"+pro_name_d+"'" );
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
 
 
         }
@@ -220,7 +238,12 @@ public class table extends Employee implements Initializable {
     }
     @FXML
     void refreshTable(ActionEvent event) {
-        pro_table.refresh();
+       // pro_table.refresh();
+        try {
+            App.setRoot("fxml/ProjectsPM");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
     @FXML
