@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,23 +23,14 @@
             <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="38.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/ad_view/PL%20project%20class%20diagram%20-%20Page%201%20(1).png" />
-               </image></ImageView>
+               </image>
+            </ImageView>
             <Label fx:id="viewBtn" layoutX="22.0" layoutY="305.0" onMouseClicked="#viewP" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="View Projects" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="addBtn" layoutX="22.0" layoutY="360.0" onMouseClicked="#addU" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Add Users" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Roboto Condensed" size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="deleteBtn" layoutX="22.0" layoutY="413.0" onMouseClicked="#deleteU" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Delete Users" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Roboto Condensed" size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="updateBtn" layoutX="22.0" layoutY="473.0" onMouseClicked="#updateU" prefHeight="38.0" prefWidth="210.0" text="Update Users" textFill="WHITE">
+            <Label fx:id="userBtn" layoutX="22.0" layoutY="360.0" onMouseClicked="#addU" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Modify Users" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
@@ -51,10 +45,27 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <Label layoutX="241.0" layoutY="71.0" prefHeight="59.0" prefWidth="176.0" text="Delete Users">
+      <Label layoutX="259.0" layoutY="95.0" prefHeight="59.0" prefWidth="176.0" text="Modify Users">
          <font>
             <Font name="Roboto Condensed" size="27.0" />
          </font>
       </Label>
+      <TextField fx:id="email" layoutX="329.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="email" />
+      <TextField fx:id="password" layoutX="329.0" layoutY="295.0" prefHeight="38.0" prefWidth="254.0" promptText="password" />
+      <TextField fx:id="username" layoutX="851.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="username" />
+      <TextField fx:id="gender" layoutX="851.0" layoutY="295.0" prefHeight="38.0" prefWidth="254.0" promptText="gender" />
+      <TextField fx:id="role" layoutX="583.0" layoutY="483.0" prefHeight="38.0" prefWidth="261.0" promptText="role" />
+      <TextField fx:id="imgUrl" layoutX="851.0" layoutY="402.0" prefHeight="38.0" prefWidth="254.0" promptText="imgUrl" />
+      <TextField fx:id="salary" layoutX="329.0" layoutY="402.0" prefHeight="38.0" prefWidth="254.0" promptText="salary" />
+      <Button fx:id="pushBtn" layoutX="626.0" layoutY="607.0" mnemonicParsing="false" onAction="#modbtn" prefHeight="38.0" prefWidth="176.0" text="Modify" />
+      <ComboBox fx:id="choice" layoutX="664.0" layoutY="561.0" onAction="#comboAction" prefHeight="24.0" prefWidth="98.0" value="Add">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Add" />
+               <String fx:value="Delete" />
+               <String fx:value="Update" />
+            </FXCollections>
+         </items>
+      </ComboBox>
    </children>
 </AnchorPane>

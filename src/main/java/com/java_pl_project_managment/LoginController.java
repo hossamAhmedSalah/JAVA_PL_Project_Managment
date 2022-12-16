@@ -1,6 +1,8 @@
 package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Account;
+import com.java_pl_project_managment.util.Admin;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -11,9 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
-public class LoginController extends Account{
-    // private String getStyle = getClass().getResource("style/app.css").toExternalForm();
-
+public class LoginController extends Admin{
     public LoginController() throws SQLException {
     }
 
@@ -27,8 +27,7 @@ public class LoginController extends Account{
 
         Alert a = new Alert(AlertType.NONE);
 
-        Account acc = new Account();
-        if(!acc.Login(e, p)){
+        if(!super.Login(e, p)){
             a.setAlertType(AlertType.ERROR);
             a.setHeaderText("");
             a.setContentText("Wrong email or password");
@@ -37,17 +36,19 @@ public class LoginController extends Account{
             password.clear();
         }
         else{
-            a.setAlertType(AlertType.INFORMATION);
-            a.setHeaderText("");
-            a.setContentText("Welcome " + Account.username);
-            a.showAndWait();   
+            // a.setAlertType(AlertType.INFORMATION);
+            // a.setHeaderText("");
+            // a.setContentText("Welcome " + Account.username);
+            // a.showAndWait();   
 
-            if(Account.role.toLowerCase().equals("ad"))
+            if(Account.role.toLowerCase().equals("ad")){
+                super.view_project();
                 App.setRoot("fxml/admin");
+            }
             else if(Account.role.toLowerCase().equals("pm"))
                 App.setRoot("fxml/dashboard");
-            // else if(Account.role.toLowerCase().equals("tl"))
-            //     App.setRoot("fxml/tl");
+            else if(Account.role.toLowerCase().equals("tl"))
+                App.setRoot("fxml/TLPenalty");
             // else    App.setRoot("fxml/employee");
             // else    App.setRoot("fxml/primary");
         }

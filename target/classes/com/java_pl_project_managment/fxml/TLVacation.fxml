@@ -58,12 +58,13 @@
                 <Font name="Roboto Condensed" size="27.0" />
             </font>
         </Label>
-        <TableView layoutX="275.0" layoutY="187.0" prefHeight="234.0" prefWidth="877.0">
+        <TableView fx:id="VacationTable" layoutX="275.0" layoutY="187.0" prefHeight="234.0" prefWidth="877.0">
             <columns>
-                <TableColumn prefWidth="206.0" text="Employee Name" />
-                <TableColumn minWidth="0.0" prefWidth="154.0" text="From" />
-                <TableColumn prefWidth="162.0" styleClass="BounsCol" text="To" />
-                <TableColumn prefWidth="354.0" styleClass="PenaltyCol" text="Vacation status" />
+                <TableColumn fx:id="v_id" prefWidth="68.0" text="v_id" />
+                <TableColumn fx:id="em_email" minWidth="0.0" prefWidth="350.0" text="em_email" />
+                <TableColumn fx:id="StartDate" prefWidth="166.0" styleClass="BounsCol" text="Start Date" />
+                <TableColumn fx:id="EndDate" prefWidth="179.0" styleClass="PenaltyCol" text="End Date" />
+            <TableColumn fx:id="VacationState" minWidth="0.0" prefWidth="113.0" text="Vacation State" />
             </columns>
         </TableView>
         <Button layoutX="275.0" layoutY="479.0" mnemonicParsing="false" styleClass="acceptBtn" text="Accept">

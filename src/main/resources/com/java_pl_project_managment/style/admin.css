@@ -16,18 +16,24 @@
     -fx-text-fill : #1a266b;
     -fx-font-size: 22px;
 }
-#addBtn:hover{
+#userBtn:hover{
     -fx-background-color: #FFFFFF;
     -fx-text-fill : #1a266b;
     -fx-font-size: 22px;
 }
-#deleteBtn:hover{
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill : #1a266b;
-    -fx-font-size: 22px;
+
+#pushBtn{
+    -fx-background-color : #e0a800;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-weight : bold;
+    -fx-font-size:14;
+    -fx-cursor : hand;
+    
 }
-#updateBtn:hover{
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill : #1a266b;
-    -fx-font-size: 22px;
+#pushBtn:hover{
+    -fx-background-color : #FFFFFF;
+-fx-text-fill:#e0a800;
+-fx-font-weight : bold;
+-fx-font-size:14;
+-fx-cursor : hand;
 }

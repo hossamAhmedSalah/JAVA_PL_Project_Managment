@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('fonts/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Condensed Light Italic';
+    src: url('fonts/RobotoCondensed-LightItalic.ttf');
+}
+
+*{
+    -fx-font-family: 'Roboto Condensed';
+}
+
 #employeeBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
@@ -64,16 +77,7 @@
 -fx-font-size:14;
 -fx-cursor : hand;
 }
-#BounsCol{
-    -fx-background-color : #05c600;
-    -fx-text-fill : #FFFFFF;
-}
 
-#PenaltyCol{
-
-   -fx-background-color : #dd3500;
-   -fx-text-fill : #FFFFFF;
-}
 .acceptBtn{
 
 -fx-background-color : #e0a800;

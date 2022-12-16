@@ -20,14 +20,17 @@ public class Admin extends Account{
 
         String str2 = "insert into "+ data[4] + " values('"+data[0];
         if(data[4].toLowerCase().equals("em"))
-            str2 += "','"+data[8]+"')";
+            str2 += "','"+data[7]+"')";
         else str2 += "')";
         statement.execute(str2);
         return true;
     }
 
     public boolean delete(String ed) throws SQLException{
-        String strole = "delete from "+ Account.role +" where "+ Account.role +"_email= '"+ed+"'";
+        rs = statement.executeQuery("select role from account where email = '"+ed+"'");
+        rs.next();
+        String rr = rs.getString("role");
+        String strole = "delete from "+ rr +" where "+ rr +"_email= '"+ed+"'";
         String str = "delete from account where email= '"+ed+"'";
         try{
             statement.execute(strole);
@@ -42,7 +45,7 @@ public class Admin extends Account{
     public boolean update(String[] eu) throws SQLException{
         String[] d = {"email","username","password","gender","imgurl","salary"};
         for(int i=1;i<eu.length;i++){
-            if(!eu[i].equals(null)){
+            if(!eu[i].equals("")){
                 try{
                     statement.execute("update account set "+d[i]+" = "+"'"+eu[i]+"' where email= "+"'"+eu[0]+"';");
                 }

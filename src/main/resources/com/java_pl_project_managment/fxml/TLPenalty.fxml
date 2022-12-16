@@ -60,11 +60,11 @@
                 <Font name="Roboto Condensed" size="27.0" />
             </font>
         </Label>
-      <TextField fx:id="search" layoutX="320.0" layoutY="144.0" prefHeight="31.0" prefWidth="193.0" promptText="Search">
+      <TextField fx:id="searchBar_penalty" layoutX="320.0" layoutY="144.0" prefHeight="31.0" prefWidth="193.0" promptText="Search">
          <font>
             <Font name="Roboto Condensed" size="16.0" />
          </font></TextField>
-      <TextField layoutX="275.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0">
+      <TextField layoutX="384.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0">
          <font>
             <Font size="14.0" />
          </font></TextField>
@@ -79,12 +79,12 @@
             <Image url="@../img/tl_view_ha/Untitled-1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="24.0" fitWidth="23.0" layoutX="284.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="searchClick" fitHeight="24.0" fitWidth="23.0" layoutX="284.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../img/tl_view_ha/search-icon.png" />
          </image>
       </ImageView>
-      <Label layoutX="439.0" layoutY="410.0" prefHeight="22.0" prefWidth="74.0" text="Amount $" textFill="#698a69">
+      <Label layoutX="276.0" layoutY="412.0" prefHeight="23.0" prefWidth="99.0" text="Employee_ID" textFill="#d7924d">
          <font>
             <Font name="Roboto Condensed" size="18.0" />
          </font>
@@ -94,14 +94,23 @@
             <Font name="Roboto Condensed" size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="275.0" layoutY="187.0" prefHeight="200.0" prefWidth="877.0">
+      <TableView fx:id="PenaltyTable" layoutX="275.0" layoutY="187.0" prefHeight="200.0" prefWidth="877.0">
         <columns>
-          <TableColumn prefWidth="117.0" text="Employee Name" />
-          <TableColumn prefWidth="89.0" text="Email" />
-            <TableColumn prefWidth="96.0" styleClass="BounsCol" text="Bouns" />
-            <TableColumn prefWidth="131.0" styleClass="PenaltyCol" text="Penalty" />
-            <TableColumn prefWidth="443.0" text="Description" />
+          <TableColumn fx:id="EmployeeIdCol" prefWidth="117.0" text="Employee_Email" />
+            <TableColumn fx:id="PenaltyCol" prefWidth="131.0" styleClass="PenaltyCol" text="Penalty" />
+            <TableColumn fx:id="DescriptionCol" prefWidth="443.0" text="Description" />
         </columns>
       </TableView>
+      <TextField layoutX="684.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="603.0" layoutY="412.0" prefHeight="22.0" prefWidth="74.0" text="Amount $" textFill="#698a69">
+         <font>
+            <Font name="Roboto Condensed" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="527.0" layoutY="147.0" mnemonicParsing="false" onAction="#MakeAsearch" text="Search" />
     </children>
 </AnchorPane>
