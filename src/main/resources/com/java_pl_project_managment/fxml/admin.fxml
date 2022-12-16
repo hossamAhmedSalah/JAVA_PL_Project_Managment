@@ -26,17 +26,7 @@
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="addBtn" layoutX="22.0" layoutY="360.0" onMouseClicked="#addU" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Add Users" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Roboto Condensed" size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="deleteBtn" layoutX="22.0" layoutY="413.0" onMouseClicked="#deleteU" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Delete Users" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Roboto Condensed" size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="updateBtn" layoutX="22.0" layoutY="473.0" onMouseClicked="#updateU" prefHeight="38.0" prefWidth="210.0" text="Update Users" textFill="WHITE">
+            <Label fx:id="userBtn" layoutX="22.0" layoutY="360.0" onMouseClicked="#addU" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Modify Users" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>

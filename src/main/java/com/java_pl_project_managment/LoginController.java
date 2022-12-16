@@ -1,6 +1,8 @@
 package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Account;
+import com.java_pl_project_managment.util.Admin;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -37,13 +39,16 @@ public class LoginController extends Account{
             password.clear();
         }
         else{
-            a.setAlertType(AlertType.INFORMATION);
-            a.setHeaderText("");
-            a.setContentText("Welcome " + Account.username);
-            a.showAndWait();   
+            // a.setAlertType(AlertType.INFORMATION);
+            // a.setHeaderText("");
+            // a.setContentText("Welcome " + Account.username);
+            // a.showAndWait();   
 
-            if(Account.role.toLowerCase().equals("ad"))
+            if(Account.role.toLowerCase().equals("ad")){
+                Admin ad = new Admin();
+                ad.view_project();
                 App.setRoot("fxml/admin");
+            }
             else if(Account.role.toLowerCase().equals("pm"))
                 App.setRoot("fxml/dashboard");
             // else if(Account.role.toLowerCase().equals("tl"))

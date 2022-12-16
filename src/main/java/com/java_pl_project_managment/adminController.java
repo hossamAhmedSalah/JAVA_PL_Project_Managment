@@ -37,8 +37,8 @@ public class adminController extends Admin implements Initializable{
     ObservableList<project> obs = FXCollections.observableArrayList();
 
     private void load() throws SQLException{
-        Admin a = new Admin();
-        a.view_project();
+        // Admin a = new Admin();
+        // a.view_project();
         String[][] kek = Admin.projects;
         for(int i=0;i<kek.length;i++){
             obs.add(new project(kek[i][0],kek[i][1],kek[i][2],kek[i][3],kek[i][4],kek[i][5]));
@@ -65,19 +65,11 @@ public class adminController extends Admin implements Initializable{
 
     @FXML
     private void viewP(MouseEvent event) throws IOException{
-        App.setRoot("fxml/admin");
+        // App.setRoot("fxml/admin");
     }
     @FXML
     private void addU(MouseEvent event) throws IOException{
-        App.setRoot("fxml/addUser");
-    }
-    @FXML
-    private void deleteU(MouseEvent event) throws IOException{
-        App.setRoot("fxml/deleteUser");
-    }
-    @FXML
-    private void updateU(MouseEvent event) throws IOException{
-        App.setRoot("fxml/updateUser");
+        App.setRoot("fxml/modifyUsers");
     }
 
 }
