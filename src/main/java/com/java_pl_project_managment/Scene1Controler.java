@@ -159,8 +159,8 @@ public class Scene1Controler extends Employee implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO we need to generalize the strings in the set-label
-        setLable(pmNameID, "Hossam");
-        setLable(pmEmailID, "Hossam@gmail.com");
+        setLable(pmNameID, Employee.username);
+        setLable(pmEmailID, Employee.email);
 
 
 
