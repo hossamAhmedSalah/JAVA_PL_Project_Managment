@@ -14,4 +14,7 @@ public class TLPenaltyController {
     public void SwitchToPenalty(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLPenalty");
     }
+    public void SwitchToAssignTask(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        App.setRoot("fxml/Tl_Tasks");
+    }
 }

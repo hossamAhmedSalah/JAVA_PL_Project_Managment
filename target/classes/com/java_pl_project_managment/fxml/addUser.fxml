@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -62,5 +64,15 @@
       <TextField fx:id="role" layoutX="283.0" layoutY="463.0" prefHeight="38.0" prefWidth="254.0" text="role" />
       <TextField fx:id="imgUrl" layoutX="283.0" layoutY="536.0" prefHeight="38.0" prefWidth="254.0" text="imgUrl" />
       <TextField fx:id="salary" layoutX="283.0" layoutY="609.0" prefHeight="38.0" prefWidth="254.0" text="salary" />
+      <Button fx:id="pushBtn" layoutX="719.0" layoutY="446.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="92.0" text="Push" />
+      <ComboBox fx:id="choice" layoutX="677.0" layoutY="246.0" prefWidth="150.0" >
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Apple" />
+               <String fx:value="Orange" />
+               <String fx:value="Pear" />
+            </FXCollections>
+         </items>
+      </ComboBox>
    </children>
 </AnchorPane>
