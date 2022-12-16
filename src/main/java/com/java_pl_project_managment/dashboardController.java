@@ -1,11 +1,14 @@
 package com.java_pl_project_managment;
 
+import com.java_pl_project_managment.util.Account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -13,6 +16,7 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -156,11 +160,27 @@ public class dashboardController extends Employee implements Initializable {
     }
     @FXML
     void logOut(ActionEvent event) {
-        try {
-            App.setRoot("fxml/main");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        Alert y = new Alert(Alert.AlertType.CONFIRMATION);
+        if (Objects.equals(Account.gender, "M")){
+            y.setTitle("Are you sure you want to log out MR."+ Account.username);
+            y.setContentText("stay in your work☠ manager, the plan need more details🥺");
+            y.setResizable(true);
         }
+        else {
+            y.setTitle("Are you sure you want to log out Miss."+ Account.username);
+            y.setContentText("bye hope the extra money the other company would pay for you deserve😶");
+            y.setResizable(true);
+        }
+        if(y.showAndWait().get() == ButtonType.OK){
+            try {
+                App.setRoot("fxml/main");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+
 
     }
 }
