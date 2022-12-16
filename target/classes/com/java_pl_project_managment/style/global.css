@@ -64,16 +64,7 @@
 -fx-font-size:14;
 -fx-cursor : hand;
 }
-#BounsCol{
-    -fx-background-color : #05c600;
-    -fx-text-fill : #FFFFFF;
-}
 
-#PenaltyCol{
-
-   -fx-background-color : #dd3500;
-   -fx-text-fill : #FFFFFF;
-}
 .acceptBtn{
 
 -fx-background-color : #e0a800;
