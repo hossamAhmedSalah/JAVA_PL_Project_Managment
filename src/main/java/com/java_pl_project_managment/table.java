@@ -1,6 +1,7 @@
 package com.java_pl_project_managment;
 
 
+import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,9 +16,9 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import com.java_pl_project_managment.util.Account;
+import com.java_pl_project_managment.util.Employee;
 
-public class table extends Account implements Initializable {
+public class table extends Employee implements Initializable {
     
     public table() throws SQLException {
     }
@@ -109,13 +110,13 @@ public class table extends Account implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pmEmailID.setText(Account.email);
-        pmNameID.setText(Account.username);
+        pmEmailID.setText(Employee.email);
+        pmNameID.setText(Employee.username);
         try{
             load();
         }
         catch(Exception e){
-            System.out.println("خخخخخخخخخخخخخخخخ");
+            System.out.println("مشكلللللللله");
         }
         colProName.setCellValueFactory(new PropertyValueFactory<projectH, String>("proName" ));
         colDeadLine.setCellValueFactory(new PropertyValueFactory<projectH, String>("date"));

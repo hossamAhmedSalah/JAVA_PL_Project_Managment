@@ -18,7 +18,7 @@
                         <Font name="Roboto Condensed" size="22.0" />
                     </font>
                 </Label>
-                <Label fx:id="tasksBtn" layoutY="338.0" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Assign a Task" textAlignment="CENTER" textFill="WHITE">
+                <Label fx:id="tasksBtn" layoutY="338.0" onMouseClicked="#SwitchToAssignTask" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Assign a Task" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="Roboto Condensed" size="22.0" />
                     </font>
@@ -38,7 +38,7 @@
                         <Font name="Roboto Condensed" size="22.0" />
                     </font>
                 </Label>
-                <Label fx:id="vacationBtn" layoutY="491.0" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Vacations" textAlignment="CENTER" textFill="WHITE">
+                <Label fx:id="vacationBtn" layoutY="491.0" onMouseClicked="#SwitchToVacation" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Vacations" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font name="Roboto Condensed" size="22.0" />
                     </font>
