@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -33,6 +34,11 @@ public class adminController extends Admin implements Initializable{
     private TableColumn<project, String> Pm;
     @FXML 
     private TableColumn<project, String> Tl;
+
+    @FXML
+    private Button goToResult;
+    @FXML
+    private TextField searchBar;
 
     ObservableList<project> obs = FXCollections.observableArrayList();
 
@@ -70,4 +76,15 @@ public class adminController extends Admin implements Initializable{
         App.setRoot("fxml/modifyUsers");
     }
 
+    @FXML
+    private void search(ActionEvent event){
+        String proname = searchBar.getText();
+        pro_table.getItems().stream()
+        .filter(item -> item.getPro_name() == proname)
+        .findAny()
+        .ifPresent(item -> {
+            pro_table.getSelectionModel().select(item);
+            pro_table.scrollTo(item);
+        });
+    }
 }

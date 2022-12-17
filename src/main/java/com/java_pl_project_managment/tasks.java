@@ -10,6 +10,9 @@ public class tasks {
     private SimpleStringProperty pro_name;
     private SimpleStringProperty tl_email;
 
+    public tasks(){
+    }
+
     public tasks(String task_name, String task_desc, String task_state, String pro_name, String tl_email ){
         this.pro_name = new SimpleStringProperty(pro_name);
         this.task_desc = new SimpleStringProperty(task_desc);

@@ -31,7 +31,7 @@ public class taskController extends tasks implements Initializable{
     ObservableList<tasks> obs = FXCollections.observableArrayList();
 
     private void load() throws SQLException{
-        String[][] array = super.Employee ;
+        String[][] array = super.Employee;
         for(int i = 0 ; i < array.length ;i++){
             obs.add(new tasks(array[i][0], array[i][1], array[i][2], array[i][3], array[i][4]));
         }
@@ -47,7 +47,7 @@ public class taskController extends tasks implements Initializable{
         }
         Pro_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("pro_name"));
         task_desc.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_desc"));
-        task_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_name"));
+        // task_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_name"));
         task_state.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_state"));
         tl_email.setCellValueFactory(new PropertyValueFactory<tasks,String>("tl"));
 
