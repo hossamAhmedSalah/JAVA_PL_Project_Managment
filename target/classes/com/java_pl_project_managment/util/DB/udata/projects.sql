@@ -1,0 +1,7 @@
+insert into project values('pro_HAFEZ_PM', '', '2022-12-25',0, 6, 'HAFEZ_PM@gmail.com','HAFEZ_TL@gmail.com') 
+insert into project values('pro_HAMID_PM', '', '2022-12-17',1, 100, 'HAMID_PM@gmail.com','HAMID_TL@gmail.com') 
+insert into project values('pro_HAZEM_AHMED_PM', '', '2022-12-22',2, 20, 'HAZEM_AHMED_PM@gmail.com','HAZEM_AHMED_TL@gmail.com') 
+insert into project values('pro_HAZEM_WALIED_PM', '', '2022-12-26',0, 24, 'HAZEM_WALIED_PM@gmail.com','HAZEM_WALIED_TL@gmail.com') 
+insert into project values('pro_HOSSAM_PM', '', '2022-12-25',0, 66, 'HOSSAM_PM@gmail.com','HOSSAM_TL@gmail.com') 
+insert into project values('pro_JOUMANA_PM', '', '2022-12-16',2, 44, 'JOUMANA_PM@gmail.com','JOUMANA_TL@gmail.com') 
+insert into project values('pro_TOQA_PM', '', '2022-12-26',0, 51, 'TOQA_PM@gmail.com','TOQA_TL@gmail.com') 
