@@ -131,14 +131,14 @@ public class table extends Employee implements Initializable {
         Alert b = new Alert(Alert.AlertType.WARNING);
         b.setTitle("progress should be a number");
 
-        String projectName, DeadLine, Description, tl_Email, pm_Email;
+        String projectName, DeadLine, Description, tl_Email, pm_Email, stateX;
         double progress, state = 0;
         projectName = textProName.getText() ;
         DeadLine = String.valueOf(dateDeadLine.getValue());
         Description = textDesc.getText();
         tl_Email = textTlEmail.getText();
         pm_Email = textPmEmail.getText();
-        state = Double.parseDouble(textState.getText());
+        stateX =  textState.getText();//Double.parseDouble(textState.getText());
         try {
             progress = Double.parseDouble(textProgress.getText());
         } catch (NumberFormatException e) {
@@ -151,7 +151,7 @@ public class table extends Employee implements Initializable {
         Alert a = new Alert(Alert.AlertType.WARNING);
         a.setTitle("Can't create");
 
-        if(projectName.equals("") || DeadLine.equals("") || Description.equals("") || tl_Email.equals("") || pm_Email.equals("") || textProgress.getText().equals("")){
+        if(projectName.equals("") || DeadLine.equals("") || Description.equals("") || tl_Email.equals("") || pm_Email.equals("") || textProgress.getText().equals("")|| stateX.equals("")){
             a.setContentText("fill all fields please");
             a.show();
         }
@@ -161,7 +161,7 @@ public class table extends Employee implements Initializable {
 
         }
         else {
-            projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, (state+""), progress);
+            projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, (Double.parseDouble(stateX)+""), progress);
             System.out.printf("project name : %s\tDeadLine : %s\tDescription: %s\ttl_Email : %s\tpm_Email : %s",projectName, DeadLine, Description, tl_Email, pm_Email);
             ObservableList<projectH> addProjectH = pro_table.getItems();
             addProjectH.add(pro);
@@ -171,7 +171,7 @@ public class table extends Employee implements Initializable {
                 query("insert into project values('"+ projectName+"', '"+
                                                          Description+ "', '"+
                                                          DeadLine + "' ,"+
-                                                         state+", "+
+                                                         Double.parseDouble(stateX)+", "+
                                                          progress+", '"+
                                                          pm_Email+"' ,'"+
                                                          tl_Email+"')"  );

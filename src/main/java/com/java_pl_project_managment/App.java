@@ -15,7 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("fxml/main"));
-        stage.setTitle("Project");
+        stage.setTitle("Project Management System ");
         stage.setScene(scene);
         stage.setResizable(false);
         //stage.getIcons().add(new Image("src/main/resources/com/java_pl_project_managment/img/logo.png"));
