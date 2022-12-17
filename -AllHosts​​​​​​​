@@ -1,0 +1,2 @@
+﻿
+Import-Module posh-git

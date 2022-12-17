@@ -11,98 +11,92 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
-            prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.dashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1297.0" stylesheets="@../style/pmStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.dashboardController">
 
    <AnchorPane layoutX="-3.0" layoutY="2.0" prefHeight="720.0" prefWidth="255.0" style="-fx-background-color: #1a266b;">
-      <Button layoutY="488.0" mnemonicParsing="false" onAction="#SwitchToReport" prefHeight="46.0" prefWidth="255.0"
-              style="-fx-background-color: white;" styleClass="buttonMenu" text="Report">
+      <Button layoutY="488.0" mnemonicParsing="false" onAction="#SwitchToReport" prefHeight="46.0" prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Report">
          <font>
-            <Font size="20.0"/>
+            <Font size="20.0" />
          </font>
       </Button>
       <ImageView fitHeight="256.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
      <!--    <Image url="G:\intelij-java\PM_view\imagesPM\account.jpeg"/>-->
          <Image url="@../img/ad_view/account.jpeg" />
       </ImageView>
-      <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0"
-              prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">
+      <Button layoutY="370.0" mnemonicParsing="false" onAction="#SwitchToDsashboard" prefHeight="46.0" prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="dashboard">
          <font>
-            <Font size="22.0"/>
+            <Font size="22.0" />
          </font>
       </Button>
-      <Button layoutY="429.0" mnemonicParsing="false" onAction="#SwitchToProject" prefHeight="46.0" prefWidth="255.0"
-              style="-fx-background-color: white;" styleClass="buttonMenu" text="Projects" textFill="#230202">
+      <Button layoutY="429.0" mnemonicParsing="false" onAction="#SwitchToProject" prefHeight="46.0" prefWidth="255.0" style="-fx-background-color: white;" styleClass="buttonMenu" text="Projects" textFill="#230202">
          <font>
-            <Font name="MS Reference Specialty" size="20.0"/>
+            <Font name="MS Reference Specialty" size="20.0" />
          </font>
       </Button>
       <Label fx:id="pmNameID" layoutX="26.0" layoutY="268.0" text="PM_name" textFill="WHITE">
          <font>
-            <Font size="18.0"/>
+            <Font size="18.0" />
          </font>
       </Label>
       <Label fx:id="pmEmailID" layoutX="26.0" layoutY="309.0" text="PM_EMAIL@gmail.com" textFill="WHITE">
          <font>
-            <Font size="18.0"/>
+            <Font size="18.0" />
          </font>
       </Label>
    </AnchorPane>
    <Label layoutX="265.0" layoutY="14.0" prefHeight="46.0" prefWidth="165.0" text="Dashboard">
       <font>
-         <Font size="30.0"/>
+         <Font size="30.0" />
       </font>
    </Label>
-   <BarChart fx:id="chart" layoutX="773.0" layoutY="372.0" prefHeight="294.0" prefWidth="366.0"
-             title="Projects progress">
+   <BarChart fx:id="chart" layoutX="746.0" layoutY="326.0" prefHeight="368.0" prefWidth="447.0" title="Projects progress">
       <xAxis>
-         <CategoryAxis fx:id="proX" label="Project name"/>
+         <CategoryAxis fx:id="proX" label="Project name" />
       </xAxis>
       <yAxis>
-         <NumberAxis fx:id="proY" label="Progress" side="LEFT"/>
+         <NumberAxis fx:id="proY" label="Progress" minorTickLength="10.0" prefHeight="242.0" prefWidth="49.0" side="LEFT" />
       </yAxis>
    </BarChart>
-   <PieChart layoutX="290.0" layoutY="406.0" prefHeight="279.0" prefWidth="366.0" title="Projects status"/>
-   <AnchorPane layoutX="348.0" layoutY="78.0" prefHeight="200.0" prefWidth="238.0"
-               style="-fx-background-color: lightblue; -fx-background-radius: 20;">
+   <PieChart fx:id="pieChart" layoutX="308.0" layoutY="360.0" prefHeight="279.0" prefWidth="430.0" title="Projects status" />
+   <AnchorPane layoutX="348.0" layoutY="78.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: lightblue; -fx-background-radius: 20;">
       <Label fx:id="employeeCounter" layoutX="42.0" layoutY="48.0" text="0000" textAlignment="JUSTIFY">
          <font>
-            <Font size="71.0"/>
+            <Font size="71.0" />
          </font>
       </Label>
       <Label layoutX="110.0" layoutY="146.0" prefHeight="28.0" prefWidth="94.0" text="Employee">
          <font>
-            <Font size="19.0"/>
+            <Font size="19.0" />
          </font>
       </Label>
    </AnchorPane>
-   <AnchorPane layoutX="663.0" layoutY="78.0" prefHeight="200.0" prefWidth="238.0"
-               style="-fx-background-color: red; -fx-background-radius: 20;">
-      <Label fx:id="projeectsCounter" layoutX="42.0" layoutY="48.0" text="0000" textAlignment="JUSTIFY"
-             textFill="#ece7e7">
+   <AnchorPane layoutX="663.0" layoutY="78.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: red; -fx-background-radius: 20;">
+      <Label fx:id="projeectsCounter" layoutX="42.0" layoutY="48.0" text="0000" textAlignment="JUSTIFY" textFill="#ece7e7">
          <font>
-            <Font size="71.0"/>
+            <Font size="71.0" />
          </font>
       </Label>
       <Label layoutX="134.0" layoutY="146.0" prefHeight="28.0" prefWidth="78.0" text="Projects" textFill="#f4eeee">
          <font>
-            <Font size="19.0"/>
+            <Font size="19.0" />
          </font>
       </Label>
    </AnchorPane>
-   <AnchorPane layoutX="978.0" layoutY="78.0" prefHeight="200.0" prefWidth="238.0"
-               style="-fx-background-color: #2DFF00; -fx-background-radius: 20;">
-      <Label fx:id="budgetCouter" layoutX="42.0" layoutY="48.0" text="0000" textAlignment="JUSTIFY"
-             textFill="#130c0c">
+   <AnchorPane layoutX="978.0" layoutY="78.0" prefHeight="200.0" prefWidth="238.0" style="-fx-background-color: #2DFF00; -fx-background-radius: 20;">
+      <Label fx:id="budgetCouter" layoutX="14.0" layoutY="65.0" prefHeight="70.0" prefWidth="210.0" text="000000000" textAlignment="JUSTIFY" textFill="#130c0c">
          <font>
-            <Font size="71.0"/>
+            <Font size="42.0" />
          </font>
       </Label>
-      <Label layoutX="129.0" layoutY="138.0" prefHeight="28.0" prefWidth="94.0" text="Budget">
+      <Label layoutX="143.0" layoutY="150.0" prefHeight="28.0" prefWidth="94.0" text="Budget">
          <font>
-            <Font size="19.0"/>
+            <Font size="19.0" />
          </font>
       </Label>
    </AnchorPane>
+   <Button layoutX="1193.0" layoutY="23.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" textFill="#1e1a1a">
+      <font>
+         <Font name="System Bold Italic" size="13.0" />
+      </font>
+   </Button>
 </AnchorPane>
