@@ -61,7 +61,7 @@
             <TableColumn fx:id="em_email" prefWidth="138.400146484375" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Employee_Email" />
         </columns>
       </TableView>
-      <Button layoutX="403.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: #866AFF;" text="Finished">
+      <Button layoutX="403.0" layoutY="600.0" onAction = "#finishTask" mnemonicParsing="false" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: #866AFF;" text="Finished">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
