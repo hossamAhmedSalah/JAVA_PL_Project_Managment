@@ -9,11 +9,11 @@ import java.util.Date;
 public class VacationTable {
     private String em_email;
     private int v_id;
-    private Date StartDate;
-    private Date EndDate;
+    private String StartDate;
+    private String EndDate;
     private int VacationState;
 
-    public VacationTable(String em_email,int v_id,Date StartDate,Date EndDate,int VacationState){
+    public VacationTable(String em_email,int v_id,String StartDate,String EndDate,int VacationState){
         this.em_email = em_email;
         this.EndDate = EndDate;
         this.VacationState = VacationState;
@@ -30,11 +30,11 @@ public class VacationTable {
         return v_id;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return StartDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return EndDate;
     }
 
@@ -50,11 +50,11 @@ public class VacationTable {
         this.v_id = v_id;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         StartDate = startDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         EndDate = endDate;
     }
 
@@ -62,3 +62,4 @@ public class VacationTable {
         VacationState = vacationState;
     }
 }
+
