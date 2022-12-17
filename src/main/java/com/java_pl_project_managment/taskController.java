@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -88,6 +89,11 @@ public class taskController extends Employee implements Initializable{
 
 
     }
+    @FXML
+    void refreshTask(ActionEvent event) throws IOException {
+        App.setRoot("fxml/task-view1");
+
+    }
 
     @FXML
     private void goToVacation(ActionEvent event){
@@ -96,6 +102,11 @@ public class taskController extends Employee implements Initializable{
     @FXML
     private void goToData(ActionEvent event){
         
+    }
+    @FXML
+    void logOUT(ActionEvent event) throws IOException {
+        App.setRoot("fxml/main");
+
     }
 
 }

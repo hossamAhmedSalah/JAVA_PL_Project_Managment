@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="container" stylesheets="@../style/EM_tasks.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.taskController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="container" stylesheets="@../style/EM_tasks.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.taskController">
     <children>
         <Pane prefHeight="720.0" prefWidth="245.0" styleClass="header" stylesheets="@../style/EM_tasks.css">
             <children>
@@ -61,9 +61,19 @@
             <TableColumn fx:id="em_email" prefWidth="138.400146484375" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Employee_Email" />
         </columns>
       </TableView>
-      <Button layoutX="403.0" layoutY="600.0" onAction = "#finishTask" mnemonicParsing="false" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: #866AFF;" text="Finished">
+      <Button layoutX="403.0" layoutY="600.0" mnemonicParsing="false" onAction="#finishTask" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: #866AFF;" text="Finished">
          <font>
             <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="567.0" layoutY="600.0" mnemonicParsing="false" onAction="#refreshTask" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: #866AFF;" text="Refresh">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="1186.0" layoutY="64.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: red;" text="LOG OUT">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
     </children>
