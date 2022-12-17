@@ -141,8 +141,8 @@ public class Scene1Controler extends Employee implements Initializable {
         tl_Email = ReportTL.getText();
         Alert a = new Alert(Alert.AlertType.WARNING);
         a.setTitle("can't send report");
-        if(emp_Email.equals("") || tl_Email.equals("") || report_desc.equals("")){
-            a.setContentText("fill all fields please");
+        if(emp_Email.equals("") || tl_Email.equals("") || report_desc.equals("") || (!emp_Email.contains("@gmail.com")) || (!tl_Email.contains("@gmail.com"))){
+            a.setContentText("fill all fields please or not a valid email");
             a.show();
 
         }
