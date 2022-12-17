@@ -5,13 +5,16 @@ import com.java_pl_project_managment.util.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 public class adminController extends Admin implements Initializable{
@@ -33,6 +36,13 @@ public class adminController extends Admin implements Initializable{
     private TableColumn<project, String> Pm;
     @FXML 
     private TableColumn<project, String> Tl;
+
+    @FXML
+    private Button goToResult;
+    @FXML
+    private TextField searchBar;
+
+    Alert a = new Alert(AlertType.NONE);
 
     ObservableList<project> obs = FXCollections.observableArrayList();
 
@@ -70,4 +80,17 @@ public class adminController extends Admin implements Initializable{
         App.setRoot("fxml/modifyUsers");
     }
 
+    @FXML
+    private void search(ActionEvent event){
+        String proname = searchBar.getText();
+        if(!pro_table.getItems().stream().anyMatch(item-> item.getPro_name().toLowerCase().equals(proname.toLowerCase()))){
+            a.setAlertType(AlertType.ERROR);
+            a.setContentText(proname + " not found");
+            a.setHeaderText("");
+            a.showAndWait();
+            return;
+        }
+
+        pro_table.getItems().stream().filter(item-> Objects.equals(item.getPro_name().toLowerCase(), proname.toLowerCase())).findAny().ifPresent(item -> {pro_table.getSelectionModel().select(item);pro_table.scrollTo(item);});
+    }
 }
