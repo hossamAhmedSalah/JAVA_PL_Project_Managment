@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -64,7 +65,28 @@ public class taskController extends Employee implements Initializable{
     }
     @FXML
     public void finishTask(ActionEvent event) throws SQLException{
-       query("update tasks set task_state = 1 where task_name = ");
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        if (!tasksTableView.getSelectionModel().isEmpty()){
+            int id = tasksTableView.getSelectionModel().getSelectedIndex();
+            // saving the name of thr deleted task to use later in db update
+            String task_name= tasksTableView.getItems().get(id).getTask_name();
+            System.out.println(task_name+" have been finished");
+
+            tasksTableView.getItems().remove(id);
+            try {
+                query("update tasks set task_state = 1 where task_name = '"+task_name+"'");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        }
+        else {
+            x.setTitle("there is no tasks to do for now");
+            x.show();
+        }
+
+
     }
 
     @FXML
