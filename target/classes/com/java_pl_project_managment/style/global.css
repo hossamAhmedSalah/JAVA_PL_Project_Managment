@@ -1,15 +1,3 @@
-@font-face {
-    font-family: 'Roboto Condensed';
-    src: url('fonts/RobotoCondensed-Regular.ttf');
-}
-@font-face {
-    font-family: 'Roboto Condensed Light Italic';
-    src: url('fonts/RobotoCondensed-LightItalic.ttf');
-}
-
-*{
-    -fx-font-family: 'Roboto Condensed';
-}
 
 #employeeBtn:hover{
 -fx-background-color: #FFFFFF;

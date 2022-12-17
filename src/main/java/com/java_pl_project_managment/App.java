@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -13,10 +14,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("fxml/TLVacation"));
-        stage.setTitle("Project");
+        scene = new Scene(loadFXML("fxml/TLPenalty"));
+        stage.setTitle("Project Management System ");
         stage.setScene(scene);
         stage.setResizable(false);
+        //stage.getIcons().add(new Image("src/main/resources/com/java_pl_project_managment/img/logo.png"));
         stage.show();
     }
 

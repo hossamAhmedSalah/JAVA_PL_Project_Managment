@@ -19,10 +19,10 @@ import java.util.ResourceBundle;
 
 public class VacationController extends Employee implements Initializable {
     @FXML
-    private TableColumn<VacationTable, Date> EndDate;
+    private TableColumn<VacationTable, String> EndDate;
 
     @FXML
-    private TableColumn<VacationTable,Date > StartDate;
+    private TableColumn<VacationTable,String > StartDate;
 
     @FXML
     private TableColumn<VacationTable,Integer> VacationState;
@@ -72,8 +72,8 @@ public class VacationController extends Employee implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         v_id.setCellValueFactory(new PropertyValueFactory<VacationTable,Integer>("v_id"));
-        StartDate.setCellValueFactory(new PropertyValueFactory<VacationTable,Date>("StartDate"));
-        EndDate.setCellValueFactory(new PropertyValueFactory<VacationTable,Date>("EndDate"));
+        StartDate.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("StartDate"));
+        EndDate.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("EndDate"));
         em_email.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("em_email"));
         VacationState.setCellValueFactory(new PropertyValueFactory<VacationTable,Integer>("VacationState"));
 
@@ -92,9 +92,9 @@ public class VacationController extends Employee implements Initializable {
             list.add(new VacationTable(
                     rs.getString("em_email"),
                     rs.getInt("v_id"),
-                    rs.getDate("StartDate"),
-                    rs.getDate("EndDate"),
-                    rs.getInt("VacationState")
+                    String.valueOf(rs.getDate("s_date")),
+                    String.valueOf(rs.getDate("e_date")),
+                    rs.getInt("v_state")
             ));
         }
     }
