@@ -18,7 +18,7 @@ public class App extends Application {
         stage.setTitle("Project Management System ");
         stage.setScene(scene);
         stage.setResizable(false);
-        //stage.getIcons().add(new Image("src/main/resources/com/java_pl_project_managment/img/logo.png"));
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("img/logo.png")));
         stage.show();
     }
 
