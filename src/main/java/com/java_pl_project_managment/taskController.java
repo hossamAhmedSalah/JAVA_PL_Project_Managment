@@ -62,6 +62,10 @@ public class taskController extends Employee implements Initializable{
 
         tasksTableView.setItems(obs);
     }
+    @FXML
+    public void finishTask(String task_name) throws SQLException{
+       query("update tasks set task_state = 1 where task_name = " + task_name);
+    }
 
     @FXML
     private void goToVacation(ActionEvent event){
