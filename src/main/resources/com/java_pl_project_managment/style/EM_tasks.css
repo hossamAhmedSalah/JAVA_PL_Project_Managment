@@ -1,0 +1,37 @@
+.container {
+  -fx-background-color : white ;
+}
+.header{
+   -fx-background-color : #0e0038;
+   -fx-opacity : 0.85 ;
+}
+
+.vbox {
+   -fx-background-color : #0e0038;
+   -fx-opacity : 0.85 ;
+}
+
+.button1 {
+   -fx-background-color : #7AA5FF  ;
+   -fx-background-radius : 0 50 50 0 ;
+}
+
+.check{
+  -fx-border-width : 0 0 0 15 ;
+  -fx-border-color : #866AFF ;
+  -fx-border-style : solid ;
+}
+
+.tasks {
+   -fx-background-color : #FF9687 ;
+
+}
+
+.date {
+   -fx-background-color : #866AFF ;
+
+}
+
+.checktask {
+  -fx-background-color :#6A84FF  ;
+}
