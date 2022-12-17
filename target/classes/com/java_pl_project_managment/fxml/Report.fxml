@@ -79,7 +79,7 @@
          </Label>
          <TextField fx:id="findEmail" layoutX="30.0" layoutY="67.0" prefHeight="26.0" prefWidth="234.0" promptText="Employee email" />
          <TextField fx:id="findSalary" disable="true" layoutX="30.0" layoutY="151.0" prefHeight="26.0" prefWidth="234.0" promptText="Salary" />
-         <Button fx:id="findme" layoutX="30.0" layoutY="231.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: red;" text="Find">
+         <Button fx:id="findme" layoutX="30.0" layoutY="231.0" mnemonicParsing="false" onAction="#findEmployee" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: red;" text="Find">
             <font>
                <Font name="System Bold Italic" size="16.0" />
             </font>

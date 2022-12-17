@@ -10,6 +10,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.*;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,6 +19,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+
 
 public class Scene1Controler extends Employee implements Initializable {
     public Button sendReport;
@@ -205,6 +208,7 @@ public class Scene1Controler extends Employee implements Initializable {
 
 
 
+
                 }
 
 
@@ -220,6 +224,15 @@ public class Scene1Controler extends Employee implements Initializable {
 
 
         }
+
+
+    }
+
+    @FXML
+    void LinkBrowse(ActionEvent event) {
+        Alert zy = new Alert(Alert.AlertType.WARNING);
+
+
 
 
     }
