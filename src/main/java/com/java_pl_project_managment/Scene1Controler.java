@@ -197,11 +197,12 @@ public class Scene1Controler extends Employee implements Initializable {
 
 
                 while (rs.next()){
-                    findSalary.setText(String.valueOf( rs.getString("salary")));
-                    //System.out.println(rs.getString("salary"));
-                    findLink.setText(String.valueOf(rs.getDouble("imgurl")));
-                    //System.out.println(rs.getDouble("imgurl"));
                     findUserName.setText(rs.getString("username"));
+                    findSalary.setText(String.valueOf( rs.getString("salary")));
+                    findLink.setText(String.valueOf(rs.getString("imgurl")));
+
+
+
 
 
                 }
