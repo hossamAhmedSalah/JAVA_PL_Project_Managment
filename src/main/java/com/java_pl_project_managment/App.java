@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -17,6 +18,7 @@ public class App extends Application {
         stage.setTitle("Project");
         stage.setScene(scene);
         stage.setResizable(false);
+        //stage.getIcons().add(new Image("src/main/resources/com/java_pl_project_managment/img/logo.png"));
         stage.show();
     }
 
