@@ -41,7 +41,7 @@ public class taskController extends Account implements Initializable{
         rs = statement.executeQuery("select * from tasks");
         String[] data = {"Not Started","Completed","In progress"};
         while(rs.next()){
-            obs.add(new tasks(rs.getString("task_name"), rs.getString("task_desc"), data[rs.getInt("task_state")], rs.getString("pro_name"), rs.getString("pm_email"), rs.getString("em_email")));
+            obs.add(new tasks(rs.getString("task_name"), rs.getString("task_desc"), data[rs.getInt("task_state")], rs.getString("pro_name"), rs.getString("tl_email"), rs.getString("em_email")));
         }
     }
 
