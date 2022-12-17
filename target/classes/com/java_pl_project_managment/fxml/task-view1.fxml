@@ -2,14 +2,14 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="container" stylesheets="@../style/EM_tasks.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.emview_project.taskController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="container" stylesheets="@../style/EM_tasks.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.taskController">
     <children>
         <Pane prefHeight="720.0" prefWidth="245.0" styleClass="header" stylesheets="@../style/EM_tasks.css">
             <children>
@@ -27,17 +27,17 @@
                         </Label>
                     </children>
                 </Pane>
-                <Button alignment="CENTER"  layoutY="350.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Tasks">
+                <Button alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Tasks">
                     <font>
                         <Font name="Arial Black" size="24.0" />
                     </font>
                 </Button>
-                <Button layoutY="467.0" onAction="#goToData" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Monthly Data">
+                <Button layoutY="467.0" mnemonicParsing="false" onAction="#goToData" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Monthly Data">
                     <font>
                         <Font name="Arial Black" size="23.0" />
                     </font>
                 </Button>
-                <Button layoutY="586.0" onAction="#goToVacation" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Vacation">
+                <Button layoutY="586.0" mnemonicParsing="false" onAction="#goToVacation" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Vacation">
                     <font>
                         <Font name="Arial Black" size="28.0" />
                     </font>
@@ -51,15 +51,16 @@
             <Font name="Arial Black" size="32.0" />
          </font>
       </Label>
-      <TreeTableView layoutX="403.0" layoutY="214.0" prefHeight="341.0" prefWidth="759.0">
+      <TableView fx:id="tasksTableView" layoutX="403.0" layoutY="214.0" prefHeight="341.0" prefWidth="847.0">
         <columns>
-          <TreeTableColumn fx:id="task_name" prefWidth="170.0" style="-fx-color: #FF9687; -fx-font-size: 15;" text="Task_Name" />
-          <TreeTableColumn fx:id="task_state" minWidth="0.0" prefWidth="159.0" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Task_Describtion" />
-            <TreeTableColumn fx:id="task_desc" prefWidth="127.0" style="-fx-color: #FF9687; -fx-font-size: 15;" text="Task_State" />
-            <TreeTableColumn fx:id="Pro_name" prefWidth="135.0" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Project Name" />
-            <TreeTableColumn fx:id="tl_email" prefWidth="171.0" style="-fx-color: #FF9687; -fx-font-size: 15;" text="TeamLeader_Email" />
+          <TableColumn fx:id="task_name" prefWidth="135.20001220703125" style="-fx-color: #FF9687; -fx-font-size: 15;" text="Task_Name" />
+          <TableColumn fx:id="task_state" minWidth="0.0" prefWidth="157.60003662109375" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Task_Describtion" />
+            <TableColumn fx:id="task_desc" prefWidth="120.79998779296875" style="-fx-color: #FF9687; -fx-font-size: 15;" text="Task_State" />
+            <TableColumn fx:id="pro_name" prefWidth="124.7999267578125" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Project Name" />
+            <TableColumn fx:id="tl_email" minWidth="5.60003662109375" prefWidth="164.79986572265625" style="-fx-color: #FF9687; -fx-font-size: 15;" text="TeamLeader_Email" />
+            <TableColumn fx:id="em_email" prefWidth="138.400146484375" style="-fx-color: #866AFF; -fx-font-size: 15;" text="Employee_Email" />
         </columns>
-      </TreeTableView>
+      </TableView>
       <Button layoutX="403.0" layoutY="600.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: #866AFF;" text="Finished">
          <font>
             <Font name="System Bold" size="24.0" />

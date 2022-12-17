@@ -2,6 +2,7 @@ package com.java_pl_project_managment;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -12,28 +13,35 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class taskController extends tasks implements Initializable{
+import com.java_pl_project_managment.util.Account;
+
+public class taskController extends Account implements Initializable{
 
     public taskController() throws SQLException {
     }
 
     @FXML
-    private TableView<tasks> task_name;
+    private TableView<tasks> tasksTableView;
     @FXML
-    private TableColumn<tasks, String> Pro_name;
+    private TableColumn<tasks, String> task_name;
+    @FXML
+    private TableColumn<tasks, String> pro_name;
     @FXML
     private TableColumn<tasks, String> task_desc;
     @FXML
     private TableColumn<tasks, String> task_state;
     @FXML
     private TableColumn<tasks, String> tl_email;
-    private TableView<tasks> tasksTableView ;
+    @FXML
+    private TableColumn<tasks, String> em_email;
+
     ObservableList<tasks> obs = FXCollections.observableArrayList();
 
     private void load() throws SQLException{
-        String[][] array = super.Employee;
-        for(int i = 0 ; i < array.length ;i++){
-            obs.add(new tasks(array[i][0], array[i][1], array[i][2], array[i][3], array[i][4]));
+        rs = statement.executeQuery("select * from tasks");
+        String[] data = {"Not Started","Completed","In progress"};
+        while(rs.next()){
+            obs.add(new tasks(rs.getString("task_name"), rs.getString("task_desc"), data[rs.getInt("task_state")], rs.getString("pro_name"), rs.getString("pm_email"), rs.getString("em_email")));
         }
     }
 
@@ -45,15 +53,23 @@ public class taskController extends tasks implements Initializable{
         catch(Exception e){
 
         }
-        Pro_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("pro_name"));
+        pro_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("pro_name"));
         task_desc.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_desc"));
-        // task_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_name"));
+        task_name.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_name"));
         task_state.setCellValueFactory(new PropertyValueFactory<tasks,String>("task_state"));
-        tl_email.setCellValueFactory(new PropertyValueFactory<tasks,String>("tl"));
+        tl_email.setCellValueFactory(new PropertyValueFactory<tasks,String>("tl_email"));
+        em_email.setCellValueFactory(new PropertyValueFactory<tasks,String>("em_email"));
 
         tasksTableView.setItems(obs);
     }
 
+    @FXML
+    private void goToVacation(ActionEvent event){
 
+    }
+    @FXML
+    private void goToData(ActionEvent event){
+        
+    }
    
     }
