@@ -17,7 +17,7 @@
       </ImageView>
       <Button fx:id="log" layoutX="184.0" layoutY="438.0" mnemonicParsing="false" onAction="#kek" prefHeight="40.0" prefWidth="177.0" text="Login" textFill="WHITE">
       </Button>
-      <TextField fx:id="email" layoutX="146.0" layoutY="294.0" prefHeight="30.0" prefWidth="254.0" promptText="EMAIL" stylesheets="@../style/app.css">
+      <TextField fx:id="email" layoutX="146.0" layoutY="294.0" prefHeight="30.0" prefWidth="254.0" promptText="EMAIL" stylesheets="@../style/app.css" text="\@gmail.com">
       </TextField>
       <Label fx:id="l1" alignment="CENTER" layoutX="202.0" layoutY="197.0" prefHeight="54.0" prefWidth="160.0" text="User Login" textFill="#0e0038">
       </Label>

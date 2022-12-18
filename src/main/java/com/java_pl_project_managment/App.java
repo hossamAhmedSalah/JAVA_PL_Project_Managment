@@ -21,7 +21,6 @@ public class App extends Application {
         stage.getIcons().add(new Image(App.class.getResourceAsStream("img/logo.png")));
         stage.show();
     }
-
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
