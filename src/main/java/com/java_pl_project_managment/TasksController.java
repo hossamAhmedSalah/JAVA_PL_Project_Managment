@@ -18,48 +18,8 @@ import java.util.ResourceBundle;
 
 public class TasksController extends Employee implements Initializable {
 
-//    @FXML
-//    private Label completeBtn;
-//
-//    @FXML
-//    private TableColumn<?, ?> deadColumn;
-//
-//    @FXML
-//    private TableColumn<?, ?> desColumn;
-//
-//    @FXML
-//    private Label employeeBtn;
-//
-//    @FXML
-//    private TableColumn<?, ?> idColumn;
-//
-//    @FXML
-//    private TableColumn<?, ?> nameColumn;
-//
-//    @FXML
-//    private TableColumn<?, ?> proColumn;
-//
-//    @FXML
-//    private Button remove;
-//
-//    @FXML
-//    private Label reportBtn;
-//
-//    @FXML
-//    private Button submit;
-//
-//    @FXML
-//    private TableColumn<?, ?> taskColumn;
-//
-//    @FXML
-//    private Label tasksBtn;
-//
-//    @FXML
-//    private Label vacationBtn;
-@FXML
-private Button AssignTask;
-
-
+    @FXML
+    private Button AssignTask;
     @FXML
     private TableView<emTasks> tlEm;
     @FXML
@@ -96,7 +56,6 @@ private Button AssignTask;
     private Button searchButton;
     @FXML
     private TextField EmEmailtxt;
-    private TextField TL_email;
     @FXML
     private TextField taskDesctxt;
     @FXML
@@ -119,6 +78,7 @@ private Button AssignTask;
     @FXML
     private Label welcomLable;
     ObservableList<emTasks> olist = FXCollections.observableArrayList();
+    
     private void load() throws SQLException{
         rs = statement.executeQuery("select * from tasks");
         String[] data = {"Not Started","Completed","In progress"};
@@ -128,7 +88,7 @@ private Button AssignTask;
                     rs.getString("task_desc"),
                     rs.getString("pro_name"),
                     rs.getString("em_email"),
-                    data[rs.getInt("state")]
+                    data[rs.getInt("task_state")]
             ));
         }
     }
@@ -156,8 +116,9 @@ private Button AssignTask;
         try{
             load();
         }
-        catch(Exception ignored){
-
+        catch(SQLException e){
+            System.out.println("exception hina");
+            e.printStackTrace();
         }
         taskName.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_name"));
         taskDesc.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_desc"));
@@ -165,7 +126,7 @@ private Button AssignTask;
         projectName.setCellValueFactory(new PropertyValueFactory<emTasks,String>("pro_name"));
         EmployeeEmail.setCellValueFactory(new PropertyValueFactory<emTasks,String>("em_email"));
 
-       tlEm.setItems(olist);
+        tlEm.setItems(olist);
         welcomLable.setText("welcome " + Employee.username);
 
 

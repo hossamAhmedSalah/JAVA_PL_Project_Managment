@@ -10,17 +10,11 @@ public class emTasks {
     private SimpleStringProperty state;
 
     public emTasks(String task_name, String task_desc,String pro_name,  String em_email, String state) {
-//        this.task_name = task_name;
-//        this.task_desc = task_desc;
-//        this.pro_name = pro_name;
-//        this.em_email = em_email;
-//        this.state = state;
         this.pro_name = new SimpleStringProperty(pro_name);
         this.task_desc = new SimpleStringProperty(task_desc);
         this.task_name = new SimpleStringProperty(task_name);
         this.state = new SimpleStringProperty(state);
         this.em_email = new SimpleStringProperty(em_email);
-
     }
 
 

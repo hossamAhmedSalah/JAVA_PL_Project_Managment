@@ -8,7 +8,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/global.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.TasksController">
    <children>
@@ -54,23 +56,70 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <TableView fx:id="reporttable" layoutX="300.0" layoutY="158.0" prefHeight="447.0" prefWidth="906.0">
+      <VBox layoutX="953.0" layoutY="98.0" prefHeight="309.0" prefWidth="299.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Email" wrappingWidth="132.00347900390625">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="EmEmailtxt" prefHeight="34.0" prefWidth="230.0" promptText="Employee Email" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="taskDesctxt" prefHeight="34.0" prefWidth="231.0" promptText="decription" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Task Name">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="taskNametxt" prefHeight="34.0" prefWidth="229.0" promptText="name the new task" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="proNametxt" prefHeight="34.0" prefWidth="263.0" promptText="project name" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team Leader Email">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tl_emailtxt" prefHeight="34.0" prefWidth="263.0" promptText="Team Leader Email" />
+         </children>
+      </VBox>
+      <Button fx:id="AssignTask" layoutX="965.0" layoutY="408.0" mnemonicParsing="false" onAction="#AssignTask" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Assign the Task" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tlEm" layoutX="250.0" layoutY="151.0" prefHeight="516.0" prefWidth="654.0">
          <columns>
-            <TableColumn fx:id="EmployeeEmailreport" prefWidth="256.800048828125" text="Employee Email" />
-            <TableColumn fx:id="Descreport" prefWidth="649.6000366210938" text="description" />
+            <TableColumn fx:id="taskName" prefWidth="92.2666015625" text="Task Name" />
+            <TableColumn fx:id="taskDesc" prefWidth="110.39996337890625" text="description" />
+            <TableColumn fx:id="taskState" prefWidth="110.39996337890625" text="state" />
+            <TableColumn fx:id="projectName" minWidth="0.0" prefWidth="104.26669311523438" text="pro ject name" />
+            <TableColumn fx:id="EmployeeEmail" prefWidth="234.4000244140625" text="Employee Email" />
          </columns>
       </TableView>
-      <Button fx:id="removereport" layoutX="872.0" layoutY="639.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="42.0" prefWidth="225.0" style="-fx-background-color: red;" text="Remove">
+      <Button fx:id="updateTask" layoutX="964.0" layoutY="483.0" mnemonicParsing="false" onAction="#updateTask" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #2DFF00;" text="Update">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="reportSearchBar" layoutX="292.0" layoutY="95.0" prefHeight="32.0" prefWidth="169.0" promptText="search for a task " />
-      <Button fx:id="searchButton" layoutX="497.0" layoutY="95.0" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="127.0" style="-fx-background-color: lightblue;" text="Search">
+      <Button fx:id="removeTask" layoutX="963.0" layoutY="561.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="42.0" prefWidth="225.0" style="-fx-background-color: red;" text="Remove">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="taskSearchBar" layoutX="292.0" layoutY="95.0" prefHeight="32.0" prefWidth="169.0" promptText="search for a task " />
+      <Button fx:id="searchButton" layoutX="480.0" layoutY="94.0" mnemonicParsing="false" onAction="#search" prefHeight="34.0" prefWidth="65.0" style="-fx-background-color: lightblue;" text="Search">
          <font>
             <Font name="System Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="refreshreport" layoutX="496.0" layoutY="638.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="47.0" prefWidth="220.0" style="-fx-background-color: #2DFF00;" text="Refresh" />
+      <Button fx:id="refreshButton" layoutX="250.0" layoutY="676.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="23.0" prefWidth="154.0" style="-fx-background-color: #2DFF00;" text="Refresh" />
    </children>
 </AnchorPane>
