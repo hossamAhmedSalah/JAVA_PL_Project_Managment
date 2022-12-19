@@ -113,6 +113,8 @@ private Button AssignTask;
 
     @FXML
     private Label vacationBtn;
+    @FXML
+    private TextField tl_emailtxt;
 
     @FXML
     private Label welcomLable;
@@ -218,9 +220,9 @@ private Button AssignTask;
         emp_des = taskDesctxt.getText();
         emp_task = taskDesctxt.getText();
         emp_pro_name = proNametxt.getText();
-        tl_email = TL_email.getText();
+        tl_email = tl_emailtxt.getText();
         System.out.println("insert into tasks values('" + emp_task + "','"+ emp_des  + "',"+ 0  + ",'"+ emp_pro_name  + "','"+ tl_email  + "','"+ emp_email  + "')");
-        try { //concet to database
+        try {
             query("insert into tasks values('" + emp_task + "','"
                                                   + emp_des  + "',"
                                                   + 0 + ",'"
@@ -233,7 +235,7 @@ private Button AssignTask;
         }
     }
     @FXML
-    //remove
+    //remove task ...,
     void removeTask(ActionEvent event) {
         Alert x = new Alert(Alert.AlertType.WARNING);
         if (!tlEm.getSelectionModel().isEmpty()){

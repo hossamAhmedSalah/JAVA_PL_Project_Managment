@@ -87,7 +87,7 @@
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField fx:id="tl_email" prefHeight="34.0" prefWidth="263.0" promptText="Team Leader Email" />
+            <TextField fx:id="tl_emailtxt" prefHeight="34.0" prefWidth="263.0" promptText="Team Leader Email" />
          </children>
       </VBox>
       <Button fx:id="AssignTask" layoutX="965.0" layoutY="408.0" mnemonicParsing="false" onAction="#AssignTask" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Assign the Task" textAlignment="CENTER">
