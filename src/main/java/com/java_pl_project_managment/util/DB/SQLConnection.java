@@ -41,6 +41,7 @@ public class SQLConnection {
         while(rs.next()){
             for(int j=1;j<=col;j++){
                 ans[i][j-1] = rs.getString(j);
+
             }
             i++;
         } 
