@@ -82,6 +82,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-<!--      <Button layoutX="438.0" layoutY="479.0" mnemonicParsing="false" onAction="#DeleteRequest" prefHeight="23.0" prefWidth="152.0" style="-fx-background-color: #e7e7e7; -fx-text-fill: black;" styleClass="refreshBtn" text="Delete Request" />-->
+      <Button layoutX="438.0" layoutY="479.0" mnemonicParsing="false" onAction="#DeleteRequest" prefHeight="23.0" prefWidth="152.0" style="-fx-background-color: #e7e7e7; -fx-text-fill: black;" styleClass="refreshBtn" text="Delete Request" />
     </children>
 </AnchorPane>
