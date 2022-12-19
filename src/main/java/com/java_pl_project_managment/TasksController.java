@@ -171,6 +171,7 @@ private Button AssignTask;
         welcomLable.setText("welcome " + Employee.username);
 
 
+
     }
     boolean isTaskNameExist(String taskNName){
         return tlEm.getItems().stream().anyMatch(item-> item.getTask_name().toLowerCase().equals(taskNName.toLowerCase()));
@@ -208,6 +209,8 @@ private Button AssignTask;
     //TODO @hafez and @Hazem
     @FXML
     void AssignTask(ActionEvent event) {
+        Alert hafez = new Alert(Alert.AlertType.WARNING);
+        hafez.setTitle("fill all the fields please to assign a task");
 
         String emp_email;
         String emp_des;
@@ -215,24 +218,31 @@ private Button AssignTask;
         String emp_pro_name;
         String tl_email;
 
-
         emp_email = EmEmailtxt.getText();
         emp_des = taskDesctxt.getText();
         emp_task = taskDesctxt.getText();
         emp_pro_name = proNametxt.getText();
         tl_email = tl_emailtxt.getText();
         System.out.println("insert into tasks values('" + emp_task + "','"+ emp_des  + "',"+ 0  + ",'"+ emp_pro_name  + "','"+ tl_email  + "','"+ emp_email  + "')");
-        try {
-            query("insert into tasks values('" + emp_task + "','"
-                                                  + emp_des  + "',"
-                                                  + 0 + ",'"
-                                                  + emp_pro_name  + "','"
-                                                  + tl_email  + "','"
-                                                  + emp_email  + "')"
-            );
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+
+        if (emp_email.equals("") || emp_des.equals("") || emp_task.equals("") || emp_pro_name.equals("")||tl_email.equals("")){
+            hafez.show();
         }
+        else {
+            try {
+                query("insert into tasks values('" + emp_task + "','"
+                        + emp_des  + "',"
+                        + 0 + ",'"
+                        + emp_pro_name  + "','"
+                        + tl_email  + "','"
+                        + emp_email  + "')"
+                );
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
     }
     @FXML
     //remove task ...,
