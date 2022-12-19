@@ -96,6 +96,7 @@ private Button AssignTask;
     private Button searchButton;
     @FXML
     private TextField EmEmailtxt;
+    private TextField TL_email;
     @FXML
     private TextField taskDesctxt;
     @FXML
@@ -112,6 +113,8 @@ private Button AssignTask;
 
     @FXML
     private Label vacationBtn;
+    @FXML
+    private TextField tl_emailtxt;
 
     @FXML
     private Label welcomLable;
@@ -126,8 +129,6 @@ private Button AssignTask;
                     rs.getString("pro_name"),
                     rs.getString("em_email"),
                     data[rs.getInt("task_state")]
-
-
             ));
         }
     }
@@ -160,12 +161,13 @@ private Button AssignTask;
         }
         taskName.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_name"));
         taskDesc.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_desc"));
-        taskState.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_state"));
+        taskState.setCellValueFactory(new PropertyValueFactory<emTasks,String>("state"));
         projectName.setCellValueFactory(new PropertyValueFactory<emTasks,String>("pro_name"));
         EmployeeEmail.setCellValueFactory(new PropertyValueFactory<emTasks,String>("em_email"));
 
        tlEm.setItems(olist);
         welcomLable.setText("welcome " + Employee.username);
+
 
 
     }
@@ -175,7 +177,7 @@ private Button AssignTask;
     }
     @FXML
     void search(ActionEvent event) {
-        //ready for search
+        //ready for search1
         Alert x = new Alert(Alert.AlertType.WARNING);
         x.setHeaderText("This Task Does not Exist");
         x.setTitle("Search failed");
@@ -205,11 +207,64 @@ private Button AssignTask;
     //TODO @hafez and @Hazem
     @FXML
     void AssignTask(ActionEvent event) {
+        Alert hafez = new Alert(Alert.AlertType.WARNING);
+        hafez.setTitle("fill all the fields please to assign a task");
+
+        String emp_email;
+        String emp_des;
+        String emp_task;
+        String emp_pro_name;
+        String tl_email;
+
+        emp_email = EmEmailtxt.getText();
+        emp_des = taskDesctxt.getText();
+        emp_task = taskDesctxt.getText();
+        emp_pro_name = proNametxt.getText();
+        tl_email = tl_emailtxt.getText();
+        System.out.println("insert into tasks values('" + emp_task + "','"+ emp_des  + "',"+ 0  + ",'"+ emp_pro_name  + "','"+ tl_email  + "','"+ emp_email  + "')");
+
+        if (emp_email.equals("") || emp_des.equals("") || emp_task.equals("") || emp_pro_name.equals("")||tl_email.equals("")){
+            hafez.show();
+        }
+        else {
+            try {
+                query("insert into tasks values('" + emp_task + "','"
+                        + emp_des  + "',"
+                        + 0 + ",'"
+                        + emp_pro_name  + "','"
+                        + tl_email  + "','"
+                        + emp_email  + "')"
+                );
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
 
     }
-    //TODO
     @FXML
+    //remove task ...,
     void removeTask(ActionEvent event) {
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        if (!tlEm.getSelectionModel().isEmpty()){
+            int id = tlEm.getSelectionModel().getSelectedIndex();
+            // saving the name of thr deleted project to use later in db deletion
+            String taskName0 = tlEm.getItems().get(id).getTask_name();
+            System.out.println(taskName0+" have been deleted");
+
+            tlEm.getItems().remove(id);
+            try {
+                query("delete from tasks where task_name = '"+taskName0+"'" );
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        }
+        else {
+            x.setTitle("there is no task to delete");
+            x.show();
+        }
 
     }
     //TODO
