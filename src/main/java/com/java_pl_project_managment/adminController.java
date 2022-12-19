@@ -42,6 +42,9 @@ public class adminController extends Admin implements Initializable{
     @FXML
     private TextField searchBar;
 
+    @FXML
+    private Label welcome_ad;
+
     Alert a = new Alert(AlertType.NONE);
 
     ObservableList<project> obs = FXCollections.observableArrayList();
@@ -55,6 +58,7 @@ public class adminController extends Admin implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        welcome_ad.setText("Welcome "+Account.username);
         try{
             load();
         }

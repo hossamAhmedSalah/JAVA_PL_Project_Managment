@@ -237,5 +237,9 @@ public class TasksController extends Employee implements Initializable {
     void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
     }
+    @FXML
+    void SwitchToReport(MouseEvent event) throws IOException {
+        App.setRoot("fxml/TLreport");
+    }
 
 }

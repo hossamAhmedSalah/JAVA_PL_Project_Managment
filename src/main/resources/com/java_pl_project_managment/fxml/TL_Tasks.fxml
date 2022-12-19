@@ -26,22 +26,17 @@
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="completeBtn" layoutY="391.0" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Completed Tasks" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Roboto Condensed" size="22.0" />
-               </font>
-            </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/tl_view_ha/leader.png" />
                </image>
             </ImageView>
-            <Label fx:id="reportBtn" layoutY="441.0" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Reports" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="reportBtn" layoutY="391.0" onMouseClicked="#SwitchToReport" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Reports" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="vacationBtn" layoutY="491.0" onMouseClicked="#SwitchToVacation" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Vacations" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="vacationBtn" layoutY="441.0" onMouseClicked="#SwitchToVacation" prefHeight="37.0" prefWidth="209.0" style="-fx-cursor: hand;" text="Vacations" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
@@ -121,5 +116,10 @@
          </font>
       </Button>
       <Button fx:id="refreshButton" layoutX="250.0" layoutY="676.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="23.0" prefWidth="154.0" style="-fx-background-color: #2DFF00;" text="Refresh" />
+      <Button layoutX="1191.0" layoutY="79.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #17a2b8;" text="LOG OUT">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

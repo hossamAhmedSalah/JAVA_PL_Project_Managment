@@ -193,6 +193,11 @@ public class TLPenaltyController extends Employee implements Initializable {
     void Refresh(ActionEvent event) throws IOException {
         App.setRoot("fxml/TLPenalty");
     }
+    @FXML
+    void SwitchToReport(MouseEvent event) throws IOException {
+        App.setRoot("fxml/TLreport");
+    }
+
 
 
 }

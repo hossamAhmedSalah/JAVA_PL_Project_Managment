@@ -24,10 +24,10 @@ public class VacationController extends Employee implements Initializable {
     private TableColumn<VacationTable, String> EndDate;
 
     @FXML
-    private TableColumn<VacationTable,String > StartDate;
+    private TableColumn<VacationTable, String> StartDate;
 
     @FXML
-    private TableColumn<VacationTable,String> VacationState;
+    private TableColumn<VacationTable, String> VacationState;
 
     @FXML
     private TableView<VacationTable> VacationTable;
@@ -48,7 +48,7 @@ public class VacationController extends Employee implements Initializable {
     private Label tasksBtn;
 
     @FXML
-    private TableColumn<VacationTable,Integer > v_id;
+    private TableColumn<VacationTable, Integer> v_id;
 
     @FXML
     private Label vacationBtn;
@@ -60,6 +60,7 @@ public class VacationController extends Employee implements Initializable {
     public void SwitchToVacation(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLVacation");
     }
+
     @FXML
     public void SwitchToPenalty(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLPenalty");
@@ -68,30 +69,31 @@ public class VacationController extends Employee implements Initializable {
     public void SwitchToAssignTask(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/Tl_Tasks");
     }
+
     ObservableList<VacationTable> list = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        v_id.setCellValueFactory(new PropertyValueFactory<VacationTable,Integer>("v_id"));
-        StartDate.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("StartDate"));
-        EndDate.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("EndDate"));
-        em_email.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("em_email"));
-        VacationState.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("VacationState"));
+        v_id.setCellValueFactory(new PropertyValueFactory<VacationTable, Integer>("v_id"));
+        StartDate.setCellValueFactory(new PropertyValueFactory<VacationTable, String>("StartDate"));
+        EndDate.setCellValueFactory(new PropertyValueFactory<VacationTable, String>("EndDate"));
+        em_email.setCellValueFactory(new PropertyValueFactory<VacationTable, String>("em_email"));
+        VacationState.setCellValueFactory(new PropertyValueFactory<VacationTable, String>("VacationState"));
 
 
-        try{
+        try {
             load();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println("ايرور");
         }
         VacationTable.setItems(list);
     }
+
     private void load() throws SQLException {
-        String[] data = {"Rejected","Accepted","Pending"};
+        String[] data = {"Rejected", "Accepted", "Pending"};
         rs = statement.executeQuery("select * from vacation");
-        while(rs.next()){
+        while (rs.next()) {
             list.add(new VacationTable(
                     rs.getString("em_email"),
                     rs.getInt("v_id"),
@@ -101,22 +103,23 @@ public class VacationController extends Employee implements Initializable {
             ));
         }
     }
+
     @FXML
-    void logOUT(ActionEvent event) throws IOException {
+    public void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
     }
 
-    void acceptV(ActionEvent event) {
+    public void acceptVacation(ActionEvent event) {
         Alert x = new Alert(Alert.AlertType.WARNING); //
-        if (!VacationTable.getSelectionModel().isEmpty()){
+        if (!VacationTable.getSelectionModel().isEmpty()) {
             int id = VacationTable.getSelectionModel().getSelectedIndex();
             // saving the name of thr deleted task to use later in db update
-            String e_mail= VacationTable.getItems().get(id).getEm_email();
-            System.out.println(e_mail+" have been accepted");
+            int Vacation_ID = VacationTable.getItems().get(id).getV_id();
+            System.out.println(Vacation_ID + " have been accepted");
 
             // VacationTable.getItems().remove(id);
             try {
-                query("update vacation set v_state = 1 where em_email = '"+e_mail+"'");
+                query("update vacation set v_state = 1 where v_id = '" + Vacation_ID + "'");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -125,26 +128,24 @@ public class VacationController extends Employee implements Initializable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-        }
-        else {
+        } else {
             x.setTitle("there is no vacation to accept for now");
             x.show();
         }
     }
 
     @FXML
-    void declineV(ActionEvent event) {
+    public void declineV(ActionEvent event) {
         Alert x = new Alert(Alert.AlertType.WARNING);
-        if (!VacationTable.getSelectionModel().isEmpty()){
+        if (!VacationTable.getSelectionModel().isEmpty()) {
             int id = VacationTable.getSelectionModel().getSelectedIndex();
             // saving the name of thr deleted task to use later in db update
-            String e_mail= VacationTable.getItems().get(id).getEm_email();
-            System.out.println(e_mail+" have been rejected");
+            int VacationId = VacationTable.getItems().get(id).getV_id();
+            System.out.println(VacationId + " have been rejected");
 
             // VacationTable.getItems().remove(id);
             try {
-                query("update vacation set v_state = 0 where em_email = '"+e_mail+"'");
+                query("update vacation set v_state = 0 where v_id = '" + VacationId + "'");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -154,11 +155,39 @@ public class VacationController extends Employee implements Initializable {
                 throw new RuntimeException(e);
             }
 
-        }
-        else {
+        } else {
             x.setTitle("there is no vacation to decline for now");
             x.show();
         }
     }
 
+    public void DeleteRequest(ActionEvent event) {
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        if (!VacationTable.getSelectionModel().isEmpty()) {
+            int id = VacationTable.getSelectionModel().getSelectedIndex();
+            // saving the name of thr deleted project to use later in db deletion
+            int VacationId = VacationTable.getItems().get(id).getV_id();
+            System.out.println(VacationId + " have been deleted");
+
+            VacationTable.getItems().remove(id);
+            try {
+                query("delete from vacation where v_id = '" + VacationId + "'");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        } else {
+            x.setTitle("there is no task to delete");
+            x.show();
+        }
+
+
+    }
+    @FXML
+    void SwitchToReport(MouseEvent event) throws IOException {
+        App.setRoot("fxml/TLreport");
+    }
+
 }
+

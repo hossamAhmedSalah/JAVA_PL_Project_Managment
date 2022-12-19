@@ -45,7 +45,6 @@ public class report extends Employee implements Initializable {
                     rs.getString("report_desc")));
         }
     }
-//yarab
 
 
     @FXML
@@ -130,4 +129,13 @@ public class report extends Employee implements Initializable {
 
         reporttable.setItems(reportlist);
     }
+    @FXML
+    void SwitchToReport(MouseEvent event) throws IOException {
+        App.setRoot("fxml/TLreport");
+    }
+    @FXML
+    void logOUT(ActionEvent event) throws IOException {
+        App.setRoot("fxml/main");
+    }
+
 }

@@ -65,7 +65,7 @@ public class taskController extends Employee implements Initializable{
         tasksTableView.setItems(obs);
     }
     @FXML
-    public void finishTask(ActionEvent event) throws SQLException{
+    public void finishTask(ActionEvent event) throws SQLException,IOException{
         Alert x = new Alert(Alert.AlertType.WARNING);
         if (!tasksTableView.getSelectionModel().isEmpty()){
             int id = tasksTableView.getSelectionModel().getSelectedIndex();
@@ -73,13 +73,12 @@ public class taskController extends Employee implements Initializable{
             String task_name= tasksTableView.getItems().get(id).getTask_name();
             System.out.println(task_name+" have been finished");
 
-            tasksTableView.getItems().remove(id);
             try {
                 query("update tasks set task_state = 1 where task_name = '"+task_name+"'");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
+            App.setRoot("fxml/task-view1");
 
         }
         else {
