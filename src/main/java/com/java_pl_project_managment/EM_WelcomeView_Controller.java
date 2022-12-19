@@ -61,6 +61,7 @@ public class EM_WelcomeView_Controller extends Account {
         endWork.setStyle("-fx-backrgound-color : #0ECDFF ");
         endWork.setMinWidth(178);
     }
+    /*
       void gotoTasks(ActionEvent event) throws IOException {
         App.setRoot("fxml/task-view1");
     }
@@ -73,5 +74,5 @@ public class EM_WelcomeView_Controller extends Account {
     {
         employeeName.setText( Employee.email) ;
     }
-
+*/
     }

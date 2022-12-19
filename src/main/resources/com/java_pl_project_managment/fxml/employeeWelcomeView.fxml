@@ -25,7 +25,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button  onAction="#gotoTasks" alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Tasks">
+            <Button> /* onAction="#gotoTasks"*/> alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Tasks">
                <font>
                   <Font name="Arial Black" size="24.0" />
                </font>
