@@ -179,7 +179,7 @@ public class TLPenaltyController extends Employee implements Initializable {
             AmountOf.setText("");
 
 
-
+            // ay 7aga
         }
     }
     @FXML
