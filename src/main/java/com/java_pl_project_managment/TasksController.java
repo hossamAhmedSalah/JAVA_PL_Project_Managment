@@ -169,17 +169,32 @@ private Button AssignTask;
 
 
     }
+    boolean isTaskNameExist(String taskNName){
+        return tlEm.getItems().stream().anyMatch(item-> item.getTask_name().toLowerCase().equals(taskNName.toLowerCase()));
+
+    }
     @FXML
     void search(ActionEvent event) {
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        x.setHeaderText("This Task Does not Exist");
+        x.setTitle("Search failed");
         String keyWord = taskSearchBar.getText();
         System.out.println(keyWord);
-        tlEm.getItems().stream()
-                .filter(item-> Objects.equals(item.getTask_name().toLowerCase(), keyWord.toLowerCase()))
-                .findAny()
-                .ifPresent(item->{
-                    tlEm.getSelectionModel().select(item);
-                    tlEm.scrollTo(item);
-                });
+        if(isTaskNameExist(keyWord)){
+            tlEm.getItems().stream()
+                    .filter(item-> Objects.equals(item.getTask_name().toLowerCase(), keyWord.toLowerCase()))
+                    .findAny()
+                    .ifPresent(item->{
+                        tlEm.getSelectionModel().select(item);
+                        tlEm.scrollTo(item);
+                    });
+
+
+        }
+        else {
+            x.show();
+        }
+
 
     }
     @FXML
