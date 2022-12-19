@@ -58,6 +58,7 @@ public class adminController extends Admin implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        welcome_ad.setText("Welcome "+Account.username);
         try{
             load();
         }
