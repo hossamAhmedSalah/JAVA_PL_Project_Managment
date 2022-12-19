@@ -171,6 +171,13 @@ public class TLPenaltyController extends Employee implements Initializable {
             } catch (SQLException e){
                 throw  new RuntimeException(e);
             }
+
+            try{
+                App.setRoot("fxml/TLPenalty");
+            }
+            catch (IOException e){
+                throw  new RuntimeException(e);
+            }
             System.out.println("kolo tmam2");
 
             PenaltyTable.setItems(tableFill);

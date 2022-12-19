@@ -106,9 +106,8 @@ public class VacationController extends Employee implements Initializable {
         App.setRoot("fxml/main");
     }
 
-    @FXML
     void acceptV(ActionEvent event) {
-        Alert x = new Alert(Alert.AlertType.WARNING);
+        Alert x = new Alert(Alert.AlertType.WARNING); //
         if (!VacationTable.getSelectionModel().isEmpty()){
             int id = VacationTable.getSelectionModel().getSelectedIndex();
             // saving the name of thr deleted task to use later in db update
@@ -161,4 +160,5 @@ public class VacationController extends Employee implements Initializable {
             x.show();
         }
     }
+
 }
