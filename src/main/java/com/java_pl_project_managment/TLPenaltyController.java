@@ -104,4 +104,8 @@ public class TLPenaltyController extends Employee implements Initializable {
         PenaltyTable.getItems().stream().filter(item-> Objects.equals(item.getEmployeeIdCol().toLowerCase(), keyWord.toLowerCase())).findAny().ifPresent(item->{PenaltyTable.getSelectionModel().select(item); PenaltyTable.scrollTo(item);});
 
     }
+    @FXML
+    void logOUT(ActionEvent event) throws IOException {
+        App.setRoot("fxml/main");
+    }
 }
