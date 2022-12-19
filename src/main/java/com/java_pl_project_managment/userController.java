@@ -1,23 +1,27 @@
 package com.java_pl_project_managment;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Admin;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
-public class userController extends Admin{
+public class userController extends Admin implements Initializable{
 
     public userController() throws SQLException {
     }
@@ -42,7 +46,14 @@ public class userController extends Admin{
     @FXML
     private TextField username;
 
-    // Admin ad = new Admin();
+    @FXML
+    private Label welcome_ad;
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        welcome_ad.setText("Welcome "+Account.username);
+    }
+
     Alert a = new Alert(AlertType.NONE);
 
     @FXML
