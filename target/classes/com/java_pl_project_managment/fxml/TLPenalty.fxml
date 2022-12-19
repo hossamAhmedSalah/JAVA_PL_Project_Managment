@@ -60,20 +60,19 @@
                 <Font name="Roboto Condensed" size="27.0" />
             </font>
         </Label>
-      <TextField fx:id="searchBar_penalty" layoutX="320.0" layoutY="144.0" prefHeight="31.0" prefWidth="193.0" promptText="Search">
+      <TextField fx:id="searchBar_penalty" layoutX="320.0" layoutY="144.0" prefHeight="31.0" prefWidth="193.0" promptText="Search With Email">
          <font>
             <Font name="Roboto Condensed" size="16.0" />
          </font></TextField>
-      <TextField layoutX="384.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0">
+      <TextField fx:id="employeeGmail" layoutX="405.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0" promptText="Email">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <TextArea layoutX="275.0" layoutY="483.0" prefHeight="200.0" prefWidth="504.0">
+      <TextArea fx:id="descriptionOfPenalty_TextField" layoutX="275.0" layoutY="483.0" prefHeight="200.0" prefWidth="504.0">
          <font>
             <Font size="16.0" />
          </font></TextArea>
-      <Button layoutX="824.0" layoutY="615.0" mnemonicParsing="false" styleClass="bounsBtn" text="Add Bouns" />
-      <Button layoutX="930.0" layoutY="615.0" mnemonicParsing="false" styleClass="penaltyBtn" text="Add Penalty" />
+      <Button layoutX="833.0" layoutY="618.0" mnemonicParsing="false" onAction="#SetPenalty" styleClass="penaltyBtn" text="Add Penalty" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="824.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/tl_view_ha/Untitled-1.png" />
@@ -84,7 +83,7 @@
             <Image url="@../img/tl_view_ha/search-icon.png" />
          </image>
       </ImageView>
-      <Label layoutX="276.0" layoutY="412.0" prefHeight="23.0" prefWidth="99.0" text="Employee_ID" textFill="#d7924d">
+      <Label layoutX="276.0" layoutY="412.0" prefHeight="23.0" prefWidth="125.0" text="Employee  gmail" textFill="#d7924d">
          <font>
             <Font name="Roboto Condensed" size="18.0" />
          </font>
@@ -96,12 +95,12 @@
       </Label>
       <TableView fx:id="PenaltyTable" layoutX="275.0" layoutY="187.0" prefHeight="200.0" prefWidth="877.0">
         <columns>
-          <TableColumn fx:id="EmployeeIdCol" prefWidth="117.0" text="Employee_Email" />
-            <TableColumn fx:id="PenaltyCol" prefWidth="131.0" styleClass="PenaltyCol" text="Penalty" />
-            <TableColumn fx:id="DescriptionCol" prefWidth="443.0" text="Description" />
+          <TableColumn fx:id="EmployeeIdCol" prefWidth="303.0" text="Employee_Email" />
+            <TableColumn fx:id="PenaltyCol" minWidth="0.0" prefWidth="74.0" styleClass="PenaltyCol" text="Penalty" />
+            <TableColumn fx:id="DescriptionCol" prefWidth="314.0" text="Description" />
         </columns>
       </TableView>
-      <TextField layoutX="684.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0">
+      <TextField fx:id="AmountOf" layoutX="684.0" layoutY="408.0" prefHeight="25.0" prefWidth="149.0" promptText="Amont">
          <font>
             <Font size="14.0" />
          </font>
@@ -112,10 +111,11 @@
          </font>
       </Label>
       <Button layoutX="527.0" layoutY="147.0" mnemonicParsing="false" onAction="#MakeAsearch" styleClass="acceptBtn" text="Search" />
-      <Button layoutX="1188.0" layoutY="84.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: red;" text="LOG OUT">
+      <Button layoutX="1188.0" layoutY="84.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #17a2b8;" text="LOG OUT">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
+      <Button layoutX="940.0" layoutY="617.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="31.0" prefWidth="74.0" styleClass="refreshBtn" text="Refresh" />
     </children>
 </AnchorPane>

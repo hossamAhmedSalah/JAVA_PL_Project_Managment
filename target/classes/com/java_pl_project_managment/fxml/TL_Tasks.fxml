@@ -115,5 +115,10 @@
          </font>
       </Button>
       <Button fx:id="refreshButton" layoutX="250.0" layoutY="676.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="23.0" prefWidth="154.0" style="-fx-background-color: #2DFF00;" text="Refresh" />
+      <Button layoutX="1194.0" layoutY="93.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: red;" text="LOG OUT">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
