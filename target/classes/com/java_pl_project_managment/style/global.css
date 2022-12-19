@@ -9,63 +9,27 @@
 
 *{
     -fx-font-family: 'Roboto Condensed';
-
-}
-#employeeBtn{
--fx-padding : 10px;
--fx-font-size : 22px;
-
-}
-#tasksBtn{
--fx-padding : 10px;
--fx-font-size : 22px;
-
-}
-#completeBtn{
--fx-padding : 10px;
--fx-font-size : 22px;
-
-}
-#reportBtn{
--fx-padding : 10px;
--fx-font-size : 22px;
-
-}
-#vacationBtn{
--fx-padding : 10px;
--fx-font-size : 22px;
-
 }
 
 #employeeBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
--fx-font-size : 22px;
-
 }
 #tasksBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
--fx-font-size : 22px;
-
 }
 #completeBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
--fx-font-size : 22px;
-
 }
 #reportBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
--fx-font-size : 22px;
-
 }
 #vacationBtn:hover{
 -fx-background-color: #FFFFFF;
 -fx-text-fill : #1a266b;
--fx-font-size : 22px;
-
 }
 
 .addBtn{

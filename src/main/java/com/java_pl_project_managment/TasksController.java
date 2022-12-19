@@ -129,8 +129,6 @@ private Button AssignTask;
                     rs.getString("pro_name"),
                     rs.getString("em_email"),
                     data[rs.getInt("task_state")]
-
-
             ));
         }
     }
@@ -163,7 +161,7 @@ private Button AssignTask;
         }
         taskName.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_name"));
         taskDesc.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_desc"));
-        taskState.setCellValueFactory(new PropertyValueFactory<emTasks,String>("task_state"));
+        taskState.setCellValueFactory(new PropertyValueFactory<emTasks,String>("state"));
         projectName.setCellValueFactory(new PropertyValueFactory<emTasks,String>("pro_name"));
         EmployeeEmail.setCellValueFactory(new PropertyValueFactory<emTasks,String>("em_email"));
 
