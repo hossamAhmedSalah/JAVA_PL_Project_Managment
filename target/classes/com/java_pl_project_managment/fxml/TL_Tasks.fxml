@@ -84,7 +84,7 @@
             <TextField fx:id="proNametxt" prefHeight="34.0" prefWidth="229.0" promptText="project name" />
          </children>
       </VBox>
-      <Button fx:id="AssignTask" layoutX="965.0" layoutY="408.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Assign the Task" textAlignment="CENTER">
+      <Button fx:id="AssignTask" layoutX="965.0" layoutY="408.0" mnemonicParsing="false" onAction="#AssignTask" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Assign the Task" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="23.0" />
          </font>
@@ -98,12 +98,12 @@
             <TableColumn fx:id="EmployeeEmail" prefWidth="234.4000244140625" text="Employee Email" />
          </columns>
       </TableView>
-      <Button fx:id="updateTask" layoutX="964.0" layoutY="483.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #2DFF00;" text="Update">
+      <Button fx:id="updateTask" layoutX="964.0" layoutY="483.0" mnemonicParsing="false" onAction="#updateTask" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #2DFF00;" text="Update">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="removeTask" layoutX="963.0" layoutY="561.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="225.0" style="-fx-background-color: red;" text="Remove">
+      <Button fx:id="removeTask" layoutX="963.0" layoutY="561.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="42.0" prefWidth="225.0" style="-fx-background-color: red;" text="Remove">
          <font>
             <Font size="18.0" />
          </font>

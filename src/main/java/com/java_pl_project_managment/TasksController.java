@@ -171,13 +171,35 @@ private Button AssignTask;
     }
     @FXML
     void search(ActionEvent event) {
-        String keyWord = searchButton.getText();
-        tlEm.getItems().stream().filter(item-> Objects.equals(item.getTask_name().toLowerCase(), keyWord.toLowerCase())).findAny().ifPresent(item->{ tlEm.getSelectionModel().select(item);  tlEm.scrollTo(item);});
+        String keyWord = taskSearchBar.getText();
+        System.out.println(keyWord);
+        tlEm.getItems().stream()
+                .filter(item-> Objects.equals(item.getTask_name().toLowerCase(), keyWord.toLowerCase()))
+                .findAny()
+                .ifPresent(item->{
+                    tlEm.getSelectionModel().select(item);
+                    tlEm.scrollTo(item);
+                });
 
     }
     @FXML
     void Refresh(ActionEvent event) throws IOException {
          App.setRoot("fxml/TL_Tasks");
+    }
+    //TODO @hafez and @Hazem
+    @FXML
+    void AssignTask(ActionEvent event) {
+
+    }
+    //TODO
+    @FXML
+    void removeTask(ActionEvent event) {
+
+    }
+    //TODO
+    @FXML
+    void updateTask(ActionEvent event) {
+
     }
 
 }
