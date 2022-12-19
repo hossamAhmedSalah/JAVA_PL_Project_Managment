@@ -109,10 +109,11 @@
          </font>
       </Button>
       <TextField fx:id="taskSearchBar" layoutX="292.0" layoutY="95.0" prefHeight="32.0" prefWidth="169.0" promptText="search for a task " />
-      <Button fx:id="searchButton" layoutX="480.0" layoutY="94.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="65.0" style="-fx-background-color: lightblue;" text="Search">
+      <Button fx:id="searchButton" layoutX="480.0" layoutY="94.0" mnemonicParsing="false" onAction="#search" prefHeight="34.0" prefWidth="65.0" style="-fx-background-color: lightblue;" text="Search">
          <font>
             <Font name="System Italic" size="16.0" />
          </font>
       </Button>
+      <Button fx:id="refreshButton" layoutX="250.0" layoutY="676.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="23.0" prefWidth="154.0" style="-fx-background-color: #2DFF00;" text="Refresh" />
    </children>
 </AnchorPane>

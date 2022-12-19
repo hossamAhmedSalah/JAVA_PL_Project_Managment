@@ -3,6 +3,7 @@ package com.java_pl_project_managment;
 import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -12,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class TasksController extends Employee implements Initializable {
@@ -163,6 +165,19 @@ private Button AssignTask;
         EmployeeEmail.setCellValueFactory(new PropertyValueFactory<emTasks,String>("em_email"));
 
        tlEm.setItems(olist);
+        welcomLable.setText("welcome " + Employee.username);
+
 
     }
+    @FXML
+    void search(ActionEvent event) {
+        String keyWord = searchButton.getText();
+        tlEm.getItems().stream().filter(item-> Objects.equals(item.getTask_name().toLowerCase(), keyWord.toLowerCase())).findAny().ifPresent(item->{ tlEm.getSelectionModel().select(item);  tlEm.scrollTo(item);});
+
+    }
+    @FXML
+    void Refresh(ActionEvent event) throws IOException {
+         App.setRoot("fxml/TL_Tasks");
+    }
+
 }
