@@ -11,15 +11,25 @@
     -fx-font-family: 'Roboto Condensed';
 }
 
+#viewBtn{
+    -fx-padding : 10px;
+}
+#userBtn{
+    -fx-padding : 10px;
+}
+
 #viewBtn:hover{
     -fx-background-color: #FFFFFF;
-    -fx-text-fill : #1a266b;
+    -fx-text-fill : black;
     -fx-font-size: 22px;
+    -fx-padding : 10px;
 }
 #userBtn:hover{
     -fx-background-color: #FFFFFF;
-    -fx-text-fill : #1a266b;
+    -fx-text-fill : black;
     -fx-font-size: 22px;
+     -fx-padding : 10px;
+
 }
 
 #pushBtn{
@@ -32,8 +42,22 @@
 }
 #pushBtn:hover{
     -fx-background-color : #FFFFFF;
--fx-text-fill:#e0a800;
--fx-font-weight : bold;
--fx-font-size:14;
--fx-cursor : hand;
+    -fx-text-fill:#e0a800;
+    -fx-font-weight : bold;
+    -fx-font-size:14;
+    -fx-cursor : hand;
+}
+#goToResult{
+        -fx-background-color : yellow;
+        -fx-text-fill:black;
+        -fx-font-weight : bold;
+        -fx-font-size:14;
+        -fx-cursor : hand;
+}
+#goToResult:hover{
+        -fx-background-color :  black;
+        -fx-text-fill:yellow;
+        -fx-font-weight : bold;
+        -fx-font-size:14;
+        -fx-cursor : hand;
 }

@@ -13,31 +13,31 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
    <children>
-      <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
+      <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: black;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/ad_view/clipart1130069.png" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="118.0" fitWidth="118.0" layoutX="38.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/ad_view/PL%20project%20class%20diagram%20-%20Page%201%20(1).png" />
                </image>
             </ImageView>
-            <Label fx:id="viewBtn" layoutX="22.0" layoutY="305.0" onMouseClicked="#viewP" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="View Projects" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="viewBtn" layoutY="305.0" onMouseClicked="#viewP" prefHeight="48.0" prefWidth="226.0" style="-fx-cursor: hand;" text="View Projects" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="userBtn" layoutX="22.0" layoutY="360.0" onMouseClicked="#addU" prefHeight="37.0" prefWidth="204.0" style="-fx-cursor: hand;" text="Modify Users" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="userBtn" layoutY="360.0" onMouseClicked="#addU" prefHeight="48.0" prefWidth="226.0" style="-fx-cursor: hand;" text="Modify Users" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed" size="22.0" />
                </font>
             </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/78948.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-3.0" prefHeight="71.0" prefWidth="1288.0" style="-fx-background-color: #1a266b;">
+      <AnchorPane layoutX="-3.0" prefHeight="71.0" prefWidth="1288.0" style="-fx-background-color: black;">
          <children>
             <Label fx:id="welcome_ad" layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome, Admin" textFill="WHITE">
                <font>
@@ -50,20 +50,41 @@
             <Font name="Roboto Condensed" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="1163.0" layoutY="95.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" textFill="#1e1a1a">
+      <Button layoutX="1163.0" layoutY="95.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #4d515c; -fx-text-fill: white; -fx-cursor: hand;" text="LOG OUT" textFill="#1e1a1a">
       <font>
          <Font name="System Bold Italic" size="13.0" />
       </font>
       </Button>
-      <TextField fx:id="email" layoutX="329.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="email" />
-      <TextField fx:id="password" layoutX="329.0" layoutY="295.0" prefHeight="38.0" prefWidth="254.0" promptText="password" />
-      <TextField fx:id="username" layoutX="851.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="username" />
-      <TextField fx:id="gender" layoutX="851.0" layoutY="295.0" prefHeight="38.0" prefWidth="254.0" promptText="gender" />
-      <TextField fx:id="role" layoutX="583.0" layoutY="483.0" prefHeight="38.0" prefWidth="261.0" promptText="role" />
-      <TextField fx:id="imgUrl" layoutX="851.0" layoutY="402.0" prefHeight="38.0" prefWidth="254.0" promptText="imgUrl" />
-      <TextField fx:id="salary" layoutX="329.0" layoutY="402.0" prefHeight="38.0" prefWidth="254.0" promptText="salary" />
-      <Button fx:id="pushBtn" layoutX="626.0" layoutY="607.0" mnemonicParsing="false" onAction="#modbtn" prefHeight="38.0" prefWidth="176.0" text="Modify" />
-      <ComboBox fx:id="choice" layoutX="664.0" layoutY="561.0" onAction="#comboAction" prefHeight="24.0" prefWidth="98.0" value="Add">
+      <TextField fx:id="email" layoutX="329.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="email">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="password" layoutX="329.0" layoutY="250.0" prefHeight="38.0" prefWidth="254.0" promptText="password">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="username" layoutX="330.0" layoutY="314.0" prefHeight="38.0" prefWidth="254.0" promptText="username">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="gender" layoutX="626.0" layoutY="250.0" prefHeight="38.0" prefWidth="254.0" promptText="gender">
+         <font>
+            <Font name="Roboto Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="role" layoutX="326.0" layoutY="375.0" prefHeight="38.0" prefWidth="261.0" promptText="role">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="imgUrl" layoutX="626.0" layoutY="314.0" prefHeight="38.0" prefWidth="254.0" promptText="imgUrl">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="salary" layoutX="626.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="salary">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Button fx:id="pushBtn" layoutX="329.0" layoutY="462.0" mnemonicParsing="false" onAction="#modbtn" prefHeight="38.0" prefWidth="254.0" text="Modify" />
+      <ComboBox fx:id="choice" layoutX="940.0" layoutY="188.0" onAction="#comboAction" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: #e7e7e7;" value="Add">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Add" />
@@ -72,5 +93,10 @@
             </FXCollections>
          </items>
       </ComboBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1088.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/4919646.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
