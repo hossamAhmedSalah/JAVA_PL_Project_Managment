@@ -238,5 +238,9 @@ private Button AssignTask;
     void updateTask(ActionEvent event) {
 
     }
+    @FXML
+    void logOUT(ActionEvent event) throws IOException {
+        App.setRoot("fxml/main");
+    }
 
 }

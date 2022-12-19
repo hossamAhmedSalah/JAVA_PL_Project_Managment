@@ -111,6 +111,11 @@
             <Font name="Roboto Condensed" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="527.0" layoutY="147.0" mnemonicParsing="false" onAction="#MakeAsearch" text="Search" />
+      <Button layoutX="527.0" layoutY="147.0" mnemonicParsing="false" onAction="#MakeAsearch" styleClass="acceptBtn" text="Search" />
+      <Button layoutX="1188.0" layoutY="84.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: red;" text="LOG OUT">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
