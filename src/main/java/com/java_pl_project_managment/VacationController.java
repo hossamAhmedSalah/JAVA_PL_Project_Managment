@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -26,7 +27,7 @@ public class VacationController extends Employee implements Initializable {
     private TableColumn<VacationTable,String > StartDate;
 
     @FXML
-    private TableColumn<VacationTable,Integer> VacationState;
+    private TableColumn<VacationTable,String> VacationState;
 
     @FXML
     private TableView<VacationTable> VacationTable;
@@ -76,7 +77,7 @@ public class VacationController extends Employee implements Initializable {
         StartDate.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("StartDate"));
         EndDate.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("EndDate"));
         em_email.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("em_email"));
-        VacationState.setCellValueFactory(new PropertyValueFactory<VacationTable,Integer>("VacationState"));
+        VacationState.setCellValueFactory(new PropertyValueFactory<VacationTable,String>("VacationState"));
 
 
         try{
@@ -88,6 +89,7 @@ public class VacationController extends Employee implements Initializable {
         VacationTable.setItems(list);
     }
     private void load() throws SQLException {
+        String[] data = {"Rejected","Accepted","Pending"};
         rs = statement.executeQuery("select * from vacation");
         while(rs.next()){
             list.add(new VacationTable(
@@ -95,12 +97,68 @@ public class VacationController extends Employee implements Initializable {
                     rs.getInt("v_id"),
                     String.valueOf(rs.getDate("s_date")),
                     String.valueOf(rs.getDate("e_date")),
-                    rs.getInt("v_state")
+                    data[rs.getInt("v_state")]
             ));
         }
     }
     @FXML
     void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
+    }
+
+    @FXML
+    void acceptV(ActionEvent event) {
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        if (!VacationTable.getSelectionModel().isEmpty()){
+            int id = VacationTable.getSelectionModel().getSelectedIndex();
+            // saving the name of thr deleted task to use later in db update
+            String e_mail= VacationTable.getItems().get(id).getEm_email();
+            System.out.println(e_mail+" have been accepted");
+
+            // VacationTable.getItems().remove(id);
+            try {
+                query("update vacation set v_state = 1 where em_email = '"+e_mail+"'");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                App.setRoot("fxml/TLVacation");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        else {
+            x.setTitle("there is no vacation to accept for now");
+            x.show();
+        }
+    }
+
+    @FXML
+    void declineV(ActionEvent event) {
+        Alert x = new Alert(Alert.AlertType.WARNING);
+        if (!VacationTable.getSelectionModel().isEmpty()){
+            int id = VacationTable.getSelectionModel().getSelectedIndex();
+            // saving the name of thr deleted task to use later in db update
+            String e_mail= VacationTable.getItems().get(id).getEm_email();
+            System.out.println(e_mail+" have been rejected");
+
+            // VacationTable.getItems().remove(id);
+            try {
+                query("update vacation set v_state = 0 where em_email = '"+e_mail+"'");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                App.setRoot("fxml/TLVacation");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        else {
+            x.setTitle("there is no vacation to decline for now");
+            x.show();
+        }
     }
 }

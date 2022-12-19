@@ -158,7 +158,6 @@ public class table extends Employee implements Initializable {
         else if(isProNameExist(projectName)){
             a.setContentText("This project already exist");
             a.show();
-
         }
         else {
             projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, (Double.parseDouble(stateX)+""), progress);

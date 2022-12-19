@@ -48,17 +48,17 @@
             <Font name="Roboto Condensed" size="27.0" />
          </font>
       </Label>
-      <Label layoutX="906.0" layoutY="101.0" prefHeight="27.0" prefWidth="45.0" text="Search">
+      <Label layoutX="911.0" layoutY="127.0" prefHeight="27.0" prefWidth="45.0" text="Search">
         <font>
           <Font size="14.0" />
         </font>
     </Label>
-    <TextField fx:id="searchBar" layoutX="965.0" layoutY="101.0" prefHeight="27.0" prefWidth="244.0" promptText="search project name" style="-fx-border-color: black;">
+    <TextField fx:id="searchBar" layoutX="967.0" layoutY="127.0" prefHeight="27.0" prefWidth="244.0" promptText="search project name" style="-fx-border-color: black;">
         <font>
           <Font size="13.0" />
         </font>
     </TextField>
-    <Button fx:id="goToResult" layoutX="1219.0" layoutY="99.0" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="46.0" text="GO" textFill="#021b33">
+    <Button fx:id="goToResult" layoutX="1219.0" layoutY="125.0" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="46.0" text="GO" textFill="#021b33">
         <font>
           <Font name="Arial Rounded MT Bold" size="15.0" />
         </font>
@@ -80,5 +80,10 @@
             </TableView>
          </children>
       </AnchorPane>
+    <Button layoutX="1178.0" layoutY="87.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" textFill="#1e1a1a">
+      <font>
+         <Font name="System Bold Italic" size="13.0" />
+      </font>
+      </Button>
    </children>
 </AnchorPane>

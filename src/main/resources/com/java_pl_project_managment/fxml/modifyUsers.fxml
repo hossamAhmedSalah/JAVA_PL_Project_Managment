@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.userController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
          <children>
@@ -50,6 +50,11 @@
             <Font name="Roboto Condensed" size="27.0" />
          </font>
       </Label>
+      <Button layoutX="1163.0" layoutY="95.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" textFill="#1e1a1a">
+      <font>
+         <Font name="System Bold Italic" size="13.0" />
+      </font>
+      </Button>
       <TextField fx:id="email" layoutX="329.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="email" />
       <TextField fx:id="password" layoutX="329.0" layoutY="295.0" prefHeight="38.0" prefWidth="254.0" promptText="password" />
       <TextField fx:id="username" layoutX="851.0" layoutY="188.0" prefHeight="38.0" prefWidth="254.0" promptText="username" />
