@@ -1,0 +1,24 @@
+.container {
+  -fx-background-color : white ;
+}
+.header{
+   -fx-background-color : #0e0038;
+   -fx-opacity : 0.85 ;
+}
+
+
+.button1 {
+   -fx-background-color : #7AA5FF  ;
+   -fx-background-radius : 0 50 50 0 ;
+}
+
+
+.button2 {
+    -fx-background-color : #7AA5FF;
+    -fx-background-radius : 50 0 50 0 ;
+ }
+
+.button3 {
+    -fx-background-color : #0ECDFF ;
+    -fx-background-radius : 50 0 50 0 ;
+ }
