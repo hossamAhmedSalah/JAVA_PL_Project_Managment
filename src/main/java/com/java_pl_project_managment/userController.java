@@ -125,6 +125,12 @@ public class userController extends Admin{
                     a.setContentText("Added Successfully");
                     a.showAndWait();
                 }
+                else if(!(role.getText() == "em" || role.getText() == "ad" || role.getText() == "tl" || role.getText() == "pm") ){
+                    a.setAlertType(AlertType.ERROR);
+                    a.setHeaderText("");
+                    a.setContentText("Wrong Role Type!");
+                    a.showAndWait();
+                }
                 else{
                     a.setAlertType(AlertType.ERROR);
                     a.setHeaderText("");
