@@ -14,14 +14,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("fxml/TLPenalty"));
+        scene = new Scene(loadFXML("fxml/main"));
         stage.setTitle("Project Management System ");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.getIcons().add(new Image(App.class.getResourceAsStream("img/logo.png")));
         stage.show();
     }
-
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }

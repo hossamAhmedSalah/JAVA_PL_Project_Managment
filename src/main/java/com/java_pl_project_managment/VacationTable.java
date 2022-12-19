@@ -11,9 +11,9 @@ public class VacationTable {
     private int v_id;
     private String StartDate;
     private String EndDate;
-    private int VacationState;
+    private String VacationState;
 
-    public VacationTable(String em_email,int v_id,String StartDate,String EndDate,int VacationState){
+    public VacationTable(String em_email,int v_id,String StartDate,String EndDate,String VacationState){
         this.em_email = em_email;
         this.EndDate = EndDate;
         this.VacationState = VacationState;
@@ -38,7 +38,7 @@ public class VacationTable {
         return EndDate;
     }
 
-    public int getVacationState() {
+    public String getVacationState() {
         return VacationState;
     }
 
@@ -58,7 +58,7 @@ public class VacationTable {
         EndDate = endDate;
     }
 
-    public void setVacationState(int vacationState) {
+    public void setVacationState(String vacationState) {
         VacationState = vacationState;
     }
 }

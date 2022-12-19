@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.adminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../style/admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java_pl_project_managment.adminController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="193.0" style="-fx-background-color: #1a266b;">
          <children>
@@ -35,7 +37,7 @@
       </AnchorPane>
       <AnchorPane layoutX="-3.0" prefHeight="71.0" prefWidth="1288.0" style="-fx-background-color: #1a266b;">
          <children>
-            <Label layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome, Admin" textFill="WHITE">
+            <Label fx:id="welcome_ad" layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome, Admin" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed Bold Italic" size="20.0" />
                </font>
@@ -46,6 +48,21 @@
             <Font name="Roboto Condensed" size="27.0" />
          </font>
       </Label>
+      <Label layoutX="911.0" layoutY="127.0" prefHeight="27.0" prefWidth="45.0" text="Search">
+        <font>
+          <Font size="14.0" />
+        </font>
+    </Label>
+    <TextField fx:id="searchBar" layoutX="967.0" layoutY="127.0" prefHeight="27.0" prefWidth="244.0" promptText="search project name" style="-fx-border-color: black;">
+        <font>
+          <Font size="13.0" />
+        </font>
+    </TextField>
+    <Button fx:id="goToResult" layoutX="1219.0" layoutY="125.0" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="46.0" text="GO" textFill="#021b33">
+        <font>
+          <Font name="Arial Rounded MT Bold" size="15.0" />
+        </font>
+    </Button>
       <AnchorPane layoutX="241.0" layoutY="167.0" prefHeight="231.0" prefWidth="1014.0">
          <children>
             <TableView fx:id="pro_table" prefHeight="516.0" prefWidth="1018.0">
@@ -63,5 +80,10 @@
             </TableView>
          </children>
       </AnchorPane>
+    <Button layoutX="1178.0" layoutY="87.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" textFill="#1e1a1a">
+      <font>
+         <Font name="System Bold Italic" size="13.0" />
+      </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -67,7 +67,7 @@
             <TableColumn fx:id="VacationState" minWidth="0.0" prefWidth="113.0" text="Vacation State" />
             </columns>
         </TableView>
-        <Button layoutX="275.0" layoutY="479.0" mnemonicParsing="false" styleClass="acceptBtn" text="Accept">
+        <Button fx:id="vaccept" layoutX="275.0" layoutY="479.0" mnemonicParsing="false" onAction="#acceptV" styleClass="acceptBtn" text="Accept">
             <font>
                 <Font name="Roboto Medium" size="18.0" />
             </font>
@@ -77,10 +77,15 @@
                 <Image url="@../img/tl_view_ha/Vacation-Beach-Free-PNG-Image.png" />
             </image>
         </ImageView>
-        <Button layoutX="355.0" layoutY="479.0" mnemonicParsing="false" styleClass="declineBtn" text="Decline">
+        <Button fx:id="vdecline" layoutX="355.0" layoutY="479.0" mnemonicParsing="false" onAction="#declineV" styleClass="declineBtn" text="Decline">
             <font>
                 <Font name="Roboto Medium" size="18.0" />
             </font>
         </Button>
+      <Button layoutX="1187.0" layoutY="84.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: red;" text="LOG OUT">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

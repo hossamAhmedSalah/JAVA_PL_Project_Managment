@@ -9,13 +9,18 @@ public class tasks {
     private SimpleStringProperty task_state;
     private SimpleStringProperty pro_name;
     private SimpleStringProperty tl_email;
+    private SimpleStringProperty em_email;
 
-    public tasks(String task_name, String task_desc, String task_state, String pro_name, String tl_email ){
+    public tasks(){
+    }
+
+    public tasks(String task_name, String task_desc, String task_state, String pro_name, String tl_email ,String em_email){
         this.pro_name = new SimpleStringProperty(pro_name);
         this.task_desc = new SimpleStringProperty(task_desc);
         this.task_name = new SimpleStringProperty(task_name);
         this.tl_email = new SimpleStringProperty(tl_email);
         this.task_state = new SimpleStringProperty(task_state);
+        this.em_email = new SimpleStringProperty(em_email);
     }
 
 
@@ -25,6 +30,10 @@ public class tasks {
 
     public String getTl_email() {
         return tl_email.get();
+    }
+
+    public String getEm_email() {
+        return em_email.get();
     }
 
     public String getPro_name() {
@@ -59,6 +68,10 @@ public class tasks {
         this.tl_email.set(tl_email);
     }
 
+    public void setEm_email(String em_email) {
+        this.em_email.set(em_email);
+    }
+
     public SimpleStringProperty task_nameProperty() {
         return task_name;
     }
@@ -77,6 +90,10 @@ public class tasks {
 
     public SimpleStringProperty tl_emailProperty() {
         return tl_email;
+    }
+
+    public SimpleStringProperty em_emailProperty() {
+        return em_email;
     }
 
 }

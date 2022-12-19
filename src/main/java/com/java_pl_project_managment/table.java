@@ -158,7 +158,6 @@ public class table extends Employee implements Initializable {
         else if(isProNameExist(projectName)){
             a.setContentText("This project already exist");
             a.show();
-
         }
         else {
             projectH pro = new projectH(DeadLine, Description, pm_Email, tl_Email, projectName, (Double.parseDouble(stateX)+""), progress);
@@ -228,8 +227,20 @@ public class table extends Employee implements Initializable {
     }
     @FXML
     void search(ActionEvent event) {
+        Alert m = new Alert(Alert.AlertType.WARNING);
+
+        m.setTitle("Search failed");
+
         String keyWord = searchBar.getText();
-        pro_table.getItems().stream().filter(item-> Objects.equals(item.getProName().toLowerCase(), keyWord.toLowerCase())).findAny().ifPresent(item->{pro_table.getSelectionModel().select(item); pro_table.scrollTo(item);});
+        if(isProNameExist(keyWord)){
+            pro_table.getItems().stream().filter(item-> Objects.equals(item.getProName().toLowerCase(), keyWord.toLowerCase())).findAny().ifPresent(item->{pro_table.getSelectionModel().select(item); pro_table.scrollTo(item);});
+
+        }
+        else {
+
+            m.setHeaderText("This project doesn't exist");
+            m.show();
+        }
 
     }
     @FXML

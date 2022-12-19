@@ -1,20 +1,27 @@
 package com.java_pl_project_managment;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
+import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Admin;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 
-public class userController extends Admin{
+public class userController extends Admin implements Initializable{
 
     public userController() throws SQLException {
     }
@@ -39,7 +46,14 @@ public class userController extends Admin{
     @FXML
     private TextField username;
 
-    // Admin ad = new Admin();
+    @FXML
+    private Label welcome_ad;
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        welcome_ad.setText("Welcome "+Account.username);
+    }
+
     Alert a = new Alert(AlertType.NONE);
 
     @FXML
@@ -122,6 +136,12 @@ public class userController extends Admin{
                     a.setContentText("Added Successfully");
                     a.showAndWait();
                 }
+                else if(!(role.getText() == "em" || role.getText() == "ad" || role.getText() == "tl" || role.getText() == "pm") ){
+                    a.setAlertType(AlertType.ERROR);
+                    a.setHeaderText("");
+                    a.setContentText("Wrong Role Type!");
+                    a.showAndWait();
+                }
                 else{
                     a.setAlertType(AlertType.ERROR);
                     a.setHeaderText("");
@@ -164,5 +184,28 @@ public class userController extends Admin{
             a.setContentText("Email Cannot be empty");
             a.showAndWait();
         }
+    }
+
+    @FXML
+    private void logOut(ActionEvent event){
+        Alert y = new Alert(Alert.AlertType.CONFIRMATION);
+        if (Objects.equals(Account.gender, "M")){
+            y.setTitle("Are you sure you want to log out MR."+ Account.username);
+            y.setContentText("stay in your work☠ manager, the plan need more details🥺");
+            y.setResizable(true);
+        }
+        else {
+            y.setTitle("Are you sure you want to log out Miss."+ Account.username);
+            y.setContentText("bye hope the extra money the other company would pay for you deserve😶");
+            y.setResizable(true);
+        }
+        if(y.showAndWait().get() == ButtonType.OK){
+            try {
+                App.setRoot("fxml/main");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 }

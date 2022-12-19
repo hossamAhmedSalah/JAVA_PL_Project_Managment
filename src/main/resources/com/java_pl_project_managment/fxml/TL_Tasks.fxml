@@ -50,70 +50,76 @@
       </AnchorPane>
       <AnchorPane layoutX="-3.0" prefHeight="71.0" prefWidth="1288.0" style="-fx-background-color: #1a266b;">
          <children>
-            <Label layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome,Team Leader" textFill="WHITE">
+            <Label fx:id="welcomLable" layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome,Team Leader" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed Bold Italic" size="20.0" />
                </font>
             </Label>
          </children></AnchorPane>
-      <VBox layoutX="276.0" layoutY="136.0" prefHeight="301.0" prefWidth="263.0">
+      <VBox layoutX="953.0" layoutY="98.0" prefHeight="309.0" prefWidth="299.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee_ID" wrappingWidth="112.803466796875">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Email" wrappingWidth="132.00347900390625">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField prefHeight="34.0" prefWidth="230.0" />
+            <TextField fx:id="EmEmailtxt" prefHeight="34.0" prefWidth="230.0" promptText="Employee Email" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField prefHeight="34.0" prefWidth="231.0" />
+            <TextField fx:id="taskDesctxt" prefHeight="34.0" prefWidth="231.0" promptText="decription" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Task Name">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField prefHeight="34.0" prefWidth="229.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Project_ID">
+            <TextField fx:id="taskNametxt" prefHeight="34.0" prefWidth="229.0" promptText="name the new task" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField prefHeight="34.0" prefWidth="229.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dead Line">
+            <TextField fx:id="proNametxt" prefHeight="34.0" prefWidth="263.0" promptText="project name" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team Leader Email">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField prefHeight="34.0" prefWidth="229.0" />
+            <TextField fx:id="tl_emailtxt" prefHeight="34.0" prefWidth="263.0" promptText="Team Leader Email" />
          </children>
       </VBox>
-      <Button fx:id="submit" layoutX="297.0" layoutY="454.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="222.0" text="Submit" textAlignment="CENTER">
+      <Button fx:id="AssignTask" layoutX="965.0" layoutY="408.0" mnemonicParsing="false" onAction="#AssignTask" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Assign the Task" textAlignment="CENTER">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold Italic" size="23.0" />
          </font>
       </Button>
-      <TableView layoutX="588.0" layoutY="119.0" prefHeight="390.0" prefWidth="610.0">
+      <TableView fx:id="tlEm" layoutX="250.0" layoutY="151.0" prefHeight="516.0" prefWidth="654.0">
          <columns>
-            <TableColumn fx:id="idColumn" prefWidth="55.199951171875" text="ID" />
-            <TableColumn fx:id="desColumn" prefWidth="142.6666259765625" text="description" />
-            <TableColumn fx:id="nameColumn" minWidth="9.06671142578125" prefWidth="107.73333740234375" text="Name" />
-            <TableColumn fx:id="proColumn" prefWidth="54.1334228515625" text="pro_ID" />
-            <TableColumn fx:id="deadColumn" prefWidth="109.333251953125" text="Dead_line" />
-            <TableColumn fx:id="taskColumn" prefWidth="105.06689453125" text="Task" />
+            <TableColumn fx:id="taskName" prefWidth="92.2666015625" text="Task Name" />
+            <TableColumn fx:id="taskDesc" prefWidth="110.39996337890625" text="description" />
+            <TableColumn fx:id="taskState" prefWidth="110.39996337890625" text="state" />
+            <TableColumn fx:id="projectName" minWidth="0.0" prefWidth="104.26669311523438" text="pro ject name" />
+            <TableColumn fx:id="EmployeeEmail" prefWidth="234.4000244140625" text="Employee Email" />
          </columns>
       </TableView>
-      <Button layoutX="737.0" layoutY="558.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="99.0" text="Update">
+      <Button fx:id="updateTask" layoutX="964.0" layoutY="483.0" mnemonicParsing="false" onAction="#updateTask" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #2DFF00;" text="Update">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="remove" layoutX="1003.0" layoutY="564.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="99.0" text="Remove">
+      <Button fx:id="removeTask" layoutX="963.0" layoutY="561.0" mnemonicParsing="false" onAction="#removeTask" prefHeight="42.0" prefWidth="225.0" style="-fx-background-color: red;" text="Remove">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <TextField fx:id="taskSearchBar" layoutX="292.0" layoutY="95.0" prefHeight="32.0" prefWidth="169.0" promptText="search for a task " />
+      <Button fx:id="searchButton" layoutX="480.0" layoutY="94.0" mnemonicParsing="false" onAction="#search" prefHeight="34.0" prefWidth="65.0" style="-fx-background-color: lightblue;" text="Search">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="refreshButton" layoutX="250.0" layoutY="676.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="23.0" prefWidth="154.0" style="-fx-background-color: #2DFF00;" text="Refresh" />
    </children>
 </AnchorPane>
