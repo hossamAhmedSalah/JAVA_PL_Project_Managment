@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.w3c.dom.events.MouseEvent;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -61,16 +61,16 @@ public class TLPenaltyController extends Employee implements Initializable {
     }
 
     @FXML
-    public void SwitchToVacation(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+    public void SwitchToVacation(MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLVacation");
     }
 
     @FXML
-    public void SwitchToPenalty(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+    public void SwitchToPenalty(MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/TLPenalty");
     }
 
-    public void SwitchToAssignTask(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+    public void SwitchToAssignTask(MouseEvent mouseEvent) throws IOException {
         App.setRoot("fxml/Tl_Tasks");
     }
 

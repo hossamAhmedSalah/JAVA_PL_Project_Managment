@@ -128,7 +128,7 @@ private Button AssignTask;
                     rs.getString("task_desc"),
                     rs.getString("pro_name"),
                     rs.getString("em_email"),
-                    data[rs.getInt("task_state")]
+                    data[rs.getInt("state")]
             ));
         }
     }
