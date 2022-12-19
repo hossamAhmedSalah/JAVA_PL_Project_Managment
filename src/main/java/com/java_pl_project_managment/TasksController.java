@@ -96,6 +96,7 @@ private Button AssignTask;
     private Button searchButton;
     @FXML
     private TextField EmEmailtxt;
+    private TextField TL_email;
     @FXML
     private TextField taskDesctxt;
     @FXML
@@ -206,8 +207,31 @@ private Button AssignTask;
     @FXML
     void AssignTask(ActionEvent event) {
 
+        String emp_email;
+        String emp_des;
+        String emp_task;
+        String emp_pro_name;
+        String tl_email;
+
+
+        emp_email = EmEmailtxt.getText();
+        emp_des = taskDesctxt.getText();
+        emp_task = taskDesctxt.getText();
+        emp_pro_name = proNametxt.getText();
+        tl_email = TL_email.getText();
+        System.out.println("insert into tasks values('" + emp_task + "','"+ emp_des  + "',"+ 0  + ",'"+ emp_pro_name  + "','"+ tl_email  + "','"+ emp_email  + "')");
+        try { //concet to database
+            query("insert into tasks values('" + emp_task + "','"
+                                                  + emp_des  + "',"
+                                                  + 0 + ",'"
+                                                  + emp_pro_name  + "','"
+                                                  + tl_email  + "','"
+                                                  + emp_email  + "')"
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
-    //TODO
     @FXML
     //remove
     void removeTask(ActionEvent event) {
@@ -237,6 +261,10 @@ private Button AssignTask;
     @FXML
     void updateTask(ActionEvent event) {
 
+    }
+    @FXML
+    void logOUT(ActionEvent event) throws IOException {
+        App.setRoot("fxml/main");
     }
 
 }

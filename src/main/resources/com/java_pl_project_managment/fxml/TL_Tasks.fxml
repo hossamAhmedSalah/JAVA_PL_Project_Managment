@@ -56,7 +56,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <VBox layoutX="944.0" layoutY="151.0" prefHeight="231.0" prefWidth="263.0">
+      <VBox layoutX="953.0" layoutY="98.0" prefHeight="309.0" prefWidth="299.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Email" wrappingWidth="132.00347900390625">
                <font>
@@ -81,7 +81,13 @@
                   <Font size="19.0" />
                </font>
             </Text>
-            <TextField fx:id="proNametxt" prefHeight="34.0" prefWidth="229.0" promptText="project name" />
+            <TextField fx:id="proNametxt" prefHeight="34.0" prefWidth="263.0" promptText="project name" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team Leader Email">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tl_email" prefHeight="34.0" prefWidth="263.0" promptText="Team Leader Email" />
          </children>
       </VBox>
       <Button fx:id="AssignTask" layoutX="965.0" layoutY="408.0" mnemonicParsing="false" onAction="#AssignTask" prefHeight="40.0" prefWidth="222.0" style="-fx-background-color: lightblue;" text="Assign the Task" textAlignment="CENTER">

@@ -82,5 +82,10 @@
                 <Font name="Roboto Medium" size="18.0" />
             </font>
         </Button>
+      <Button layoutX="1187.0" layoutY="84.0" mnemonicParsing="false" onAction="#logOUT" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: red;" text="LOG OUT">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

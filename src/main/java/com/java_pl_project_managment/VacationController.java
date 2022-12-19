@@ -3,6 +3,7 @@ package com.java_pl_project_managment;
 import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -97,5 +98,9 @@ public class VacationController extends Employee implements Initializable {
                     rs.getInt("v_state")
             ));
         }
+    }
+    @FXML
+    void logOUT(ActionEvent event) throws IOException {
+        App.setRoot("fxml/main");
     }
 }
