@@ -35,12 +35,7 @@ public class LoginController extends Admin{
             email.clear();
             password.clear();
         }
-        else{
-            // a.setAlertType(AlertType.INFORMATION);
-            // a.setHeaderText("");
-            // a.setContentText("Welcome " + Account.username);
-            // a.showAndWait();   
-
+        else{   
             if(Account.role.toLowerCase().equals("ad")){
                 super.view_project();
                 App.setRoot("fxml/admin");

@@ -63,6 +63,7 @@ public class adminController extends Admin implements Initializable{
             load();
         }
         catch(Exception e){
+            e.printStackTrace();
             System.out.println("kolo msh tmam");
         }
         Pro_name.setCellValueFactory(new PropertyValueFactory<project,String>("pro_name"));
