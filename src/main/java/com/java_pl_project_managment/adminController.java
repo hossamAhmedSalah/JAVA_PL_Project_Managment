@@ -42,6 +42,9 @@ public class adminController extends Admin implements Initializable{
     @FXML
     private TextField searchBar;
 
+    @FXML
+    private Label welcome_ad;
+
     Alert a = new Alert(AlertType.NONE);
 
     ObservableList<project> obs = FXCollections.observableArrayList();

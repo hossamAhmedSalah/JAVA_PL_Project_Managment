@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
@@ -41,6 +42,9 @@ public class userController extends Admin{
     private TextField salary;
     @FXML
     private TextField username;
+
+    @FXML
+    private Label welcome_ad;
 
     // Admin ad = new Admin();
     Alert a = new Alert(AlertType.NONE);

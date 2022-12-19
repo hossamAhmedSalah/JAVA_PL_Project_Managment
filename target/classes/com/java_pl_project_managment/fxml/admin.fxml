@@ -37,7 +37,7 @@
       </AnchorPane>
       <AnchorPane layoutX="-3.0" prefHeight="71.0" prefWidth="1288.0" style="-fx-background-color: #1a266b;">
          <children>
-            <Label layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome, Admin" textFill="WHITE">
+            <Label fx:id="welcome_ad" layoutX="25.0" layoutY="29.0" prefHeight="24.0" prefWidth="193.0" text="Welcome, Admin" textFill="WHITE">
                <font>
                   <Font name="Roboto Condensed Bold Italic" size="20.0" />
                </font>
