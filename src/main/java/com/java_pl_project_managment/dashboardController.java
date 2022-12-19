@@ -100,14 +100,21 @@ public class dashboardController extends Employee implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        ObservableList<PieChart.Data> pieChartData2 =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Not Started", 80),
-                        new PieChart.Data("in_progress", 100),
-                        new PieChart.Data("Completed", 10)
-                );
+        try {
+            loadPieChartData();
+        } catch (SQLException e) {
+            System.out.println("pie error");
+            throw new RuntimeException(e);
+        }
+        
+        // ObservableList<PieChart.Data> pieChartData2 =
+        //         FXCollections.observableArrayList(
+        //                 new PieChart.Data("Not Started", 80),
+        //                 new PieChart.Data("in_progress", 100),
+        //                 new PieChart.Data("Completed", 10)
+        //         );
 
-        pieChart.setData(pieChartData2);
+        // pieChart.setData(pieChartData2);
 
 
     }
@@ -123,41 +130,34 @@ public class dashboardController extends Employee implements Initializable {
         }
 
         chart.getData().add(series);
-
-
     }
 
 
 
 
-    private ObservableList<PieChart.Data> loadPieChartData() throws SQLException{
-        ResultSet notStarted = statement.executeQuery("select count(pro_state)  from project where pro_state = 0");
-        ResultSet Completed = statement.executeQuery("select count(pro_state) from  project where pro_state = 1");
-        ResultSet inProgress = statement.executeQuery("select count(pro_state) from  project where pro_state = 2");
-        int s = notStarted.getInt((0));
-        int p =  inProgress.getInt(0);
-        int c = Completed.getInt(0);
-        double allPro = s+p+c;
+    private void loadPieChartData() throws SQLException{
+        ObservableList<PieChart.Data> pp = FXCollections.observableArrayList();
+
+        rs = statement.executeQuery("select count(pro_state) as cnt from project where pro_state = 0");
+        rs.next();
+        int s = rs.getInt("cnt");
+        rs = statement.executeQuery("select count(pro_state) as cnt from  project where pro_state = 1");
+        rs.next();
+        int c =  rs.getInt("cnt");
+        rs = statement.executeQuery("select count(pro_state) as cnt from  project where pro_state = 2");
+        rs.next();
+        int p = rs.getInt("cnt");
+
+        int allPro = s+p+c;
 
 
-        return FXCollections.observableArrayList(
-//                        new PieChart.Data("Not_Started",(s/allPro)*100),
-//                        new PieChart.Data("in_progress", (c/allPro)*100),
-//                        new PieChart.Data("Completed",(p/allPro)*100)
-        new PieChart.Data("Not_Started",10),
-        new PieChart.Data("in_progress", 20),
-        new PieChart.Data("Completed",70)
+        pp.add(0,new PieChart.Data("Not_Started",((double)s/allPro) * 100));
+        pp.add(1,new PieChart.Data("in_progress", ((double)p/allPro) * 100));
+        pp.add(2,new PieChart.Data("Completed",((double)c/allPro) * 100));
 
-
-
-        );
-
-//        pieChart.setTitle("project states");
-//        pieChart.setData(pieChartData);
-
-
-
+        pieChart.setData(pp);
     }
+
     @FXML
     void logOut(ActionEvent event) {
         Alert y = new Alert(Alert.AlertType.CONFIRMATION);

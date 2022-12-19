@@ -59,7 +59,7 @@ public class adminController extends Admin implements Initializable{
             load();
         }
         catch(Exception e){
-            System.out.println("خخخخخخخخخخخخخخ");
+            System.out.println("kolo msh tmam");
         }
         Pro_name.setCellValueFactory(new PropertyValueFactory<project,String>("pro_name"));
         Pro_desc.setCellValueFactory(new PropertyValueFactory<project,String>("pro_desc"));
@@ -92,5 +92,28 @@ public class adminController extends Admin implements Initializable{
         }
 
         pro_table.getItems().stream().filter(item-> Objects.equals(item.getPro_name().toLowerCase(), proname.toLowerCase())).findAny().ifPresent(item -> {pro_table.getSelectionModel().select(item);pro_table.scrollTo(item);});
+    }
+
+    @FXML
+    private void logOut(ActionEvent event){
+        Alert y = new Alert(Alert.AlertType.CONFIRMATION);
+        if (Objects.equals(Account.gender, "M")){
+            y.setTitle("Are you sure you want to log out MR."+ Account.username);
+            y.setContentText("stay in your work☠ manager, the plan need more details🥺");
+            y.setResizable(true);
+        }
+        else {
+            y.setTitle("Are you sure you want to log out Miss."+ Account.username);
+            y.setContentText("bye hope the extra money the other company would pay for you deserve😶");
+            y.setResizable(true);
+        }
+        if(y.showAndWait().get() == ButtonType.OK){
+            try {
+                App.setRoot("fxml/main");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 }
