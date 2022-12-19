@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="container" stylesheets="@../style/EM_Welcome_view.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller = "com.java_pl_project_managment.EM_WelcomeView_Controller">
+   <children>
+      <Pane prefHeight="720.0" prefWidth="245.0" styleClass="header" stylesheets="@../style/EM_Welcome_view.css">
+         <children>
+            <Pane layoutY="46.0" prefHeight="276.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css">
+               <children>
+                  <ImageView fitHeight="182.0" fitWidth="223.0" layoutX="21.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/ad_view/icon-employee-0.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label  fx:id = "employee_name" layoutX="26.0" layoutY="218.0" prefHeight="34.0" prefWidth="172.0" text="Employee Name">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button  onAction="#gotoTasks" alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Tasks">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutY="467.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Monthly Data">
+               <font>
+                  <Font name="Arial Black" size="23.0" />
+               </font>
+            </Button>
+            <Button layoutY="586.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Vacation">
+               <font>
+                  <Font name="Arial Black" size="28.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="35.0" layoutY="689.0" prefHeight="17.0" prefWidth="172.0" text="2022 All Rights Reserved" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="245.0" layoutY="-2.0" prefHeight="45.0" prefWidth="1037.0" styleClass="header" stylesheets="@../style/EM_Welcome_view.css" />
+      <ImageView fitHeight="516.0" fitWidth="1037.0" layoutX="343.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/emplyeePhoto2.png" />
+         </image>
+      </ImageView>
+      <Label  fx:id = "employeeName" alignment="CENTER" layoutX="444.0" layoutY="100.0" prefHeight="154.0" prefWidth="668.0" text="Welcome Employee Name">
+         <font>
+            <Font name="Arial Black" size="33.0" />
+         </font>
+      </Label>
+      <Button fx:id="startWork" layoutX="397.0" layoutY="503.0" mnemonicParsing="false" onAction="#StartWork" prefHeight="89.0" prefWidth="160.0" styleClass="button2" stylesheets="@../style/EM_Welcome_view.css" text="Start Work">
+         <font>
+            <Font name="Arial Black" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="endWork" layoutX="963.0" layoutY="494.0" mnemonicParsing="false" onAction="#EndWork" prefHeight="89.0" prefWidth="182.0" styleClass="button3" stylesheets="@../style/EM_Welcome_view.css" text="End Work">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="640.0" fx:id="totalHours" onAction="#worksHourTimer" layoutY="621.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="197.0" styleClass="button3" stylesheets="@../style/EM_Welcome_view.css" text="Working Timer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
