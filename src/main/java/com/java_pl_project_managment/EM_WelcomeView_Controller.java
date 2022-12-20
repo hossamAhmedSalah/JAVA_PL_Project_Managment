@@ -78,23 +78,13 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
     public void gotoTasks(ActionEvent event) throws IOException {
         App.setRoot("fxml/task-view1");
     }
-
     public void switch_to_mdata(ActionEvent event) throws IOException {
         App.setRoot("fxml/monthdata");
     }
     public void switch_to_vacation(ActionEvent event) throws IOException {
         App.setRoot("fxml/vacationEM");
     }
-    public void setEmployeeName(ActionEvent event)
-    {
-        employee_name.setText("Welcome" + Account.username) ;
-    }
-    public void setEmployee_name(ActionEvent event)
-    {
-        employeeName.setText(Account.username) ;
-    }
-
-
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         employee_name.setText(Account.username);
