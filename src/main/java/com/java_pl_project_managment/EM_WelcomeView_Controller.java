@@ -4,30 +4,27 @@ import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Employee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
-public class EM_WelcomeView_Controller extends Account implements Initializable {
+public class EM_WelcomeView_Controller extends Account Implements Iniailizable {
     @FXML
     public Button startWork;
     @FXML
     public Button endWork;
 
-    public long startTimer;
-    public long endTimer;
+    public long startTimer ;
+    public long endTimer ;
 
     @FXML
-    public Button totalHours;
+    public Button totalHours ;
     @FXML
-    public Label employee_name;
+    public Label employee_name ;
     @FXML
-    public Label employeeName;
+    public Label employeeName ;
 
     public EM_WelcomeView_Controller() throws SQLException {
     }
@@ -38,7 +35,7 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
         startWork.setMinWidth(350);
         startWork.setText("Now you are starting Work");
         startWork.setCancelButton(true);
-        this.startTimer = System.currentTimeMillis();
+        this.startTimer = System.currentTimeMillis() ;
         endWork.setText("End Work");
         endWork.setStyle("-fx-backrgound-color : #0ECDFF ");
         endWork.setMinWidth(178);
@@ -59,12 +56,11 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
             startWork.setMinWidth(167);
         }
     }
-
-    public void worksHourTimer() {
+    public void worksHourTimer(){
         totalHours.setStyle("-fx-background-color : red");
         totalHours.setMinWidth(370);
 
-        totalHours.setText("you have worked : " + ((endTimer - startTimer) / 1000f) / 60f + "minutes");
+        totalHours.setText("you have worked : " + ((endTimer - startTimer)/1000f)/60f + "minutes");
 
         startWork.setText("Start Work");
         startWork.setStyle("-fx-backrgound-color : #7AA5FF");
@@ -82,22 +78,31 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
     public void switch_to_mdata(ActionEvent event) throws IOException {
         App.setRoot("fxml/monthdata");
     }
-
     public void switch_to_vacation(ActionEvent event) throws IOException {
         App.setRoot("fxml/vacationEM");
     }
-
-    public void setEmployeeName(ActionEvent event) {
-        employee_name.setText("Welcome" + Account.username);
+    public void setEmployeeName(ActionEvent event)
+    {
+        employee_name.setText("Welcome" + Account.username) ;
     }
-
-    public void setEmployee_name(ActionEvent event) {
-        employeeName.setText(Account.username);
+    public void setEmployee_name(ActionEvent event)
+    {
+        employeeName.setText(Account.username) ;
     }
-
-
-    @Override
+    
+     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            setEmployee_name();
+            setEmployeeName();
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
+    
+    
+    
+    
 }
