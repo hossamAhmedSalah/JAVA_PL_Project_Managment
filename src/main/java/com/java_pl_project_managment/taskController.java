@@ -95,13 +95,15 @@ public class taskController extends Employee implements Initializable{
 
     }
 
-    @FXML
-    private void goToVacation(ActionEvent event){
-
+    public void gotoTasks(ActionEvent event) throws IOException {
+        App.setRoot("fxml/task-view1");
     }
-    @FXML
-    private void goToData(ActionEvent event){
-        
+
+    public void switch_to_mdata(ActionEvent event) throws IOException {
+        App.setRoot("fxml/monthdata");
+    }
+    public void switch_to_vacation(ActionEvent event) throws IOException {
+        App.setRoot("fxml/vacationEM");
     }
     @FXML
     void logOUT(ActionEvent event) throws IOException {

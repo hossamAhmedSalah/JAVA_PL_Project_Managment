@@ -93,5 +93,39 @@
             </Button>
          </children>
       </Pane>
+      <Pane layoutX="-4.0" prefHeight="720.0" prefWidth="246.0" styleClass="header" stylesheets="@../style/EM_Welcome_view.css">
+         <children>
+            <Pane layoutY="46.0" prefHeight="276.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css">
+               <children>
+                  <ImageView fitHeight="182.0" fitWidth="223.0" layoutX="21.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/ad_view/icon-employee-0.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="employee_name" layoutX="26.0" layoutY="218.0" prefHeight="34.0" prefWidth="172.0" text="Employee Name">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button alignment="CENTER" layoutY="350.0" mnemonicParsing="false" onAction="#gotoTasks" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Tasks">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutY="467.0" mnemonicParsing="false" onAction="#switch_to_mdata" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Monthly Data">
+               <font>
+                  <Font name="Arial Black" size="23.0" />
+               </font>
+            </Button>
+            <Button layoutY="586.0" mnemonicParsing="false" onAction="#switch_to_vacation" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_Welcome_view.css" text="Vacation">
+               <font>
+                  <Font name="Arial Black" size="28.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="35.0" layoutY="689.0" prefHeight="17.0" prefWidth="172.0" text="2022 All Rights Reserved" textFill="WHITE" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

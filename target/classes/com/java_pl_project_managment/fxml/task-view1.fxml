@@ -27,17 +27,17 @@
                         </Label>
                     </children>
                 </Pane>
-                <Button alignment="CENTER" layoutY="350.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Tasks">
+                <Button alignment="CENTER" layoutY="350.0" mnemonicParsing="false" onAction="#gotoTasks" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Tasks">
                     <font>
                         <Font name="Arial Black" size="24.0" />
                     </font>
                 </Button>
-                <Button layoutY="467.0" mnemonicParsing="false" onAction="#goToData" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Monthly Data">
+                <Button layoutY="467.0" mnemonicParsing="false" onAction="#switch_to_mdata" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Monthly Data">
                     <font>
                         <Font name="Arial Black" size="23.0" />
                     </font>
                 </Button>
-                <Button layoutY="586.0" mnemonicParsing="false" onAction="#goToVacation" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Vacation">
+                <Button layoutY="586.0" mnemonicParsing="false" onAction="#switch_to_vacation" prefHeight="79.0" prefWidth="223.0" styleClass="button1" stylesheets="@../style/EM_tasks.css" text="Vacation">
                     <font>
                         <Font name="Arial Black" size="28.0" />
                     </font>

@@ -2,6 +2,7 @@ package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Employee;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -83,6 +84,15 @@ public class MonthdataControoler extends Employee implements Initializable {
             throw new RuntimeException(e);
         }
 
+    }
+    public void switch_to_mdata(ActionEvent event) throws IOException {
+        App.setRoot("fxml/monthdata");
+    }
+    public void switch_to_vacation(ActionEvent event) throws IOException {
+        App.setRoot("fxml/vacationEM");
+    }
+    public void gotoTasks(ActionEvent event) throws IOException {
+        App.setRoot("fxml/task-view1");
     }
 }
 

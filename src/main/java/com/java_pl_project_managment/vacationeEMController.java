@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
@@ -60,13 +61,33 @@ public class vacationeEMController extends Employee {
 
     public void checkreq(ActionEvent event) throws SQLException {
         String[] v_state = {"Rejected","Accepted","Pending"};
-        rs = statement.executeQuery("select v_state as v from vacation where v_id="+Integer.parseInt(input_text.getText()));
-        if(rs.next()) state = v_state[rs.getInt("v")];
-        Alert check =new Alert(Alert.AlertType.WARNING);
-        check.setTitle("vacation state");
-        check.setHeaderText("your vacation is "+state);
-        check.show();
+        try {
+            rs = statement.executeQuery("select v_state as v from vacation where v_id=" + Integer.parseInt(input_text.getText()));
+            if(rs.next()) state = v_state[rs.getInt("v")];
+            Alert check =new Alert(Alert.AlertType.WARNING);
+            check.setTitle("vacation state");
+            check.setHeaderText("your vacation is "+state);
+            check.show();
+        }
+        catch (NumberFormatException e){
+            Alert input_int =new Alert(Alert.AlertType.WARNING);
+            input_int.setTitle("error");
+            input_int.setHeaderText("invalid input");
+            input_int.setContentText("enter an integer value");
+            input_int.show();
+        }
 
     }
+    public void switch_to_mdata(ActionEvent event) throws IOException {
+        App.setRoot("fxml/monthdata");
+    }
+    public void switch_to_vacation(ActionEvent event) throws IOException {
+        App.setRoot("fxml/vacationEM");
+    }
+
+    public void gotoTasks(ActionEvent event) throws IOException {
+        App.setRoot("fxml/task-view1");
+    }
+
 }
 
