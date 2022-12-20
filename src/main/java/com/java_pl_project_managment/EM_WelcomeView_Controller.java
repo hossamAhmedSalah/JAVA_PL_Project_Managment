@@ -96,6 +96,6 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        employee_name.setText("Welcome "+Account.username);
     }
 }
