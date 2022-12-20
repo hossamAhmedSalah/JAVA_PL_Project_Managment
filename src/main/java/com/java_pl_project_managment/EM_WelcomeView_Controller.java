@@ -4,13 +4,16 @@ import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Employee;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class EM_WelcomeView_Controller extends Account Implements Iniailizable {
+public class EM_WelcomeView_Controller extends Account implements Initializable {
     @FXML
     public Button startWork;
     @FXML
@@ -89,20 +92,10 @@ public class EM_WelcomeView_Controller extends Account Implements Iniailizable {
     {
         employeeName.setText(Account.username) ;
     }
-    
-     @Override
+
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            setEmployee_name();
-            setEmployeeName();
-        }
-        catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
     }
-    
-    
-    
-    
 }
