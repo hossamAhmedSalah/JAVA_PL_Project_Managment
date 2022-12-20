@@ -1,7 +1,6 @@
 package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Account;
-import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,7 +17,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class TLPenaltyController extends Employee implements Initializable {
+public class TLPenaltyController extends Account implements Initializable {
 
     @FXML
     private Label completeBtn;
