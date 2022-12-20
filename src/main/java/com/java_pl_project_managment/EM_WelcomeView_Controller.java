@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class EM_WelcomeView_Controller extends Account {
+public class EM_WelcomeView_Controller extends Account Implements Iniailizable {
     @FXML
     public Button startWork;
     @FXML
@@ -83,10 +83,26 @@ public class EM_WelcomeView_Controller extends Account {
     }
     public void setEmployeeName(ActionEvent event)
     {
-        employee_name.setText("Welcome" + Employee.username) ;
+        employee_name.setText("Welcome" + Account.username) ;
     }
     public void setEmployee_name(ActionEvent event)
     {
-        employeeName.setText( Employee.email) ;
+        employeeName.setText(Account.username) ;
     }
+    
+     @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            setEmployee_name();
+            setEmployeeName();
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    
+    
+    
+    
 }
