@@ -29,6 +29,7 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
     @FXML
     public Label employeeName ;
 
+
     public EM_WelcomeView_Controller() throws SQLException {
     }
 
@@ -96,6 +97,8 @@ public class EM_WelcomeView_Controller extends Account implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        employee_name.setText("Welcome "+Account.username);
+        employee_name.setText(Account.username);
+        employeeName.setText("Welcome "+Account.username);
+
     }
 }
