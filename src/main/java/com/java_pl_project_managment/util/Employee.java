@@ -12,14 +12,18 @@ public class Employee extends Account implements TaskEM, penalitiesEM,VacationEM
         public String[][] workHours;
         public double Salary;
         public double netSalary;
+        public double bonus;
+        public double penalty;
         //SQLConnection conn = new SQLConnection();
         private String[] v_state = {"Rejected","Accepted","Pending"};
         private String[] taskstring = {"not started","completed","in progress"};
 
     public Employee() throws SQLException {
-        //Salary = super.salary;
-        //netSalary=viewNetSalary(this.email);
-        //workHours=getWorkHours(this.email);
+        Salary = super.salary;
+        netSalary=viewNetSalary(this.email);
+        workHours=getWorkHours(this.email);
+        bonus=viewBonus(this.email);
+        penalty=viewPenalities(this.email);
     }
     public void setSalary (String email, double salary) throws SQLException {
         query("update Account set salary ="+salary+" where email='"+email+"'");
@@ -84,14 +88,14 @@ public class Employee extends Account implements TaskEM, penalitiesEM,VacationEM
         return TotalHours;
     }
     //request and return vacation id *input email must be in em table (only em rule can request vacation)*
-    public int requestVacation(String email, Date fromDateX,Date toDateY) throws SQLException {
+    public int requestVacation(String email, String fromDateX,String toDateY) throws SQLException {
         // *** remove email from parameters & interface proto
         int v_id=0;
-        SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
-        String dx= form.format(fromDateX);
-        String dy= form.format(toDateY);
-        System.out.println(dx);
-        System.out.println(dy);
+        //SimpleDateFormat form = new SimpleDateFormat("yyyy-MM-dd");
+        String dx= fromDateX;
+        String dy= toDateY;
+        //System.out.println(dx);
+        //System.out.println(dy);
         query("insert into vacation values('"+email+"','"+dx+"','"+dy+"',"+2+")");
         rs = statement.executeQuery("select v_id from vacation where(em_email='"+email+"' and s_date='"+dx+"' and e_date='"+dy+"')");
         if(rs.next()) v_id = rs.getInt("v_id");
