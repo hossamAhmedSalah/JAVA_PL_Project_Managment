@@ -1,6 +1,7 @@
 package com.java_pl_project_managment;
 
 import com.java_pl_project_managment.util.Employee;
+import com.java_pl_project_managment.util.Account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -107,6 +108,7 @@ public class VacationController extends Employee implements Initializable {
     @FXML
     public void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
+        Account.email = null;
     }
 
     public void acceptVacation(ActionEvent event) {

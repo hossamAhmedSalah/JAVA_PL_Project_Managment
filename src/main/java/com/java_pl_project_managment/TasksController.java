@@ -1,5 +1,6 @@
 package com.java_pl_project_managment;
 
+import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -236,6 +237,7 @@ public class TasksController extends Employee implements Initializable {
     @FXML
     void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
+        Account.email = null;
     }
     @FXML
     void SwitchToReport(MouseEvent event) throws IOException {

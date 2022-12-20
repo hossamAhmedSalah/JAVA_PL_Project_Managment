@@ -101,24 +101,11 @@ public class adminController extends Admin implements Initializable{
 
     @FXML
     private void logOut(ActionEvent event){
-        Alert y = new Alert(Alert.AlertType.CONFIRMATION);
-        if (Objects.equals(Account.gender, "M")){
-            y.setTitle("Are you sure you want to log out MR."+ Account.username);
-            y.setContentText("stay in your work☠ manager, the plan need more details🥺");
-            y.setResizable(true);
+        try {
+            App.setRoot("fxml/main");
+            Account.email = null;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        else {
-            y.setTitle("Are you sure you want to log out Miss."+ Account.username);
-            y.setContentText("bye hope the extra money the other company would pay for you deserve😶");
-            y.setResizable(true);
-        }
-        if(y.showAndWait().get() == ButtonType.OK){
-            try {
-                App.setRoot("fxml/main");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
     }
 }

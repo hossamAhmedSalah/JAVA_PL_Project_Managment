@@ -1,5 +1,6 @@
 package com.java_pl_project_managment;
 import com.java_pl_project_managment.reporttype;
+import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -136,6 +137,7 @@ public class report extends Employee implements Initializable {
     @FXML
     void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
+        Account.email = null;
     }
 
 }

@@ -174,6 +174,7 @@ public class dashboardController extends Employee implements Initializable {
         if(y.showAndWait().get() == ButtonType.OK){
             try {
                 App.setRoot("fxml/main");
+                Account.email = null;
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -1,5 +1,6 @@
 package com.java_pl_project_managment;
 
+import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
@@ -106,11 +108,19 @@ public class TLPenaltyController extends Employee implements Initializable {
     @FXML
     void MakeAsearch(ActionEvent event) {
         String keyWord = searchBar_penalty.getText();
+
+        Alert searchError = new Alert(AlertType.ERROR);
+        if(!PenaltyTable.getItems().stream().anyMatch(item-> item.getEmployeeIdCol().toLowerCase().equals(keyWord.toLowerCase()))){
+            searchError.setAlertType(AlertType.ERROR);
+            searchError.setContentText(keyWord + " not found");
+            searchError.setHeaderText("");
+            searchError.showAndWait();
+            return;
+        }
         PenaltyTable.getItems().stream().filter(item -> Objects.equals(item.getEmployeeIdCol().toLowerCase(), keyWord.toLowerCase())).findAny().ifPresent(item -> {
             PenaltyTable.getSelectionModel().select(item);
             PenaltyTable.scrollTo(item);
         });
-        Alert searchError = new Alert(Alert.AlertType.ERROR);
         if (Objects.equals(searchBar_penalty.getText(), "")) {
             searchError.setTitle("Cannot Search");
             searchError.setContentText("Please Type an email");
@@ -121,6 +131,7 @@ public class TLPenaltyController extends Employee implements Initializable {
     @FXML
     void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
+        Account.email = null;
     }
 
     @FXML

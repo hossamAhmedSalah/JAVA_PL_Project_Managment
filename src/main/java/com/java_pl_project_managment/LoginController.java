@@ -45,7 +45,7 @@ public class LoginController extends Admin{
             else if(Account.role.toLowerCase().equals("tl"))
                 App.setRoot("fxml/TLPenalty");
             else if(Account.role.toLowerCase().equals("em"))
-                App.setRoot("fxml/task-view1");
+                App.setRoot("fxml/employeeWelcomeView");
         }
     }
 }

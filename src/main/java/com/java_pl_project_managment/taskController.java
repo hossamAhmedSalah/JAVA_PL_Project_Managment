@@ -15,6 +15,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import com.java_pl_project_managment.util.Account;
 import com.java_pl_project_managment.util.Employee;
 
 public class taskController extends Employee implements Initializable{
@@ -105,6 +106,7 @@ public class taskController extends Employee implements Initializable{
     @FXML
     void logOUT(ActionEvent event) throws IOException {
         App.setRoot("fxml/main");
+        Account.email = null;
 
     }
 
